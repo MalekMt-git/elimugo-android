@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="menu_home">kenyan_menu_home</string>
+    <string name="menu_settings">kenyan_menu_settings</string>
+    <string name="menu_help">kenyan_menu_help</string>
+
+    <string name="home_fragment_description">kenyan_select_functionality</string>
+    <string name="home_fragment_share_content_button">kenyan_share</string>
+    <string name="home_fragment_download_button">kenyan_download</string>
+    <string name="home_fragment_explore_button">kenyan_home_explore</string>
+    <string name="share_fragment_title">kenyan_share_fragment_title</string>
+    <string name="home_fragment_share_app_button">kenyan_share_app</string>
+    <string name="select_fragment_title">kenyan_select_fragment_title</string>
+    <string name="select_fragment_description">kenyan_select_fragment_description</string>
+    <string name="select_fragment_website_button">kenyan_select_fragment_website_button</string>
+    <string name="select_fragment_mobile_button">kenyan_select_fragment_mobile_button</string>
+    <string name="select_fragment_pi_button">kenyan_select_fragment_pi_button</string>
+    <string name="retrieve_fragment_title">kenyan_retrieve_fragment_title</string>
+    <string name="retrieve_fragment_description">kenyan_retrieve_fragment_description</string>
+    <string name="retrieve_fragment_connected_to">kenyan_retrieve_fragment_connected_to</string>
+    <string name="retrieve_fragment_connecting_to">kenyan_retrieve_fragment_connecting_to</string>
+    <string name="retrieve_fragment_disconnect">kenyan_retrieve_fragment_disconnect</string>
+    <string name="download_status_fragment_validity_check">kenyan_download_status_fragment_validity_check</string>
+    <string name="download_status_fragment_download_in_progress">kenyan_download_status_fragment_download_in_progress</string>
+    <string name="download_status_fragment_download_complete">kenyan_download_status_fragment_download_complete</string>
+    <string name="share_fragment_description">kenyan_share_fragment_description</string>
+    <string name="explore_fragment_title">kenyan_explore_fragment_title</string>
+    <string name="textview">Test Languagedsdsdvsd kiswasgu</string>
+</resources>

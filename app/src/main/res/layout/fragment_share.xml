@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/default_spacing"
+    android:orientation="vertical"
+    tools:context=".fragments.home.share.ShareFragment">
+
+    <ngo.dean.elimugo.custom_views.HeaderView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:titleText="@string/home_fragment_share_content_button" />
+    
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_spacing"
+        android:text="@string/share_fragment_description" />
+
+    <ImageView
+        android:id="@+id/qrCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/networkName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="8dp"
+        android:text="@string/network_name" />
+
+    <TextView
+        android:id="@+id/networkPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="8dp"
+        android:text="@string/network_password" />
+
+    <TextView
+        android:id="@+id/ipAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="8dp"
+        android:text="@string/ip_address" />
+</LinearLayout>

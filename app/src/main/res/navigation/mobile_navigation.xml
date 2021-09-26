@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/splashScreenFragment">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="ngo.dean.elimugo.fragments.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_nav_home_to_share"
+            app:destination="@id/nav_share"
+            app:enterAnim="@anim/slide_in_right"
+             />
+
+        <action
+            android:id="@+id/action_nav_home_to_download"
+            app:destination="@id/nav_select_source"
+            app:enterAnim="@anim/slide_in_right"
+              />
+
+        <action
+            android:id="@+id/action_nav_home_to_explore"
+            app:destination="@id/nav_explore"
+            app:enterAnim="@anim/slide_in_right"
+            />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_share"
+        android:name="ngo.dean.elimugo.fragments.home.share.ShareFragment"
+        android:label="@string/share_fragment_title"
+        tools:layout="@layout/fragment_share" />
+
+    <fragment
+        android:id="@+id/nav_select_source"
+        android:name="ngo.dean.elimugo.fragments.home.download.select.SelectSourceFragment"
+        android:label="@string/select_fragment_title"
+        tools:layout="@layout/fragment_select_source">
+        <action
+            android:id="@+id/action_nav_select_to_website"
+            app:destination="@id/nav_retrieve_source"
+            app:enterAnim="@anim/slide_in_right"
+/>
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/qr_scan_camera"
+        android:name="ngo.dean.elimugo.fragments.home.download.hotspot.QrCameraScanFragment"
+        android:label="@string/select_fragment_title"
+        tools:layout="@layout/fragment_select_source">
+        <action
+            android:id="@+id/action_nav_select_to_scan_camera"
+            app:destination="@id/nav_retrieve_source"
+            app:enterAnim="@anim/slide_in_right"
+/>
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/nav_retrieve_source"
+        android:name="ngo.dean.elimugo.fragments.home.download.retrieve.RetrieveFragment"
+        android:label="@string/retrieve_fragment_title"
+        tools:layout="@layout/fragment_retrieve" >
+        <action
+            android:id="@+id/action_nav_retrieve_to_status"
+            app:destination="@id/nav_download_status"
+            app:enterAnim="@anim/slide_in_right"
+/>
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/nav_retrieve_another_device"
+        android:name="ngo.dean.elimugo.fragments.home.download.retrieve.RetrieveFragment"
+        android:label="@string/retrieve_fragment_title"
+        tools:layout="@layout/fragment_retrieve" >
+        <action
+            android:id="@+id/action_nav_retrieve_to_status"
+            app:destination="@id/nav_download_status"
+            app:enterAnim="@anim/slide_in_right"
+           />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_download_status"
+        android:name="ngo.dean.elimugo.fragments.home.download.status.DownloadStatusFragment"
+        android:label="@string/retrieve_fragment_title"
+        tools:layout="@layout/fragment_download_status" >
+        <argument
+            android:name="contentPackages"
+            app:argType="ngo.dean.elimugo.repositories.models.ParcelableContentModule[]" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_explore"
+        android:name="ngo.dean.elimugo.fragments.home.explore.ExploreFragment"
+        android:label="@string/explore_fragment_title"
+        tools:layout="@layout/fragment_explore">
+        <action
+            android:id="@+id/action_nav_explore_to_html"
+            app:destination="@id/nav_explore_html"
+            app:enterAnim="@anim/slide_in_right"
+
+         />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_explore_html"
+        android:name="ngo.dean.elimugo.fragments.home.explore.html.HtmlFragment"
+        android:label="@string/explore_fragment_title"
+        tools:layout="@layout/fragment_html">
+        <argument
+            android:name="contentPackage"
+            app:argType="ngo.dean.elimugo.repositories.models.ParcelableContentModule" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="ngo.dean.elimugo.fragments.settings.SettingsFragment"
+        android:label="@string/menu_settings"
+        tools:layout="@layout/fragment_settings" />
+
+    <fragment
+        android:id="@+id/nav_help"
+        android:name="ngo.dean.elimugo.fragments.help.HelpFragment"
+        android:label="@string/menu_help"
+        tools:layout="@layout/fragment_help" />
+    <fragment
+        android:id="@+id/splashScreenFragment"
+        android:name="ngo.dean.elimugo.fragments.SplashScreenFragment"
+        android:label="fragment_splash_screen"
+        tools:layout="@layout/fragment_splash_screen" >
+        <action
+            android:id="@+id/action_splashScreenFragment_to_selectLanguageFragment"
+            app:destination="@id/selectLanguageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectLanguageFragment"
+        android:name="ngo.dean.elimugo.fragments.SelectLanguageFragment"
+        android:label="Select Language"
+        tools:layout="@layout/fragment_select_language">
+        <action
+            android:id="@+id/action_selectLanguageFragment_to_nav_home"
+            app:destination="@id/nav_home"
+            app:enterAnim="@anim/slide_in_right"
+
+           />
+    </fragment>
+
+</navigation>

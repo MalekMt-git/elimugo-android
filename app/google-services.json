@@ -1,0 +1,138 @@
+{
+  "project_info": {
+    "project_number": "658251372905",
+    "firebase_url": "https://antivirus-89301.firebaseio.com",
+    "project_id": "antivirus-89301",
+    "storage_bucket": "antivirus-89301.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:658251372905:android:824d729e7748de41",
+        "android_client_info": {
+          "package_name": "com.fararoid.mobosecurity"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "658251372905-jh8f03mio2sqhgubu5ikhu1ndrfffo5h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fararoid.mobosecurity",
+            "certificate_hash": "683ef02b215e93b73f8476b5e8696bdae7ef0dff"
+          }
+        },
+        {
+          "client_id": "658251372905-q9s7kdi4i5mks8kjihnsvc8e76b4b4ng.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCyyM_LWtFE01etFStShd4imD1qsTFzkUQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "658251372905-q9s7kdi4i5mks8kjihnsvc8e76b4b4ng.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:658251372905:android:77753edec30101b95bc5f8",
+        "android_client_info": {
+          "package_name": "ngo.dean.elimugo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "658251372905-q9s7kdi4i5mks8kjihnsvc8e76b4b4ng.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCyyM_LWtFE01etFStShd4imD1qsTFzkUQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "658251372905-q9s7kdi4i5mks8kjihnsvc8e76b4b4ng.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:658251372905:android:adc1403e045739595bc5f8",
+        "android_client_info": {
+          "package_name": "nl.gamebasics.poulefase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "658251372905-8p894h86c5t5lre12dmiicrlumerkndh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "nl.gamebasics.poulefase",
+            "certificate_hash": "974ebb6aca8bcb954616d14558ec21e98e38e787"
+          }
+        },
+        {
+          "client_id": "658251372905-b524mak7e7mgn2d0bbjt1cfv56v96hsb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "nl.gamebasics.poulefase",
+            "certificate_hash": "23018e22d58b73931fb0805c5e7db34d8a95aead"
+          }
+        },
+        {
+          "client_id": "658251372905-r6bnshnkeb9l92buq47lmla03258og4e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "nl.gamebasics.poulefase",
+            "certificate_hash": "fe37dae40dd81d0d898d15058c4f0cb3bb9ff6d1"
+          }
+        },
+        {
+          "client_id": "658251372905-ua2edo648n2h7bif3trot71aq3j4csev.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "nl.gamebasics.poulefase",
+            "certificate_hash": "682f0477a88dd30acac7ea64304e7afde19cb079"
+          }
+        },
+        {
+          "client_id": "658251372905-q9s7kdi4i5mks8kjihnsvc8e76b4b4ng.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCyyM_LWtFE01etFStShd4imD1qsTFzkUQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "658251372905-q9s7kdi4i5mks8kjihnsvc8e76b4b4ng.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

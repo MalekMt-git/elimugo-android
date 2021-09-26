@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.home.download.select.SelectSourceFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/default_spacing"
+        android:orientation="vertical">
+
+        <ngo.dean.elimugo.custom_views.HeaderView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:iconDrawable="@drawable/ic_solid_cloud_download_alt"
+            app:titleText="@string/home_fragment_download_button" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="32dp"
+            android:text="@string/select_fragment_description"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/websiteSource"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/select_fragment_website_button"
+            app:cornerRadius="24dp" />
+
+        <Button
+            android:id="@+id/mobileSource"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/select_fragment_mobile_button"
+            app:cornerRadius="24dp" />
+
+        <Button
+            android:id="@+id/piSource"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/select_fragment_pi_button"
+            android:enabled="false"
+            app:cornerRadius="24dp" />
+
+    </LinearLayout>
+</FrameLayout>
