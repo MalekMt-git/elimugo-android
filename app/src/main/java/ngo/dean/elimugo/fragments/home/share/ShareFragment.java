@@ -22,8 +22,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.jetbrains.annotations.NotNull;
+
+import java.util.Objects;
 
 import ngo.dean.elimugo.R;
 import ngo.dean.elimugo.services.hotspot_server.service.HotspotServerService;
@@ -94,12 +97,12 @@ public class ShareFragment extends Fragment {
             new AlertDialog.Builder(this.getContext())
                     .setTitle("Permission required")
                     .setMessage("Access to your location is needed to open a WLAN.")
-                    .setPositiveButton("ok", (dialog, which) -> requestPermissions(new String[] { Manifest.permission.ACCESS_FINE_LOCATION }, READ_LOCATION_PERMISSION))
+                    .setPositiveButton("ok", (dialog, which) -> requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, READ_LOCATION_PERMISSION))
                     .setNegativeButton("cancel", (dialog, which) -> dialog.dismiss())
                     .create()
                     .show();
         } else {
-            requestPermissions(new String[] { Manifest.permission.ACCESS_FINE_LOCATION },  READ_LOCATION_PERMISSION);
+            requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, READ_LOCATION_PERMISSION);
         }
     }
 
@@ -116,18 +119,26 @@ public class ShareFragment extends Fragment {
             SSID.setText(String.format("%s: %s", getString(R.string.network_name), information.getName()));
             password.setText(String.format("%s: %s", getString(R.string.network_password), information.getPassword()));
 
-            String qrContent = String.format("{ hotspot: 'WIFI:T:WPA;Ssid:~%s~;Password:~%s~', serverIP: '~%s~: ~%s~'}", information.getName(), information.getPassword(), information.getURL());
+
+         //   String qrContent = String.format("{ hotspot: 'WIFI:T:WPA;S:%s;P:%s', serverIP: '%s'}", information.getName(), information.getPassword(), information.getURL());
+
+
+            String qrContent = String.format("{ hotspot: 'WIFI:T:WPA;S:~%s~;P:~%s~', serverIP: '~%s~'}", information.getName(), information.getPassword(), information.getURL());
             qrView.setImageBitmap(QRGenerator.createQRCode(qrContent));
+
+
+            Toast.makeText(getContext() , qrContent.toString() , Toast.LENGTH_LONG).show();
+
 
             wlanServerServiceConnection.getServiceInstance().updateNotification("Running WLAN hotspot server.");
         });
     }
 
     private void bindWLANServerService() {
-        Intent serviceIntent = new Intent(getActivity().getApplicationContext(), HotspotServerService.class);
+        Intent serviceIntent = new Intent(requireActivity().getApplicationContext(), HotspotServerService.class);
         serviceIntent.putExtra("hotspotService", "Starting WLAN hotspot...");
 
-        getActivity().startService(serviceIntent);
+        requireActivity().startService(serviceIntent);
         wlanServerServiceConnection = new HotspotServerServiceConnection();
         getActivity().bindService(serviceIntent, wlanServerServiceConnection, Context.BIND_AUTO_CREATE);
     }

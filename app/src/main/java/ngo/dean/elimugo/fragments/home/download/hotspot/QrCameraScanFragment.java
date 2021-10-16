@@ -35,6 +35,7 @@ import com.thanosfisherman.wifiutils.wifiConnect.ConnectionErrorCode;
 import com.thanosfisherman.wifiutils.wifiConnect.ConnectionSuccessListener;
 
 import java.util.List;
+import java.util.Objects;
 
 import ngo.dean.elimugo.R;
 
@@ -67,7 +68,7 @@ public class QrCameraScanFragment extends Fragment {
         Context context = requireContext();
 
 
-        RxPermissions rxPermissions = new RxPermissions(getActivity());
+        RxPermissions rxPermissions = new RxPermissions(requireActivity());
         rxPermissions
                 .request(Manifest.permission.CAMERA) // ask single or multiple permission once
                 .subscribe(granted -> {
@@ -88,104 +89,109 @@ public class QrCameraScanFragment extends Fragment {
                                     public void run() {
 
 
-                                        String[] ary = result.getText().split("~");
+                                        try {
 
 
-                                        Log.i("ARMAN", result.getText());
+                                            String[] ary = result.getText().split("~");
 
 
-                                        String str = TextUtils.join("~", ary);
+                                            Log.i("ARMAN", result.getText());
 
 
-                                        Log.i("ARMAN", ary[1]);
+                                            String str = TextUtils.join("~", ary);
 
 
-                                        String networkSSID = ary[1];
-                                        String networkPass = ary[3];
+                                            Log.i("ARMAN", ary[1]);
 
 
-                                        Log.i("ARMAN", networkSSID + ":ssid");
-                                        Log.i("ARMAN", networkPass + ":pss");
+                                            String networkSSID = ary[1];
+                                            String networkPass = ary[3];
 
 
-                                        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.Q) {
+                                            Log.i("ARMAN", networkSSID + ":ssid");
+                                            Log.i("ARMAN", networkPass + ":pss");
 
 
-                                            WifiNetworkSpecifier.Builder builder = new WifiNetworkSpecifier.Builder();
-                                            builder.setSsid(networkSSID);
-                                            builder.setWpa2Passphrase(networkPass);
+                                            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.Q) {
 
-                                            WifiNetworkSpecifier wifiNetworkSpecifier = builder.build();
-                                            NetworkRequest.Builder networkRequestBuilder = new NetworkRequest.Builder();
-                                            networkRequestBuilder.addTransportType(NetworkCapabilities.TRANSPORT_WIFI);
-                                            networkRequestBuilder.setNetworkSpecifier(wifiNetworkSpecifier);
-                                            NetworkRequest networkRequest = networkRequestBuilder.build();
-                                            ConnectivityManager cm = (ConnectivityManager)
-                                                    requireContext()
-                                                            .getSystemService(Context.CONNECTIVITY_SERVICE);
-                                            if (cm != null) {
-                                                cm.requestNetwork(networkRequest, new ConnectivityManager.NetworkCallback() {
-                                                    @Override
-                                                    public void onAvailable(@NonNull Network network) {
-                                                        super.onAvailable(network);
-                                                        cm.bindProcessToNetwork(network);
-                                                    }
-                                                });
 
-                                                //   Toast.makeText(activity, ary.length , Toast.LENGTH_SHORT).show();
+                                                WifiNetworkSpecifier.Builder builder = new WifiNetworkSpecifier.Builder();
+                                                builder.setSsid(networkSSID);
+                                                builder.setWpa2Passphrase(networkPass);
+
+                                                WifiNetworkSpecifier wifiNetworkSpecifier = builder.build();
+                                                NetworkRequest.Builder networkRequestBuilder = new NetworkRequest.Builder();
+                                                networkRequestBuilder.addTransportType(NetworkCapabilities.TRANSPORT_WIFI);
+                                                networkRequestBuilder.setNetworkSpecifier(wifiNetworkSpecifier);
+                                                NetworkRequest networkRequest = networkRequestBuilder.build();
+                                                ConnectivityManager cm = (ConnectivityManager)
+                                                        requireContext()
+                                                                .getSystemService(Context.CONNECTIVITY_SERVICE);
+                                                if (cm != null) {
+                                                    cm.requestNetwork(networkRequest, new ConnectivityManager.NetworkCallback() {
+                                                        @Override
+                                                        public void onAvailable(@NonNull Network network) {
+                                                            super.onAvailable(network);
+                                                            cm.bindProcessToNetwork(network);
+                                                        }
+                                                    });
+
+                                                    //   Toast.makeText(activity, ary.length , Toast.LENGTH_SHORT).show();
+                                                }
+
+
+                                            } else {
+
+
+                                                WifiManager wifiManager = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
+                                                // setup a wifi configuration
+                                                WifiConfiguration wc = new WifiConfiguration();
+
+                                                wc.SSID = "\"" + networkSSID + "\"";   // Please note the quotes. String should contain ssid in quotes
+
+                                                wc.preSharedKey = "\"" + networkPass + "\"";   // Please note the quotes. String should contain ssid in quotes
+
+                                                wc.status = WifiConfiguration.Status.ENABLED;
+                                                wc.allowedGroupCiphers.set(WifiConfiguration.GroupCipher.TKIP);
+                                                wc.allowedGroupCiphers.set(WifiConfiguration.GroupCipher.CCMP);
+                                                wc.allowedKeyManagement.set(WifiConfiguration.KeyMgmt.WPA_PSK);
+                                                wc.allowedPairwiseCiphers.set(WifiConfiguration.PairwiseCipher.TKIP);
+                                                wc.allowedPairwiseCiphers.set(WifiConfiguration.PairwiseCipher.CCMP);
+                                                wc.allowedProtocols.set(WifiConfiguration.Protocol.RSN);
+                                                // connect to and enable the connection
+                                                int netId = wifiManager.addNetwork(wc);
+                                                wifiManager.enableNetwork(netId, true);
+                                                wifiManager.setWifiEnabled(true);
+
+                                                if (wifiManager.isWifiEnabled()) {
+
+
+                                                    //   String[] ary = result.getText().split("~");
+
+
+                                                    Log.i("ARMAN", result.getText());
+
+
+                                                    // String str = TextUtils.join("~", ary);
+
+
+                                                    Log.i("ARMAN", ary[1]);
+
+
+                                                    String Ip = ary[5];
+                                                    String Port = ary[6];
+
+                                                    //    new FileSender( Ip, Port) ;
+
+
+                                                }
+
                                             }
 
 
-                                        } else {
-
-
-                                            WifiManager wifiManager = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
-                                            // setup a wifi configuration
-                                            WifiConfiguration wc = new WifiConfiguration();
-
-                                            wc.SSID = "\"" + networkSSID + "\"";   // Please note the quotes. String should contain ssid in quotes
-
-                                            wc.preSharedKey = "\"" + networkPass + "\"";   // Please note the quotes. String should contain ssid in quotes
-
-                                            wc.status = WifiConfiguration.Status.ENABLED;
-                                            wc.allowedGroupCiphers.set(WifiConfiguration.GroupCipher.TKIP);
-                                            wc.allowedGroupCiphers.set(WifiConfiguration.GroupCipher.CCMP);
-                                            wc.allowedKeyManagement.set(WifiConfiguration.KeyMgmt.WPA_PSK);
-                                            wc.allowedPairwiseCiphers.set(WifiConfiguration.PairwiseCipher.TKIP);
-                                            wc.allowedPairwiseCiphers.set(WifiConfiguration.PairwiseCipher.CCMP);
-                                            wc.allowedProtocols.set(WifiConfiguration.Protocol.RSN);
-                                            // connect to and enable the connection
-                                            int netId = wifiManager.addNetwork(wc);
-                                            wifiManager.enableNetwork(netId, true);
-                                            wifiManager.setWifiEnabled(true);
-
-                                            if (wifiManager.isWifiEnabled()){
-
-
-                                             //   String[] ary = result.getText().split("~");
-
-
-                                                Log.i("ARMAN", result.getText());
-
-
-                                               // String str = TextUtils.join("~", ary);
-
-
-                                                Log.i("ARMAN", ary[1]);
-
-
-                                                String Ip = ary[5];
-                                                String Port = ary[6];
-
-                                                //    new FileSender( Ip, Port) ;
-
-
-                                            }
-
+                                        } catch (Exception exception) {
+                                            Toast.makeText(getContext(), exception.getMessage(), Toast.LENGTH_LONG).show();
                                         }
-
-
-
 
 
                                     }
@@ -237,9 +243,10 @@ public class QrCameraScanFragment extends Fragment {
     }
 
 
+    @SuppressLint("CheckResult")
     private void setupPermission() {
 
-        RxPermissions rxPermissions = new RxPermissions(getActivity());
+        RxPermissions rxPermissions = new RxPermissions(requireActivity());
         rxPermissions
                 .request(Manifest.permission.CAMERA) // ask single or multiple permission once
                 .subscribe(granted -> {

@@ -10,10 +10,11 @@
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
-
 
 
     <application
@@ -26,9 +27,9 @@
         android:theme="@style/Theme.AppCompat.NoActionBar"
         android:usesCleartextTraffic="true"
         tools:replace="android:theme">
-<!--
-        <activity android:name=".filetransfer.MyWifiActivity"></activity>
--->
+        <!--
+                <activity android:name=".filetransfer.MyWifiActivity"></activity>
+        -->
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
@@ -40,7 +41,9 @@
             </intent-filter>
         </activity>
 
-        <service android:name=".services.hotspot_server.service.HotspotServerService" />
+        <service android:name=".services.hotspot_server.service.HotspotServerService"
+
+            />
 
         <provider
             android:name="androidx.core.content.FileProvider"

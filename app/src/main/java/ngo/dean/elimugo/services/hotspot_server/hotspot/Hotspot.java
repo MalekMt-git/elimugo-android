@@ -64,6 +64,7 @@ public class Hotspot {
                         + "\n\tPassword: " + currentConfig.preSharedKey);
 
                 Intent intent = new Intent(HotspotServer.INTENT_HOTSPOT_STARTED);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 intent.putExtra("SSID", currentConfig.SSID);
                 intent.putExtra("password", currentConfig.preSharedKey);
                 intent.putExtra("ip", getWLANIpAddress());
@@ -103,6 +104,7 @@ public class Hotspot {
         } catch (SocketException ex) {
             Log.e(TAG, ex.toString());
         }
+
         return null;
     }
 }
