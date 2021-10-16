@@ -7,7 +7,7 @@ import androidx.compose.material.MaterialTheme
 import ngo.dean.elimugo.R
 import ngo.dean.elimugo.ui.nav.controller.NavController
 
-class MainActivity : AppCompatActivity() {
+class BaseActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -16,7 +16,6 @@ class MainActivity : AppCompatActivity() {
                 NavController(applicationContext = applicationContext)
             }
         }
-
 
     }
 }

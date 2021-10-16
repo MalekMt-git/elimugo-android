@@ -1,4 +1,8 @@
 package ngo.dean.elimugo.ui.nav.controller
 
-class Routes {
+import android.annotation.SuppressLint
+
+sealed class Routes(val route: String) {
+    @SuppressLint("CustomSplashScreen")
+    object SplashScreen : Routes( "SplashScreen")
 }
