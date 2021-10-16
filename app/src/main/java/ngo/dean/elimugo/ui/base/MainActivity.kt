@@ -1,7 +1,8 @@
-package ngo.dean.elimugo
+package ngo.dean.elimugo.ui.base
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import ngo.dean.elimugo.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
