@@ -12,6 +12,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import ngo.dean.elimugo.R
 
@@ -52,7 +53,7 @@ fun Toolbar() {
                     }) {
                         Icon(
                             Icons.Filled.Search,
-                            contentDescription = "Localized description",
+                            contentDescription = stringResource(R.string.content_description),
                             modifier = Modifier,
                             Color.White
                         )

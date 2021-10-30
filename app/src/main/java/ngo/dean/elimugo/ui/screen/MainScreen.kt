@@ -14,7 +14,6 @@ import androidx.compose.ui.AbsoluteAlignment
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Alignment.Companion.BottomCenter
 import androidx.compose.ui.Alignment.Companion.Center
-import androidx.compose.ui.Alignment.Companion.CenterVertically
 import androidx.compose.ui.Alignment.Companion.TopCenter
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
@@ -51,13 +50,11 @@ fun Content(
     ) {
 
         Text(
-            text = "Select a Language",
+            text = stringResource(R.string.main_screen_toolbar_title),
             Modifier
                 .align(TopCenter)
                 .padding(top = 13.dp)
-
         )
-
 
         IconButton(
             onClick = {
@@ -67,7 +64,7 @@ fun Content(
         ) {
             Icon(
                 Icons.Filled.Info,
-                contentDescription = "Localized description",
+                contentDescription = stringResource(R.string.content_description),
                 modifier = Modifier,
                 Color.Black
             )
@@ -78,7 +75,7 @@ fun Content(
 
         Modifier
             .fillMaxSize()
-            .wrapContentSize(Alignment.Center)
+            .wrapContentSize(Center)
             .padding(top = 120.dp)
 
     ) {
@@ -86,7 +83,7 @@ fun Content(
         Column(
             Modifier
                 .fillMaxSize()
-                .wrapContentSize(Alignment.Center)
+                .wrapContentSize(Center)
 
         ) {
             Row(Modifier.padding(10.dp)) {
@@ -104,7 +101,6 @@ fun Content(
                         .shadow(19.dp, shape = RoundedCornerShape(4))
                 ) {
 
-
                     Box(Modifier.fillMaxSize()) {
 
                         Text(
@@ -117,8 +113,10 @@ fun Content(
 
                         Icon(
                             Icons.Filled.MobileScreenShare,
-                            contentDescription = "Localized description",
-                            modifier = Modifier.align(Center).size(80.dp),
+                            contentDescription = stringResource(R.string.content_description),
+                            modifier = Modifier
+                                .align(Center)
+                                .size(80.dp),
                             Color.White
 
                         )
@@ -149,12 +147,37 @@ fun Content(
                         .shadow(19.dp, shape = RoundedCornerShape(4))
                 ) {
 
-                    Text(
-                        text = "Download",
-                        fontSize = 25.sp,
-                        fontWeight = FontWeight.ExtraBold,
-                        fontStyle = FontStyle.Normal
-                    )
+                    Box(Modifier.fillMaxSize()) {
+
+                        Text(
+                            text = stringResource(R.string.download_btn_title),
+                            fontSize = 23.sp,
+                            fontWeight = FontWeight.ExtraBold,
+                            fontStyle = FontStyle.Normal,
+                            modifier = Modifier.align(TopCenter)
+                        )
+
+                        Icon(
+                            Icons.Filled.CloudDownload,
+                            contentDescription = stringResource(R.string.content_description),
+                            modifier = Modifier
+                                .align(Center)
+                                .size(80.dp),
+                            Color.White
+
+                        )
+
+                        Text(
+                            text = stringResource(R.string.download_btn_content),
+                            fontSize = 12.sp,
+                            fontWeight = FontWeight.ExtraBold,
+                            fontStyle = FontStyle.Normal,
+                            textAlign = TextAlign.Center,
+                            modifier = Modifier.align(BottomCenter)
+                        )
+
+                    }
+
                 }
 
             }
@@ -173,12 +196,37 @@ fun Content(
                         .size(180.dp, 180.dp)
                         .shadow(19.dp, shape = RoundedCornerShape(4))
                 ) {
-                    Text(
-                        text = "Explore",
-                        fontSize = 25.sp,
-                        fontWeight = FontWeight.ExtraBold,
-                        fontStyle = FontStyle.Normal
-                    )
+
+                    Box(Modifier.fillMaxSize()) {
+
+                        Text(
+                            text = stringResource(R.string.share_btn_title),
+                            fontSize = 23.sp,
+                            fontWeight = FontWeight.ExtraBold,
+                            fontStyle = FontStyle.Normal,
+                            modifier = Modifier.align(TopCenter)
+                        )
+
+                        Icon(
+                            Icons.Filled.MobileScreenShare,
+                            contentDescription = stringResource(R.string.content_description),
+                            modifier = Modifier
+                                .align(Center)
+                                .size(80.dp),
+                            Color.White
+
+                        )
+
+                        Text(
+                            text = stringResource(R.string.share_btn_content),
+                            fontSize = 12.sp,
+                            fontWeight = FontWeight.ExtraBold,
+                            fontStyle = FontStyle.Normal,
+                            textAlign = TextAlign.Center,
+                            modifier = Modifier.align(BottomCenter)
+                        )
+
+                    }
 
                 }
 
@@ -194,12 +242,37 @@ fun Content(
                         .size(180.dp, 180.dp)
                         .shadow(19.dp, shape = RoundedCornerShape(4))
                 ) {
-                    Text(
-                        text = "ElimuGo",
-                        fontSize = 25.sp,
-                        fontWeight = FontWeight.ExtraBold,
-                        fontStyle = FontStyle.Normal
-                    )
+
+                    Box(Modifier.fillMaxSize()) {
+
+                        Text(
+                            text = stringResource(R.string.share_btn_title),
+                            fontSize = 23.sp,
+                            fontWeight = FontWeight.ExtraBold,
+                            fontStyle = FontStyle.Normal,
+                            modifier = Modifier.align(TopCenter)
+                        )
+
+                        Icon(
+                            Icons.Filled.MobileScreenShare,
+                            contentDescription = stringResource(R.string.content_description),
+                            modifier = Modifier
+                                .align(Center)
+                                .size(80.dp),
+                            Color.White
+
+                        )
+
+                        Text(
+                            text = stringResource(R.string.share_btn_content),
+                            fontSize = 12.sp,
+                            fontWeight = FontWeight.ExtraBold,
+                            fontStyle = FontStyle.Normal,
+                            textAlign = TextAlign.Center,
+                            modifier = Modifier.align(BottomCenter)
+                        )
+
+                    }
 
                 }
             }

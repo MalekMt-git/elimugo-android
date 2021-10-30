@@ -3,4 +3,8 @@
     <string name="app_name">ElimuGo</string>
     <string name="share_btn_content">Share ElimuGo Content to Another Device</string>
     <string name="share_btn_title">Share</string>
+    <string name="main_screen_toolbar_title">Select a ElimuGo functionality</string>
+    <string name="download_btn_title">Download</string>
+    <string name="content_description">Localized description</string>
+    <string name="download_btn_content">Start downloading ElimuGo content</string>
 </resources>
