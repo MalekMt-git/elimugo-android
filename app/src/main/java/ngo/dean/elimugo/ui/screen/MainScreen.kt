@@ -19,12 +19,14 @@ import androidx.compose.ui.Alignment.Companion.TopCenter
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import ngo.dean.elimugo.R
 import ngo.dean.elimugo.ui.Toolbar
 import ngo.dean.elimugo.ui.nav.controller.Routes
 
@@ -51,7 +53,7 @@ fun Content(
         Text(
             text = "Select a Language",
             Modifier
-                .align(Alignment.TopCenter)
+                .align(TopCenter)
                 .padding(top = 13.dp)
 
         )
@@ -106,7 +108,7 @@ fun Content(
                     Box(Modifier.fillMaxSize()) {
 
                         Text(
-                            text = "Share",
+                            text = stringResource(R.string.share_btn_title),
                             fontSize = 23.sp,
                             fontWeight = FontWeight.ExtraBold,
                             fontStyle = FontStyle.Normal,
@@ -122,7 +124,7 @@ fun Content(
                         )
 
                         Text(
-                            text = "Share ElimuGo Content to Another Device ",
+                            text = stringResource(R.string.share_btn_content),
                             fontSize = 12.sp,
                             fontWeight = FontWeight.ExtraBold,
                             fontStyle = FontStyle.Normal,

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ElimuGo</string>
+    <string name="share_btn_content">Share ElimuGo Content to Another Device</string>
+    <string name="share_btn_title">Share</string>
 </resources>
