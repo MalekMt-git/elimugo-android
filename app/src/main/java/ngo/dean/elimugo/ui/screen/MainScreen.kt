@@ -8,16 +8,19 @@ import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.*
+import androidx.compose.material.icons.filled.CloudDownload
+import androidx.compose.material.icons.filled.Info
+import androidx.compose.material.icons.filled.MobileScreenShare
+import androidx.compose.material.icons.filled.TravelExplore
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.AbsoluteAlignment
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Alignment.Companion.BottomCenter
 import androidx.compose.ui.Alignment.Companion.Center
 import androidx.compose.ui.Alignment.Companion.TopCenter
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -31,34 +34,27 @@ import ngo.dean.elimugo.ui.nav.controller.Routes
 
 @Composable
 fun MainScreen(navController: NavController, context: Context) {
-
     Toolbar()
-
     Content(navController = navController)
-
 }
 
 @Composable
 fun Content(
     navController: NavController
 ) {
-
     Box(
         Modifier
             .fillMaxSize()
             .padding(top = 70.dp)
     ) {
-
         Text(
             text = stringResource(R.string.main_screen_toolbar_title),
             Modifier
                 .align(TopCenter)
                 .padding(top = 13.dp)
         )
-
         IconButton(
             onClick = {
-
             },
             Modifier.align(AbsoluteAlignment.TopRight),
         ) {
@@ -72,19 +68,16 @@ fun Content(
     }
 
     Box(
-
         Modifier
             .fillMaxSize()
             .wrapContentSize(Center)
             .padding(top = 120.dp)
-
     ) {
 
         Column(
             Modifier
                 .fillMaxSize()
                 .wrapContentSize(Center)
-
         ) {
             Row(Modifier.padding(10.dp)) {
 
@@ -92,9 +85,7 @@ fun Content(
 
                 Button(
                     onClick = {
-
                         navController.navigate(Routes.MainScreen.route)
-
                     },
                     Modifier
                         .size(180.dp, 180.dp)
@@ -118,7 +109,6 @@ fun Content(
                                 .align(Center)
                                 .size(80.dp),
                             Color.White
-
                         )
 
                         Text(
@@ -129,9 +119,7 @@ fun Content(
                             textAlign = TextAlign.Center,
                             modifier = Modifier.align(BottomCenter)
                         )
-
                     }
-
                 }
 
                 Spacer(modifier = Modifier.size(10.dp, 0.dp))
@@ -164,7 +152,6 @@ fun Content(
                                 .align(Center)
                                 .size(80.dp),
                             Color.White
-
                         )
 
                         Text(
@@ -175,11 +162,8 @@ fun Content(
                             textAlign = TextAlign.Center,
                             modifier = Modifier.align(BottomCenter)
                         )
-
                     }
-
                 }
-
             }
 
             Row(Modifier.padding(10.dp)) {
@@ -200,7 +184,7 @@ fun Content(
                     Box(Modifier.fillMaxSize()) {
 
                         Text(
-                            text = stringResource(R.string.share_btn_title),
+                            text = stringResource(R.string.explore),
                             fontSize = 23.sp,
                             fontWeight = FontWeight.ExtraBold,
                             fontStyle = FontStyle.Normal,
@@ -208,26 +192,23 @@ fun Content(
                         )
 
                         Icon(
-                            Icons.Filled.MobileScreenShare,
+                            Icons.Filled.TravelExplore,
                             contentDescription = stringResource(R.string.content_description),
                             modifier = Modifier
                                 .align(Center)
                                 .size(80.dp),
                             Color.White
-
                         )
 
                         Text(
-                            text = stringResource(R.string.share_btn_content),
+                            text = stringResource(R.string.explore_content),
                             fontSize = 12.sp,
                             fontWeight = FontWeight.ExtraBold,
                             fontStyle = FontStyle.Normal,
                             textAlign = TextAlign.Center,
                             modifier = Modifier.align(BottomCenter)
                         )
-
                     }
-
                 }
 
                 Spacer(modifier = Modifier.size(10.dp, 0.dp))
@@ -236,7 +217,6 @@ fun Content(
                     onClick = {
 
                         navController.navigate(Routes.MainScreen.route)
-
                     },
                     Modifier
                         .size(180.dp, 180.dp)
@@ -246,7 +226,7 @@ fun Content(
                     Box(Modifier.fillMaxSize()) {
 
                         Text(
-                            text = stringResource(R.string.share_btn_title),
+                            text = stringResource(R.string.elimugo),
                             fontSize = 23.sp,
                             fontWeight = FontWeight.ExtraBold,
                             fontStyle = FontStyle.Normal,
@@ -254,30 +234,25 @@ fun Content(
                         )
 
                         Icon(
-                            Icons.Filled.MobileScreenShare,
+                            painter = painterResource(id = R.drawable.toolbar_logo),
                             contentDescription = stringResource(R.string.content_description),
                             modifier = Modifier
                                 .align(Center)
-                                .size(80.dp),
+                                .size(180.dp),
                             Color.White
-
                         )
 
                         Text(
-                            text = stringResource(R.string.share_btn_content),
+                            text = stringResource(R.string.elimugo_btn_content),
                             fontSize = 12.sp,
                             fontWeight = FontWeight.ExtraBold,
                             fontStyle = FontStyle.Normal,
                             textAlign = TextAlign.Center,
                             modifier = Modifier.align(BottomCenter)
                         )
-
                     }
-
                 }
             }
-
         }
     }
-
 }
