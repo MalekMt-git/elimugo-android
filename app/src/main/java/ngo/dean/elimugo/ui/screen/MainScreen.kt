@@ -1,5 +1,6 @@
 package ngo.dean.elimugo.ui.screen
 
+import android.app.Activity
 import android.content.Context
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -31,16 +32,17 @@ import androidx.navigation.NavController
 import ngo.dean.elimugo.R
 import ngo.dean.elimugo.ui.Toolbar
 import ngo.dean.elimugo.ui.nav.controller.Routes
+import ngo.dean.elimugo.util.ShareAPK
 
 @Composable
-fun MainScreen(navController: NavController, context: Context) {
+fun MainScreen(navController: NavController, activity: Activity) {
     Toolbar()
-    Content(navController = navController)
+    MainScreenContent(navController = navController , activity)
 }
 
 @Composable
-fun Content(
-    navController: NavController
+fun MainScreenContent(
+    navController: NavController , activity: Activity
 ) {
     Box(
         Modifier
@@ -127,7 +129,7 @@ fun Content(
                 Button(
                     onClick = {
 
-                        navController.navigate(Routes.MainScreen.route)
+                        navController.navigate(Routes.DownloadScreen.route)
 
                     },
                     Modifier
@@ -216,7 +218,7 @@ fun Content(
                 Button(
                     onClick = {
 
-                        navController.navigate(Routes.MainScreen.route)
+                        ShareAPK().share(activity)
                     },
                     Modifier
                         .size(180.dp, 180.dp)

@@ -7,6 +7,7 @@ import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
+import ngo.dean.elimugo.ui.nav.controller.Routes
 
 private val LightThemeColors = lightColors(
     primary = Red700,
@@ -28,13 +29,23 @@ private val DarkThemeColors = darkColors(
     error = Red200
 )
 
+private val DownloadScreenThemeColors = lightColors(
+    primary = Blue900,
+    primaryVariant = Blue900,
+    onPrimary = Color.White,
+    secondary = Blue900,
+    onSecondary = Color.White,
+    error = Blue900,
+)
+
 @Composable
 fun ElimugoTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
+    downloadScreenThemeColors: Boolean =false,
     content: @Composable () -> Unit
 ) {
     MaterialTheme(
-        colors = if (darkTheme) DarkThemeColors else LightThemeColors,
+        colors = if (darkTheme) DarkThemeColors else if (downloadScreenThemeColors) DownloadScreenThemeColors else LightThemeColors,
         typography = JetnewsTypography,
         shapes = JetnewsShapes,
         content = content
