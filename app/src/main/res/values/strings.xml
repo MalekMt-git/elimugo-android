@@ -11,4 +11,6 @@
     <string name="elimugo_btn_content">Send ElimuGO to another phone</string>
     <string name="elimugo">ElimuGO</string>
     <string name="downlaod_from_server_content">Download from server if you have internt</string>
+    <string name="connection_error">connection error</string>
+    <string name="xml_error">xml error</string>
 </resources>

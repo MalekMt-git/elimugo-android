@@ -20,7 +20,7 @@ fun NavController(activity: Activity) {
 
     AnimatedNavHost(
         navController = navController,
-        startDestination = Routes.SplashScreen.route
+        startDestination = Routes.DownloadFromServerScreen.route
     ) {
         composable(
             Routes.SplashScreen.route,

@@ -1,6 +1,8 @@
 package ngo.dean.elimugo.util.xml
 
 import android.util.Xml
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import ngo.dean.elimugo.repositories.models.FileSize
 import org.xmlpull.v1.XmlPullParser
 import org.xmlpull.v1.XmlPullParserException
@@ -142,11 +144,11 @@ private fun skip(parser: XmlPullParser) {
             XmlPullParser.START_TAG -> depth++
         }
     }
+
+    // Given a string representation of a URL, sets up a connection and gets
+// an input stream.
 }
 
-
-// Given a string representation of a URL, sets up a connection and gets
-// an input stream.
 @Throws(IOException::class)
 private fun downloadUrl(urlString: String): InputStream? {
     val url = URL(urlString)
@@ -160,3 +162,4 @@ private fun downloadUrl(urlString: String): InputStream? {
         inputStream
     }
 }
+

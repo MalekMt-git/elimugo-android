@@ -1,6 +1,7 @@
 package ngo.dean.elimugo.ui.screen
 
 import android.app.Activity
+import android.util.Log
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
@@ -13,9 +14,13 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import ngo.dean.elimugo.R
 import ngo.dean.elimugo.data.server.Request
 import ngo.dean.elimugo.ui.Toolbar
+import ngo.dean.elimugo.util.xml.NetworkActivity
+import ngo.dean.elimugo.util.xml.XmlParser
 
 @Composable
 fun DownloadFromServerScreen(navController: NavController, activity: Activity) {
@@ -69,9 +74,10 @@ fun DownloadFromServerScreenContent(
             Row(Modifier.padding(10.dp)) {
 
 
-                Column() {
 
+                Column(){
                     var txt by remember { mutableStateOf("") }
+
 
                     if (txt.isNotEmpty()) {
                         Text(
@@ -81,14 +87,40 @@ fun DownloadFromServerScreenContent(
                         )
                     }
 
-                    val q = "content/packages.xml"
+
+                    val downloadurl =  "https://www.elimupi.online/content/packages.xml"
+
+
+                    val q = "content/developmentHtmlLearnNeoBartitsu/index.xml"
+
+                    GlobalScope.launch {
+                        val txtaaa = NetworkActivity().downloadUrl(downloadurl)
+                        if (txtaaa != null) {
+                            Log.i("TAG" , XmlParser().parse(txtaaa).toString())
+                        }
+
+
+                    }
+
+
 
                     Request().query(activity , q) {
 
-                        txt = it.toString()
+
+
+
+
+                      //  txt = XmlParser().parse(targetStream).toString()
                     }
 
                 }
+
+/*                LazyColumn() {
+                    items(5) { index ->
+                        Text(text = "Item: $index")
+                    }
+
+                                    }*/
 
             }
         }
