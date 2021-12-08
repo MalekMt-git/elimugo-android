@@ -10,10 +10,7 @@ import androidx.compose.runtime.Composable
 import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.google.accompanist.navigation.animation.composable
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
-import ngo.dean.elimugo.ui.screen.DownloadScreen
-import ngo.dean.elimugo.ui.screen.LanguageScreen
-import ngo.dean.elimugo.ui.screen.MainScreen
-import ngo.dean.elimugo.ui.screen.SplashScreen
+import ngo.dean.elimugo.ui.screen.*
 
 @OptIn(ExperimentalAnimationApi::class)
 @Composable
@@ -56,7 +53,14 @@ fun NavController(activity: Activity) {
 
             DownloadScreen(navController = navController, activity)
         }
+        composable(
 
+            Routes.DownloadFromServerScreen.route,
+            enterTransition = { initial, _ -> enterScreenFadeAnimation() },
+        ) {
+
+            DownloadFromServerScreen(navController = navController, activity)
+        }
     }
 }
 

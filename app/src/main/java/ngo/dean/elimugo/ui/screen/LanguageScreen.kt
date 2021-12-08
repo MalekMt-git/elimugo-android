@@ -70,8 +70,6 @@ fun Content(
         }
     }
 
-
-
     Box(
 
         Modifier

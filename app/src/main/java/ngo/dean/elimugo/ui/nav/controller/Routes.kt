@@ -8,4 +8,5 @@ sealed class Routes(val route: String) {
     object LanguageScreen : Routes( "LanguageScreen")
     object MainScreen : Routes( "MainScreen")
     object DownloadScreen : Routes( "DownloadScreen")
+    object DownloadFromServerScreen : Routes( "DownloadFromServerScreen")
 }

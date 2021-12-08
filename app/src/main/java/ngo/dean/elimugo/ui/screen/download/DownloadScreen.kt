@@ -35,7 +35,6 @@ import ngo.dean.elimugo.R
 import ngo.dean.elimugo.ui.Toolbar
 import ngo.dean.elimugo.ui.nav.controller.Routes
 import ngo.dean.elimugo.ui.theme.ElimugoTheme
-import ngo.dean.elimugo.util.ShareAPK
 
 @Composable
 fun DownloadScreen(navController: NavController, activity: Activity) {
@@ -47,6 +46,7 @@ fun DownloadScreen(navController: NavController, activity: Activity) {
 fun DownloadScreenContent(
     navController: NavController , activity: Activity
 ) {
+
     Box(
         Modifier
             .fillMaxSize()
@@ -135,7 +135,7 @@ fun DownloadScreenContent(
                 Button(
                     onClick = {
 
-                        navController.navigate(Routes.MainScreen.route)
+                        navController.navigate(Routes.DownloadFromServerScreen.route)
 
                     },
                     Modifier
@@ -165,7 +165,7 @@ fun DownloadScreenContent(
                         )
 
                         Text(
-                            text = stringResource(R.string.download_btn_content),
+                            text = stringResource(R.string.downlaod_from_server_content),
                             fontSize = 12.sp,
                             fontWeight = FontWeight.ExtraBold,
                             fontStyle = FontStyle.Normal,
