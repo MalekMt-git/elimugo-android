@@ -32,7 +32,7 @@ fun DownloadFromServerScreen(navController: NavController, activity: Activity) {
 fun DownloadFromServerScreenContent(
     navController: NavController , activity: Activity
 ) {
-    
+
 
     Box(
         Modifier
@@ -93,20 +93,21 @@ fun DownloadFromServerScreenContent(
 
                     val q = "content/developmentHtmlLearnNeoBartitsu/index.xml"
 
-                    GlobalScope.launch {
+   /*                 GlobalScope.launch {
                         val txtaaa = NetworkActivity().downloadUrl(downloadurl)
                         if (txtaaa != null) {
                             Log.i("TAG" , XmlParser().parse(txtaaa).toString())
                         }
 
 
-                    }
+                    }*/
 
 
 
                     Request().query(activity , q) {
 
 
+                        txt = it.toString()
 
 
 
