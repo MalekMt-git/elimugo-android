@@ -31,6 +31,9 @@ fun DownloadFromServerScreen(navController: NavController, activity: Activity) {
 fun DownloadFromServerScreenContent(
     navController: NavController, activity: Activity
 ) {
+    val mutablePackagesName = remember { mutableStateOf(arrayListOf<String>()) }
+    var packages = arrayListOf<String>()
+
     val queryUrlString = "content/package" +
             "s.xml"
     Box(
@@ -70,8 +73,7 @@ fun DownloadFromServerScreenContent(
         ) {
             Row(Modifier.padding(10.dp)) {
                 Column() {
-                    val mutablePackagesName = remember { mutableStateOf(arrayListOf<String>()) }
-                    var packages = arrayListOf<String>()
+
                     Request().query(activity, queryUrlString) {
                         mutablePackagesName.value = it!!
                     }
@@ -110,7 +112,7 @@ fun DownloadFromServerScreenContent(
             }
         }
         FloatingActionButton(onClick = {
-
+                                       Request().download(packages , activity)
         }, modifier = Modifier.align(Alignment.BottomEnd).padding(20.dp)) {
             /* FAB content */
             Icon(

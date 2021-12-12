@@ -79,6 +79,8 @@ dependencies {
     // Navigation Animation
     implementation "com.google.accompanist:accompanist-navigation-animation:0.20.0"
 
+    // library for download from server
+    implementation 'com.liulishuo.filedownloader:library:1.7.7'
 
     // UI Tests
     androidTestImplementation 'androidx.compose.ui:ui-test-junit4:1.0.4'
