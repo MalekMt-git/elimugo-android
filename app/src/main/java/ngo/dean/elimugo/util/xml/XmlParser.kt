@@ -30,7 +30,7 @@ class XmlParser() {
     private fun getPackagesData(parser: XmlPullParser): List<Package> {
         val entries = mutableListOf<Package>()
 
-        parser.require(XmlPullParser.START_TAG, ns, "Packages")
+  //      parser.require(XmlPullParser.START_TAG, ns, "Packages")
         while (parser.next() != XmlPullParser.END_TAG) {
             if (parser.eventType != XmlPullParser.START_TAG) {
                 continue

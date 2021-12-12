@@ -11,6 +11,7 @@ import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.google.accompanist.navigation.animation.composable
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 import ngo.dean.elimugo.ui.screen.*
+import ngo.dean.elimugo.ui.screen.download.DownloadFromServerScreen
 
 @OptIn(ExperimentalAnimationApi::class)
 @Composable
