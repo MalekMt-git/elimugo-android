@@ -7,6 +7,7 @@ sealed class Routes(val route: String) {
     object SplashScreen : Routes( "SplashScreen")
     object LanguageScreen : Routes( "LanguageScreen")
     object MainScreen : Routes( "MainScreen")
+    object ExploreScreen : Routes( "ExploreScreen")
     object DownloadScreen : Routes( "DownloadScreen")
     object DownloadFromServerScreen : Routes( "DownloadFromServerScreen")
 }

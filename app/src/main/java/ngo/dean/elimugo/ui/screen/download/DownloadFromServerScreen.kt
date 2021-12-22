@@ -20,6 +20,7 @@ import ngo.dean.elimugo.R
 import ngo.dean.elimugo.data.server.Package
 import ngo.dean.elimugo.data.server.Request
 import ngo.dean.elimugo.ui.Toolbar
+import java.io.File
 
 @Composable
 fun DownloadFromServerScreen(navController: NavController, activity: Activity) {
@@ -31,7 +32,7 @@ fun DownloadFromServerScreen(navController: NavController, activity: Activity) {
 fun DownloadFromServerScreenContent(
     navController: NavController, activity: Activity
 ) {
-    val mutablePackageList = remember { mutableStateOf(listOf<Package>()) }
+    val mutablePackageList = remember { mutableStateOf(arrayListOf<Package>()) }
     val choosedPackagesToDownload =  remember { mutableStateOf(ArrayList<Package>()) }
 
     val queryUrlString = "content/package" +
@@ -74,8 +75,8 @@ fun DownloadFromServerScreenContent(
             Row(Modifier.padding(10.dp)) {
                 Column() {
 
-                    Request().query(activity, queryUrlString) {
-                        mutablePackageList.value = it
+                    Request().query(activity, queryUrlString) {listOfPackages ->
+                            mutablePackageList.value = listOfPackages
                     }
                     LazyColumn {
                         items(mutablePackageList.value.size) { index ->
@@ -97,7 +98,7 @@ fun DownloadFromServerScreenContent(
 
                                 Text(
                                     with(mutablePackageList.value[index]){
-                                       this.uniqueId + " : " + this.size / 1000 + stringResource(R.string.mega_byte)
+                                       this.uniqueId + " : " + this.size / 1000 + "KB"
                                     }
                                 )
 

@@ -175,7 +175,7 @@ fun MainScreenContent(
                 Button(
                     onClick = {
 
-                        navController.navigate(Routes.MainScreen.route)
+                        navController.navigate(Routes.ExploreScreen.route)
 
                     },
                     Modifier

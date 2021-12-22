@@ -15,4 +15,5 @@
     <string name="xml_error">xml error</string>
     <string name="mega_byte">MB</string>
     <string name="shared_pref_app_language">app_language</string>
+    <string name="nothing_downloaded">Nothing is downloaded</string>
 </resources>

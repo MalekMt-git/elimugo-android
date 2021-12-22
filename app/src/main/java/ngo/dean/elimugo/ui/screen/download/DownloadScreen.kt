@@ -176,7 +176,7 @@ fun DownloadScreenContent(
                 }
             }
             }
-            Row(Modifier.padding(10.dp)) {
+/*            Row(Modifier.padding(10.dp)) {
 
                 Spacer(modifier = Modifier.size(0.dp, 0.dp))
 
@@ -223,7 +223,7 @@ fun DownloadScreenContent(
 
                 Spacer(modifier = Modifier.size(10.dp, 0.dp))
 
-            }
+            }*/
         }
     }
 }

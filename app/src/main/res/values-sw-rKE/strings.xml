@@ -13,4 +13,5 @@
     <string name="elimugo">ElimuGO</string>
     <string name="downlaod_from_server_content">Download from server if you have internt</string>
     <string name="mega_byte">MB</string>
+    <string name="nothing_downloaded">Nothing is downloaded</string>
 </resources>

@@ -1,6 +1,5 @@
 package ngo.dean.elimugo.data.server
 
-import android.R
 import android.app.DownloadManager
 import android.content.Context
 import android.content.Context.DOWNLOAD_SERVICE
@@ -20,8 +19,8 @@ class Request {
 
     private val baseUrl = "https://www.elimupi.online/"
     private val contentsUrl = "${baseUrl}content"
-    lateinit var listOfPackages : List<Package>
-    fun query(context: Context, query: String, callBack: (result: List<Package>) -> Unit) {
+    lateinit var listOfPackages : ArrayList<Package>
+    fun query(context: Context, query: String, callBack: (result: ArrayList<Package>) -> Unit) {
 
 
         // Instantiate the RequestQueue.
@@ -32,10 +31,9 @@ class Request {
         val stringRequest = StringRequest(
             Request.Method.GET, url,
             { response ->
-                listOfPackages = XmlParser().parse(response.toByteArray().inputStream())
+                listOfPackages = XmlParser().parse(response.toByteArray().inputStream()) as ArrayList<Package>
                 with(listOfPackages){
                     callBack(this)
-
                 }
             },
             {
@@ -64,7 +62,7 @@ class Request {
             val request = DownloadManager.Request(Uri.parse(link))
             request.setTitle("${learnPackage.uniqueId} is Downloading")
             request.setDescription("please be wait")
-            request.setDestinationInExternalFilesDir(context, Environment.DIRECTORY_DOCUMENTS ,"${learnPackage.uniqueId}.${learnPackage.type}" )
+            request.setDestinationInExternalFilesDir(context, "Elimugo" ,"${learnPackage.uniqueId}.${learnPackage.type}" )
             request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED)
             val manager = context.getSystemService(DOWNLOAD_SERVICE) as DownloadManager?
             manager!!.enqueue(request)
