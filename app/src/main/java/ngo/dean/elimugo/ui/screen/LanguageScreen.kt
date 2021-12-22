@@ -1,6 +1,7 @@
 package ngo.dean.elimugo.ui.screen
 
 import android.content.Context
+import android.provider.Settings.Global.getString
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Button
@@ -77,6 +78,8 @@ fun Content(
             .wrapContentSize(Alignment.Center)
 
     ) {
+        val sharedPref = context.getSharedPreferences(
+            getString(context.contentResolver ,context.resources.getString(R.string.app_name)), Context.MODE_PRIVATE)
 
         Column(
             Modifier
@@ -86,6 +89,13 @@ fun Content(
         ) {
             Button(
                 onClick = {
+
+
+                    with (sharedPref.edit()) {
+                        putString(getString(context.contentResolver , context.resources.getString(R.string.shared_pref_app_language)
+                        ), "sw")
+                        apply()
+                    }
 
                     navController.navigate(Routes.MainScreen.route)
 
@@ -108,7 +118,11 @@ fun Content(
 
             Button(
                 onClick = {
-
+                    with (sharedPref.edit()) {
+                        putString(getString(context.contentResolver , context.resources.getString(R.string.shared_pref_app_language)
+                        ), "en")
+                        apply()
+                    }
                     navController.navigate(Routes.MainScreen.route)
 
                 },

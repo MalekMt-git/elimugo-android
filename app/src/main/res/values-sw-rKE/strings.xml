@@ -12,4 +12,5 @@
     <string name="elimugo_btn_content">Send ElimuGO to another phone</string>
     <string name="elimugo">ElimuGO</string>
     <string name="downlaod_from_server_content">Download from server if you have internt</string>
+    <string name="mega_byte">MB</string>
 </resources>

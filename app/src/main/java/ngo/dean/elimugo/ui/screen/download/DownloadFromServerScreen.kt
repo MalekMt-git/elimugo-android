@@ -8,7 +8,6 @@ import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Download
 import androidx.compose.material.icons.filled.Info
-import androidx.compose.material.icons.filled.Search
 import androidx.compose.runtime.*
 import androidx.compose.ui.AbsoluteAlignment
 import androidx.compose.ui.Alignment
@@ -18,6 +17,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import ngo.dean.elimugo.R
+import ngo.dean.elimugo.data.server.Package
 import ngo.dean.elimugo.data.server.Request
 import ngo.dean.elimugo.ui.Toolbar
 
@@ -31,8 +31,8 @@ fun DownloadFromServerScreen(navController: NavController, activity: Activity) {
 fun DownloadFromServerScreenContent(
     navController: NavController, activity: Activity
 ) {
-    val mutablePackagesName = remember { mutableStateOf(arrayListOf<String>()) }
-    var packages = arrayListOf<String>()
+    val mutablePackageList = remember { mutableStateOf(listOf<Package>()) }
+    val choosedPackagesToDownload =  remember { mutableStateOf(ArrayList<Package>()) }
 
     val queryUrlString = "content/package" +
             "s.xml"
@@ -75,34 +75,35 @@ fun DownloadFromServerScreenContent(
                 Column() {
 
                     Request().query(activity, queryUrlString) {
-                        mutablePackagesName.value = it!!
+                        mutablePackageList.value = it
                     }
                     LazyColumn {
-                        items(mutablePackagesName.value.size) { index ->
+                        items(mutablePackageList.value.size) { index ->
                             Spacer(modifier = Modifier.size(20.dp, 20.dp))
                             val checkedState = remember { mutableStateOf(false) }
                             Row {
                                 Checkbox(
                                     checked = checkedState.value,
-                                    onCheckedChange = { checkedState.value = it },
+                                    onCheckedChange = {
+                                        checkedState.value = it
+                                        if (checkedState.value){
+                                            choosedPackagesToDownload.value.add(mutablePackageList.value[index])
+                                        } else{
+                                            choosedPackagesToDownload.value.removeAt(index)
+                                        }
+                                        },
                                 )
                                 Spacer(modifier = Modifier.size(10.dp, 0.dp))
 
                                 Text(
-                                    mutablePackagesName.value[index]
-                                )
-                                if (checkedState.value) {
-                                    packages.add(mutablePackagesName.value[index])
-                                } else if (packages.isNotEmpty()) {
-                                    try {
-                                        packages.removeAt(index)
-                                    } catch (e: Throwable) {
-                                        packages.clear()
+                                    with(mutablePackageList.value[index]){
+                                       this.uniqueId + " : " + this.size / 1000 + stringResource(R.string.mega_byte)
                                     }
-                                }
+                                )
+
                             }
                             Log.i(
-                                "TAAAG", packages.toString()
+                                "TAAAG", choosedPackagesToDownload.value.toString()
                             )
                         }
                     }
@@ -112,9 +113,8 @@ fun DownloadFromServerScreenContent(
             }
         }
         FloatingActionButton(onClick = {
-                                       Request().download(packages , activity)
+                                       Request().download(choosedPackagesToDownload.value, activity)
         }, modifier = Modifier.align(Alignment.BottomEnd).padding(20.dp)) {
-            /* FAB content */
             Icon(
                 Icons.Filled.Download,
                 contentDescription = stringResource(R.string.content_description),
