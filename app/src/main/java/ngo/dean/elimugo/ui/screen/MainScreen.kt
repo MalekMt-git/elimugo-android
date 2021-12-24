@@ -87,7 +87,7 @@ fun MainScreenContent(
 
                 Button(
                     onClick = {
-                        navController.navigate(Routes.MainScreen.route)
+                        navController.navigate(Routes.ShareDataScreen.route)
                     },
                     Modifier
                         .size(180.dp, 180.dp)
