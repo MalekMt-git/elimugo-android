@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="delete_files_question">
+        <item quantity="one">Souhaitez-vous supprimer ce fichier \?</item>
+        <item quantity="other">Souhaitez-vous supprimer %d fichiers \?</item>
+    </plurals>
+    <plurals name="receive_files_success_summary">
+        <item quantity="one">%d fichier a été reçu</item>
+        <item quantity="other">%d fichiers ont été reçus</item>
+    </plurals>
+    <plurals name="text_itemSelected">
+        <item quantity="one">%d fichier est sélectionné</item>
+        <item quantity="other">%d fichiers ont été sélectionnés</item>
+    </plurals>
+    <plurals name="text_removeQueueSummary">
+        <item quantity="one">Ce transfert en attente sera supprimé</item>
+        <item quantity="other">%d transferts en attente seront supprimés</item>
+    </plurals>
+    <plurals name="text_availableConnections">
+        <item quantity="one">%d connexion</item>
+        <item quantity="other">%d connexions</item>
+    </plurals>
+    <plurals name="receive_files_question">
+        <item quantity="one">Recevoir ce fichier \?</item>
+        <item quantity="other">Recevoir %d fichiers \?</item>
+    </plurals>
+    <plurals name="files">
+        <item quantity="one">%d fichier</item>
+        <item quantity="other">%d fichiers</item>
+    </plurals>
+    <plurals name="seconds_ago">
+        <item quantity="one">Il y a une seconde</item>
+        <item quantity="other">Il y a %d secondes</item>
+    </plurals>
+    <plurals name="minutes_ago">
+        <item quantity="one">Il y a une minute</item>
+        <item quantity="other">Il y a %d minutes</item>
+    </plurals>
+    <plurals name="text_fileDeletionCompleted">
+        <item quantity="one">%d fichier a été supprimé</item>
+        <item quantity="other">%d fichiers ont été supprimés</item>
+    </plurals>
+    <plurals name="text_gridRow">
+        <item quantity="one">Une seule rangée</item>
+        <item quantity="other">%d rangées</item>
+    </plurals>
+    <plurals name="text_devicesShared">
+        <item quantity="one">Partage unique</item>
+        <item quantity="other">Partager avec %d appareils</item>
+    </plurals>
+    <plurals name="albums">
+        <item quantity="one">%d album</item>
+        <item quantity="other">%d albums</item>
+    </plurals>
+    <plurals name="tasks">
+        <item quantity="one">%d tâche</item>
+        <item quantity="other">%d tâches</item>
+    </plurals>
+    <plurals name="items">
+        <item quantity="one">%d élément</item>
+        <item quantity="other">%d éléments</item>
+    </plurals>
+    <plurals name="selected_files_summary">
+        <item quantity="one">%d fichier est sélectionné</item>
+        <item quantity="other">%d fichiers sont sélectionnés</item>
+    </plurals>
+</resources>

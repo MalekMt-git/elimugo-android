@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 Veli Tasalı
+  ~
+  ~ This program is free software; you can redistribute it and/or
+  ~ modify it under the terms of the GNU General Public License
+  ~ as published by the Free Software Foundation; either version 2
+  ~ of the License, or (at your option) any later version.
+  ~
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with this program; if not, write to the Free Software
+  ~ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+  -->
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_sharing"
+    app:startDestination="@id/prepareSharingFragment">
+
+    <fragment
+        android:id="@+id/prepareSharingFragment"
+        android:name="org.monora.uprotocol.client.android.fragment.PrepareSharingFragment"
+        android:label="@string/preparing_files">
+        <action
+            android:id="@+id/action_prepareSharingFragment_to_sharingFragment"
+            app:destination="@id/sharingFragment"
+            app:popUpTo="@id/prepareSharingFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_prepareSharingFragment_to_nav_text_editor"
+            app:destination="@id/nav_text_editor"
+            app:popUpTo="@id/prepareSharingFragment"
+            app:popUpToInclusive="true">
+            <argument
+                android:name="sharedText"
+                app:argType="org.monora.uprotocol.client.android.database.model.SharedText"
+                app:nullable="true"
+                android:defaultValue="@null" />
+            <argument
+                android:name="text"
+                app:argType="string"
+                app:nullable="true"
+                android:defaultValue="@null"/>
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/sharingFragment"
+        android:name="org.monora.uprotocol.client.android.fragment.SharingFragment"
+        android:label="@string/share">
+
+        <action
+            android:id="@+id/pick_client"
+            app:destination="@id/nav_pick_client"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim">
+            <argument
+                android:name="direction"
+                app:argType="org.monora.uprotocol.core.protocol.Direction"
+                android:defaultValue="Outgoing" />
+        </action>
+        <argument
+            android:name="contents"
+            app:argType="org.monora.uprotocol.client.android.database.model.UTransferItem[]" />
+        <argument
+            android:name="groupId"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_sharingFragment_to_nav_transfer_details"
+            app:destination="@id/nav_transfer_details"
+            app:popUpTo="@id/sharingFragment"
+            app:popUpToInclusive="true">
+            <argument
+                android:name="transfer"
+                app:argType="org.monora.uprotocol.client.android.database.model.Transfer" />
+        </action>
+        <action
+            android:id="@+id/action_sharingFragment_to_webShareLauncherFragment2"
+            app:destination="@id/webShareLauncherFragment2" />
+    </fragment>
+    <include app:graph="@navigation/nav_pick_client" />
+    <include app:graph="@navigation/nav_transfer_details" />
+    <dialog
+        android:id="@+id/webShareLauncherFragment2"
+        android:name="org.monora.uprotocol.client.android.fragment.content.transfer.WebShareLauncherFragment"
+        android:label="@string/web_share" />
+    <include app:graph="@navigation/nav_text_editor" />
+
+</navigation>

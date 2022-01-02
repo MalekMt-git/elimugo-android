@@ -45,15 +45,6 @@ fun NavController(activity: Activity) {
 
             MainScreen(navController = navController, activity)
         }
-
-        composable(
-
-            Routes.DownloadScreen.route,
-            enterTransition = { initial, _ -> enterScreenFadeAnimation() },
-        ) {
-
-            DownloadScreen(navController = navController, activity)
-        }
         composable(
 
             Routes.DownloadFromServerScreen.route,

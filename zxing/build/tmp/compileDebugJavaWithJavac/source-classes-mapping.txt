@@ -1,0 +1,2 @@
+org/monora/android/codescanner/BuildConfig.java
+ org.monora.android.codescanner.BuildConfig

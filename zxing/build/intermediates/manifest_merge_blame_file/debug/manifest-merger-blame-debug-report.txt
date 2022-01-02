@@ -1,0 +1,72 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<!--
+3  ~ Copyright (C) 2012-2018 ZXing authors, Journey Mobile
+4  ~ Copyright (C) 2021 Veli Tasalı
+5  ~
+6  ~ Licensed under the Apache License, Version 2.0 (the "License");
+7  ~ you may not use this file except in compliance with the License.
+8  ~ You may obtain a copy of the License at
+9  ~
+10  ~     http://www.apache.org/licenses/LICENSE-2.0
+11  ~
+12  ~ Unless required by applicable law or agreed to in writing, software
+13  ~ distributed under the License is distributed on an "AS IS" BASIS,
+14  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+15  ~ See the License for the specific language governing permissions and
+16  ~ limitations under the License.
+17-->
+18<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+19    package="org.monora.android.codescanner" >
+20
+21    <uses-sdk
+22        android:minSdkVersion="14"
+22-->/home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml
+23        android:targetSdkVersion="30" />
+23-->/home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml
+24
+25    <uses-permission android:name="android.permission.CAMERA" />
+25-->/home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml:21:5-65
+25-->/home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml:21:22-62
+26
+27    <!-- Don't require camera, as this requires a rear camera. This allows it to work on the Nexus 7 -->
+28    <uses-feature
+28-->/home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml:24:5-26:36
+29        android:name="android.hardware.camera"
+29-->/home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml:25:9-47
+30        android:required="false" />
+30-->/home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml:26:9-33
+31    <uses-feature
+31-->/home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml:28:5-30:36
+32        android:name="android.hardware.camera.front"
+32-->/home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml:29:9-53
+33        android:required="false" />
+33-->/home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml:30:9-33
+34    <uses-feature android:name="android.hardware.camera.any" />
+34-->/home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml:32:5-64
+34-->/home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml:32:19-61
+35    <uses-feature
+35-->/home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml:34:5-36:36
+36        android:name="android.hardware.camera.autofocus"
+36-->/home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml:35:9-57
+37        android:required="false" />
+37-->/home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml:36:9-33
+38    <uses-feature
+38-->/home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml:38:5-40:36
+39        android:name="android.hardware.camera.flash"
+39-->/home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml:39:9-53
+40        android:required="false" />
+40-->/home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml:40:9-33
+41    <uses-feature
+41-->/home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml:42:5-44:36
+42        android:name="android.hardware.screen.landscape"
+42-->/home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml:43:9-57
+43        android:required="false" />
+43-->/home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml:44:9-33
+44    <uses-feature
+44-->/home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml:46:5-48:36
+45        android:name="android.hardware.wifi"
+45-->/home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml:47:9-45
+46        android:required="false" />
+46-->/home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml:48:9-33
+47
+48</manifest>

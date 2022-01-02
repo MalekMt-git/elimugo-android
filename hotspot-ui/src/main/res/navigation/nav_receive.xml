@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 Veli Tasalı
+  ~
+  ~ This program is free software; you can redistribute it and/or
+  ~ modify it under the terms of the GNU General Public License
+  ~ as published by the Free Software Foundation; either version 2
+  ~ of the License, or (at your option) any later version.
+  ~
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with this program; if not, write to the Free Software
+  ~ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+  -->
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_receive"
+    app:startDestination="@id/receiveFragment">
+
+    <fragment
+        android:id="@+id/receiveFragment"
+        android:name="org.monora.uprotocol.client.android.fragment.ReceiveFragment"
+        android:label="@string/receive">
+        <action
+            android:id="@+id/pick_client"
+            app:destination="@id/nav_pick_client">
+            <argument
+                android:name="direction"
+                app:argType="org.monora.uprotocol.core.protocol.Direction"
+                android:defaultValue="Incoming" />
+        </action>
+        <action
+            android:id="@+id/action_receiveFragment_to_filePickerFragment"
+            app:destination="@id/filePickerFragment" />
+        <action
+            android:id="@+id/action_receiveFragment_to_nav_transfer_details"
+            app:destination="@id/nav_transfer_details"
+            app:popUpTo="@id/receiveFragment"
+            app:popUpToInclusive="true">
+            <argument
+                android:name="transfer"
+                app:argType="org.monora.uprotocol.client.android.database.model.Transfer" />
+        </action>
+        <action
+            android:id="@+id/action_receiveFragment_to_webShareLauncherFragment3"
+            app:destination="@id/webShareLauncherFragment3" />
+    </fragment>
+    <include app:graph="@navigation/nav_pick_client" />
+    <fragment
+        android:id="@+id/filePickerFragment"
+        android:name="org.monora.uprotocol.client.android.fragment.FilePickerFragment"
+        android:label="@string/change_storage_folder">
+        <argument
+            android:name="selectionType"
+            app:argType="org.monora.uprotocol.client.android.fragment.FilePickerFragment$SelectionType"
+            android:defaultValue="Folder" />
+    </fragment>
+    <include app:graph="@navigation/nav_transfer_details" />
+    <dialog
+        android:id="@+id/webShareLauncherFragment3"
+        android:name="org.monora.uprotocol.client.android.fragment.content.transfer.WebShareLauncherFragment"
+        android:label="@string/web_share" />
+
+</navigation>

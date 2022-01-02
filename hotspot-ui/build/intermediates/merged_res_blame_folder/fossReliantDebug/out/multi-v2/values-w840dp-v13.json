@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/malek/StudioProjects/elimugo-android/hotspot-ui/build/intermediates/incremental/mergeFossReliantDebugResources/merged.dir/values-w840dp-v13/values-w840dp-v13.xml",
+            "map": [
+                {
+                    "source": "/home/malek/StudioProjects/elimugo-android/core/build/intermediates/packaged_res/debug/values-w840dp-v13/values-w840dp-v13.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "61",
+                        "endOffsets": "112"
+                    }
+                }
+            ]
+        }
+    ]
+}

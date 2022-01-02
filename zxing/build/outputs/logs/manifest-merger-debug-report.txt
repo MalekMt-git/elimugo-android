@@ -1,0 +1,69 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml:18:1-49:12
+INJECTED from /home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml:18:1-49:12
+INJECTED from /home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml:18:1-49:12
+	package
+		ADDED from /home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml:19:5-45
+		INJECTED from /home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml
+		INJECTED from /home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml:18:11-69
+uses-permission#android.permission.CAMERA
+ADDED from /home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml:21:5-65
+	android:name
+		ADDED from /home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml:21:22-62
+uses-feature#android.hardware.camera
+ADDED from /home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml:24:5-26:36
+	android:required
+		ADDED from /home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml:26:9-33
+	android:name
+		ADDED from /home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml:25:9-47
+uses-feature#android.hardware.camera.front
+ADDED from /home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml:28:5-30:36
+	android:required
+		ADDED from /home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml:30:9-33
+	android:name
+		ADDED from /home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml:29:9-53
+uses-feature#android.hardware.camera.any
+ADDED from /home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml:32:5-64
+	android:name
+		ADDED from /home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml:32:19-61
+uses-feature#android.hardware.camera.autofocus
+ADDED from /home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml:34:5-36:36
+	android:required
+		ADDED from /home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml:36:9-33
+	android:name
+		ADDED from /home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml:35:9-57
+uses-feature#android.hardware.camera.flash
+ADDED from /home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml:38:5-40:36
+	android:required
+		ADDED from /home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml:40:9-33
+	android:name
+		ADDED from /home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml:39:9-53
+uses-feature#android.hardware.screen.landscape
+ADDED from /home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml:42:5-44:36
+	android:required
+		ADDED from /home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml:44:9-33
+	android:name
+		ADDED from /home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml:43:9-57
+uses-feature#android.hardware.wifi
+ADDED from /home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml:46:5-48:36
+	android:required
+		ADDED from /home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml:48:9-33
+	android:name
+		ADDED from /home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml:47:9-45
+uses-sdk
+INJECTED from /home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml
+INJECTED from /home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml
+INJECTED from /home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml
+INJECTED from /home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml
+		ADDED from /home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml
+		INJECTED from /home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml
+		ADDED from /home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml
+		INJECTED from /home/malek/StudioProjects/elimugo-android/zxing/src/main/AndroidManifest.xml

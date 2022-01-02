@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/malek/StudioProjects/elimugo-android/hotspot-ui/build/intermediates/incremental/mergeFossReliantDebugResources/merged.dir/values-normal-v4/values-normal-v4.xml",
+            "map": [
+                {
+                    "source": "/home/malek/StudioProjects/elimugo-android/core/build/intermediates/packaged_res/debug/values-normal-v4/values-normal-v4.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "50",
+                        "endOffsets": "101"
+                    }
+                }
+            ]
+        }
+    ]
+}

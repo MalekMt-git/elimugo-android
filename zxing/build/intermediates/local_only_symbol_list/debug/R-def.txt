@@ -1,0 +1,22 @@
+R_DEF: Internal format may change without notice
+local
+attr? zxing_autoFocusButtonColor
+attr? zxing_autoFocusButtonVisible
+attr? zxing_flashButtonColor
+attr? zxing_flashButtonVisible
+attr? zxing_frameAspectRatioHeight
+attr? zxing_frameAspectRatioWidth
+attr? zxing_frameColor
+attr? zxing_frameCornersRadius
+attr? zxing_frameCornersSize
+attr? zxing_frameSize
+attr? zxing_frameThickness
+attr? zxing_maskColor
+drawable zxing_ic_baseline_center_focus_weak_24
+drawable zxing_ic_baseline_filter_center_focus_24
+drawable zxing_ic_baseline_flash_off_24
+drawable zxing_ic_baseline_flash_on_24
+drawable zxing_round_selected
+drawable zxing_round_selector
+drawable zxing_round_selector_mask
+styleable zxing zxing_autoFocusButtonColor zxing_maskColor zxing_frameColor zxing_flashButtonColor zxing_autoFocusButtonVisible zxing_flashButtonVisible zxing_frameThickness zxing_frameCornersSize zxing_frameCornersRadius zxing_frameAspectRatioWidth zxing_frameAspectRatioHeight zxing_frameSize

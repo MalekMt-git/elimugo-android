@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2019 Veli Tasalı
+  ~
+  ~ This program is free software; you can redistribute it and/or
+  ~ modify it under the terms of the GNU General Public License
+  ~ as published by the Free Software Foundation; either version 2
+  ~ of the License, or (at your option) any later version.
+  ~
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with this program; if not, write to the Free Software
+  ~ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+  -->
+
+<resources>
+    <!-- prototype start -->
+    <style name="Theme.Prototype.TrebleShot.Base" parent="Theme.MaterialComponents.Light">
+        <item name="actionBarStyle">@style/Widget.TrebleShot.ActionBar</item>
+        <item name="alertDialogTheme">@style/Theme.TrebleShot.Dialog</item>
+        <item name="appBarLayoutStyle">@style/Widget.TrebleShot.AppBarLayout</item>
+        <item name="bottomNavigationStyle">@style/Widget.TrebleShot.BottomNavigationView</item>
+        <item name="cardViewStyle">@style/Widget.TrebleShot.CardView</item>
+        <item name="extendedFloatingActionButtonStyle">@style/Widget.TrebleShot.ExtendedFloatingActionButtonStyle</item>
+        <item name="floatingActionButtonStyle">@style/Widget.TrebleShot.FloatingActionButtonStyle</item>-->
+        <item name="materialCardViewStyle">@style/Widget.TrebleShot.CardView</item>
+        <item name="navigationViewStyle">@style/Widget.TrebleShot.NavigationView</item>
+        <item name="popupMenuBackground">?backgroundPopupMenu</item>
+        <!--<item name="snackbarStyle">@style/Widget.TrebleShot.Snackbar</item>-->
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearanceOverlay.Rounded</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearanceOverlay.Rounded</item>
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearanceOverlay.Rounded</item>
+        <item name="tabStyle">@style/Widget.TrebleShot.TabLayout</item>
+        <item name="textAppearanceButton">@style/TextAppearance.Button</item>
+        <item name="toolbarStyle">@style/Widget.TrebleShot.Toolbar</item>
+        <item name="android:windowBackground">@color/windowBackground</item>
+
+        <!-- app styling -->
+        <item name="backgroundDialog">@drawable/background_dialog</item>
+        <item name="backgroundEdgeAction">@drawable/background_edge_action</item>
+        <item name="backgroundGradient">@drawable/background_gradient</item>
+        <item name="backgroundGradientBottom">@drawable/background_gradient_bottom</item>
+        <item name="backgroundGradientTop">@drawable/background_gradient_top</item>
+        <item name="backgroundPopupMenu">@drawable/background_popup_menu</item>
+        <item name="backgroundTextOverImage">@drawable/background_text_over_image</item>
+        <item name="backgroundTopBar">@drawable/background_top_bar</item>
+        <item name="colorDivider">@color/colorDivider</item>
+        <item name="colorPassive">@color/colorPassive</item>
+        <item name="colorSelection">@color/colorSelection</item>
+        <item name="colorTranslucent">@color/colorTranslucent</item>
+        <item name="contentShowingBackground">@color/contentShowingBackground</item>
+        <item name="fastScrollBackground">@drawable/fastscroll_default_bubble</item>
+        <item name="rectSelector">@drawable/rect_selector</item>
+        <item name="rippleBackground">@drawable/ripple_background</item>
+        <item name="roundSelector">@drawable/zxing_round_selector</item>
+        <item name="roundProgressBar">@drawable/round_progress_bar</item>
+        <item name="roundProgressBarShape">@drawable/round_progress_bar_shape</item>
+        <item name="selectionAccentColor">@color/selection_accent</item>
+        <item name="selectionColor">@color/selection</item>
+        <item name="selectableItemBackground">@drawable/selectable_item_background</item>
+        <item name="snackbarBackground">@drawable/background_snackbar</item>
+        <item name="stateSelectedImage">@drawable/state_selected_image</item>
+        <item name="stateSelectedImageRounded">@drawable/state_selected_image_rounded</item>
+        <item name="stateSelectedImageRoundedGuiding">@drawable/state_selected_image_rounded_guiding</item>
+        <item name="stateSelectedImageSquare">@drawable/state_selected_image_square</item>
+        <item name="statusBarColor">@android:color/transparent</item>
+        <item name="useLightStatusBar">true</item>
+
+        <!--styling framework-->
+        <item name="genfw_customListFragmentEmptyImageStyle">@style/CustomListFragmentEmptyImageStyle</item>
+        <item name="genfw_customListFragmentEmptyTextStyle">@style/CustomListFragmentEmptyTextStyle</item>
+        <item name="genfw_customListFragmentEmptyActionButtonStyle">?buttonStyle</item>
+    </style>
+
+    <style name="Theme.Prototype.TrebleShot.Dark.Base" parent="Theme.MaterialComponents">
+        <item name="actionBarStyle">@style/Widget.TrebleShot.ActionBar</item>
+        <item name="alertDialogTheme">@style/Theme.TrebleShot.Dialog</item>
+        <item name="appBarLayoutStyle">@style/Widget.TrebleShot.AppBarLayout</item>
+        <item name="bottomNavigationStyle">@style/Widget.TrebleShot.BottomNavigationView</item>
+        <item name="cardViewStyle">@style/Widget.TrebleShot.CardView</item>
+        <item name="extendedFloatingActionButtonStyle">@style/Widget.TrebleShot.ExtendedFloatingActionButtonStyle</item>
+        <item name="floatingActionButtonStyle">@style/Widget.TrebleShot.FloatingActionButtonStyle</item>
+        <item name="materialCardViewStyle">@style/Widget.TrebleShot.CardView</item>
+        <item name="navigationViewStyle">@style/Widget.TrebleShot.NavigationView</item>
+        <item name="popupMenuBackground">?backgroundPopupMenu</item>
+        <!--<item name="snackbarStyle">@style/Widget.TrebleShot.Snackbar</item>-->
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearanceOverlay.Rounded</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearanceOverlay.Rounded</item>
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearanceOverlay.Rounded</item>
+        <item name="tabStyle">@style/Widget.TrebleShot.TabLayout</item>
+        <item name="textAppearanceButton">@style/TextAppearance.Button</item>
+        <!--<item name="android:textColorPrimary">@color/dark_colorControlNormal</item>-->
+        <item name="toolbarStyle">@style/Widget.TrebleShot.Toolbar</item>
+        <item name="android:windowBackground">@color/dark_windowBackground</item>
+
+        <!-- app styling -->
+        <item name="backgroundDialog">@drawable/background_dialog_dark</item>
+        <item name="backgroundEdgeAction">@drawable/background_edge_action_dark</item>
+        <item name="backgroundGradient">@drawable/background_gradient_dark</item>
+        <item name="backgroundGradientBottom">@drawable/background_gradient_bottom_dark</item>
+        <item name="backgroundGradientTop">@drawable/background_gradient_top_dark</item>
+        <item name="backgroundPopupMenu">@drawable/background_popup_menu_dark</item>
+        <item name="backgroundTextOverImage">@drawable/background_text_over_image_dark</item>
+        <item name="backgroundTopBar">@drawable/background_top_bar_dark</item>
+        <item name="colorDivider">@color/dark_colorDivider</item>
+        <item name="colorPassive">@color/dark_colorPassive</item>
+        <item name="colorSelection">@color/dark_colorSelection</item>
+        <item name="colorTranslucent">@color/dark_colorTranslucent</item>
+        <item name="contentShowingBackground">@color/dark_contentShowingBackground</item>
+        <item name="fastScrollBackground">@drawable/fastscroll_default_bubble_dark</item>
+        <item name="rectSelector">@drawable/rect_selector_dark</item>
+        <item name="rippleBackground">@drawable/ripple_background_dark</item>
+        <item name="roundSelector">@drawable/round_selector_dark</item>
+        <item name="roundProgressBar">@drawable/round_progress_bar_dark</item>
+        <item name="roundProgressBarShape">@drawable/round_progress_bar_shape_dark</item>
+        <item name="selectionAccentColor">@color/selection_accent_dark</item>
+        <item name="selectionColor">@color/selection_dark</item>
+        <item name="selectableItemBackground">@drawable/selectable_item_background_dark</item>
+        <item name="snackbarBackground">@drawable/background_snackbar_dark</item>
+        <item name="stateSelectedImage">@drawable/state_selected_image_dark</item>
+        <item name="stateSelectedImageRounded">@drawable/state_selected_image_rounded_dark</item>
+        <item name="stateSelectedImageRoundedGuiding">@drawable/state_selected_image_rounded_guiding_dark</item>
+        <item name="stateSelectedImageSquare">@drawable/state_selected_image_square_dark</item>
+        <item name="statusBarColor">@android:color/transparent</item>
+        <item name="useLightStatusBar">false</item>
+
+        <!--styling framework-->
+        <item name="genfw_customListFragmentEmptyImageStyle">@style/CustomListFragmentEmptyImageStyle</item>
+        <item name="genfw_customListFragmentEmptyTextStyle">@style/CustomListFragmentEmptyTextStyle</item>
+        <item name="genfw_customListFragmentEmptyActionButtonStyle">?buttonStyle</item>
+    </style>
+    <!-- prototype end -->
+
+    <!-- generalization start -->
+    <style name="Theme.TrebleShot.Base" parent="Theme.Prototype.TrebleShot.Base" />
+
+    <style name="Theme.TrebleShot.Dark.Base" parent="Theme.Prototype.TrebleShot.Dark.Base" />
+
+    <style name="Theme.TrebleShot.Base.NoActionBar" parent="@style/Theme.TrebleShot.Base">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.TrebleShot.Dark.Base.NoActionBar" parent="@style/Theme.TrebleShot.Dark.Base">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <!-- generalization end -->
+</resources>

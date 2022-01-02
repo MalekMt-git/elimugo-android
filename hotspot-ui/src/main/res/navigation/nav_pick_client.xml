@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 Veli Tasalı
+  ~
+  ~ This program is free software; you can redistribute it and/or
+  ~ modify it under the terms of the GNU General Public License
+  ~ as published by the Free Software Foundation; either version 2
+  ~ of the License, or (at your option) any later version.
+  ~
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with this program; if not, write to the Free Software
+  ~ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+  -->
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_pick_client"
+    app:startDestination="@id/optionsFragment">
+    <fragment
+        android:id="@+id/optionsFragment"
+        android:name="org.monora.uprotocol.client.android.fragment.pickclient.ConnectionOptionsFragment"
+        android:label="@string/choose_client">
+        <action
+            android:id="@+id/action_optionsFragment_to_networkManagerFragment"
+            app:destination="@id/networkManagerFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_optionsFragment_to_clientsFragment"
+            app:destination="@id/clientsFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_optionsFragment_to_manualConnectionFragment"
+            app:destination="@id/manualConnectionFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_optionsFragment_to_barcodeScannerFragment"
+            app:destination="@id/barcodeScannerFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_optionsFragment_to_clientConnectionFragment"
+            app:destination="@id/clientConnectionFragment" />
+        <action
+            android:id="@+id/action_optionsFragment_to_clientDetailsFragment"
+            app:destination="@id/clientDetailsFragment" />
+        <argument
+            android:name="direction"
+            app:argType="org.monora.uprotocol.core.protocol.Direction" />
+        <action
+            android:id="@+id/action_optionsFragment_to_nav_transfer_details"
+            app:destination="@id/nav_transfer_details"
+            app:popUpTo="@id/optionsFragment"
+            app:popUpToInclusive="true">
+            <argument
+                android:name="transfer"
+                app:argType="org.monora.uprotocol.client.android.database.model.Transfer" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/networkManagerFragment"
+        android:name="org.monora.uprotocol.client.android.fragment.NetworkManagerFragment"
+        android:label="@string/generate_qr_code">
+        <argument
+            android:name="direction"
+            app:argType="org.monora.uprotocol.core.protocol.Direction" />
+        <action
+            android:id="@+id/action_networkManagerFragment_to_nav_transfer_details"
+            app:destination="@id/nav_transfer_details"
+            app:popUpTo="@id/networkManagerFragment"
+            app:popUpToInclusive="true">
+            <argument
+                android:name="transfer"
+                app:argType="org.monora.uprotocol.client.android.database.model.Transfer" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/clientsFragment"
+        android:name="org.monora.uprotocol.client.android.fragment.pickclient.PickClientFragment"
+        android:label="@string/all_clients">
+        <action
+            android:id="@+id/action_clientsFragment_to_clientConnectionFragment"
+            app:destination="@id/clientConnectionFragment" />
+        <action
+            android:id="@+id/action_clientsFragment_to_clientDetailsFragment"
+            app:destination="@id/clientDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/manualConnectionFragment"
+        android:name="org.monora.uprotocol.client.android.fragment.pickclient.ManualConnectionFragment"
+        android:label="@string/enter_address">
+        <action
+            android:id="@+id/action_manualConnectionFragment_to_acceptClientFragment"
+            app:destination="@id/acceptClientFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/barcodeScannerFragment"
+        android:name="org.monora.uprotocol.client.android.fragment.pickclient.BarcodeScannerFragment"
+        android:label="@string/scan_qr_code">
+        <action
+            android:id="@+id/action_barcodeScannerFragment_to_wifiConnectFragment"
+            app:destination="@id/wifiConnectFragment" />
+        <argument
+            android:name="inetAddress"
+            app:argType="java.net.InetAddress"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+    <dialog
+        android:id="@+id/wifiConnectFragment"
+        android:name="org.monora.uprotocol.client.android.fragment.pickclient.WifiConnectFragment"
+        android:label="@string/connect_to_wifi">
+        <argument
+            android:name="networkDescription"
+            app:argType="org.monora.uprotocol.client.android.model.NetworkDescription" />
+        <action
+            android:id="@+id/action_wifiConnectFragment_to_barcodeScannerFragment"
+            app:destination="@id/barcodeScannerFragment" />
+        <argument
+            android:name="pin"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </dialog>
+    <fragment
+        android:id="@+id/clientConnectionFragment"
+        android:name="org.monora.uprotocol.client.android.fragment.pickclient.ClientConnectionFragment"
+        android:label="@string/connect_to_client">
+        <argument
+            android:name="client"
+            app:argType="org.monora.uprotocol.client.android.database.model.UClient" />
+        <argument
+            android:name="clientAddress"
+            app:argType="org.monora.uprotocol.client.android.database.model.UClientAddress"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+    <dialog
+        android:id="@+id/acceptClientFragment"
+        android:name="org.monora.uprotocol.client.android.fragment.pickclient.AcceptClientFragment"
+        android:label="@string/verify_client">
+        <action
+            android:id="@+id/action_acceptClientFragment_to_clientConnectionFragment"
+            app:destination="@id/clientConnectionFragment" />
+        <argument
+            android:name="clientRoute"
+            app:argType="org.monora.uprotocol.client.android.model.ClientRoute" />
+    </dialog>
+    <dialog
+        android:id="@+id/clientDetailsFragment"
+        android:name="org.monora.uprotocol.client.android.fragment.ClientDetailsFragment"
+        android:label="@string/client_details">
+        <argument
+            android:name="client"
+            app:argType="org.monora.uprotocol.client.android.database.model.UClient" />
+    </dialog>
+    <action
+        android:id="@+id/xml_pop"
+        app:popUpTo="@id/nav_pick_client"
+        app:popUpToInclusive="true" />
+    <include app:graph="@navigation/nav_transfer_details" />
+
+</navigation>

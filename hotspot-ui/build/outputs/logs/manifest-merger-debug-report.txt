@@ -1,0 +1,251 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:19:1-157:12
+INJECTED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:19:1-157:12
+INJECTED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:19:1-157:12
+	package
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:21:5-50
+		INJECTED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml
+		INJECTED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:20:5-51
+	xmlns:android
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:19:11-69
+uses-permission-sdk-23#android.permission.ACCESS_COARSE_LOCATION
+ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:23:5-88
+	android:name
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:23:29-85
+uses-permission-sdk-23#android.permission.ACCESS_FINE_LOCATION
+ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:24:5-86
+	android:name
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:24:29-83
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:26:5-76
+	android:name
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:26:22-73
+uses-permission#android.permission.CHANGE_WIFI_STATE
+ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:27:5-76
+	android:name
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:27:22-73
+uses-permission#android.permission.CHANGE_NETWORK_STATE
+ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:28:5-79
+	android:name
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:28:22-76
+uses-permission#android.permission.FOREGROUND_SERVICE
+ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:29:5-77
+	android:name
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:29:22-74
+uses-permission#android.permission.QUERY_ALL_PACKAGES
+ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:30:5-32:53
+	tools:ignore
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:32:9-50
+	android:name
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:31:9-61
+uses-permission#android.permission.REQUEST_INSTALL_PACKAGES
+ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:33:5-83
+	android:name
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:33:22-80
+uses-permission#android.permission.SYSTEM_ALERT_WINDOW
+ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:34:5-78
+	android:name
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:34:22-75
+uses-permission#android.permission.WAKE_LOCK
+ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:35:5-68
+	android:name
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:35:22-65
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:36:5-81
+	android:name
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:36:22-78
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:37:5-80
+	android:name
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:37:22-77
+uses-permission#android.permission.VIBRATE
+ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:38:5-66
+	android:name
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:38:22-63
+uses-permission#android.permission.WRITE_SETTINGS
+ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:39:5-73
+	android:name
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:39:22-70
+uses-permission#android.permission.MODIFY_AUDIO_SETTINGS
+ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:40:5-80
+	android:name
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:40:22-77
+application
+ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:42:5-156:19
+	android:name
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:43:9-76
+activity#org.monora.uprotocol.client.android.activity.HomeActivity
+ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:45:9-71:20
+	android:label
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:48:13-45
+	android:launchMode
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:49:13-44
+	android:exported
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:47:13-36
+	android:theme
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:50:13-64
+	android:name
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:46:13-85
+intent-filter#action:name:android.service.quicksettings.action.QS_TILE_PREFERENCES
+ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:52:13-54:29
+action#android.service.quicksettings.action.QS_TILE_PREFERENCES
+ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:53:17-99
+	android:name
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:53:25-96
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:*+data:mimeType:*/*+data:pathPattern:.*\\..*\\.tshare+data:pathPattern:.*\\.tshare+data:pathPattern:.*\\.tshare\\.*+data:scheme:content+data:scheme:file
+ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:55:13-70:29
+action#android.intent.action.VIEW
+ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:56:17-69
+	android:name
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:56:25-66
+category#android.intent.category.DEFAULT
+ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:58:17-76
+	android:name
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:58:27-73
+category#android.intent.category.BROWSABLE
+ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:59:17-78
+	android:name
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:59:27-75
+data
+ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:61:17-47
+	android:host
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:65:23-39
+	android:scheme
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:61:23-44
+	android:pathPattern
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:67:23-56
+	android:mimeType
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:63:23-45
+activity#org.monora.uprotocol.client.android.activity.SharingActivity
+ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:73:9-88:20
+	android:label
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:76:13-45
+	android:exported
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:75:13-36
+	android:name
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:74:13-88
+intent-filter#action:name:android.intent.action.SEND+action:name:android.intent.action.SEND_MULTIPLE+category:name:android.intent.category.DEFAULT+data:mimeType:*/*
+ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:77:13-83:29
+action#android.intent.action.SEND
+ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:78:17-69
+	android:name
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:78:25-66
+action#android.intent.action.SEND_MULTIPLE
+ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:79:17-78
+	android:name
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:79:25-75
+activity#org.monora.uprotocol.client.android.activity.ContentBrowserActivity
+ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:90:9-100:20
+	android:parentActivityName
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:95:13-99
+	android:label
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:92:13-42
+	android:launchMode
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:93:13-44
+	tools:targetApi
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:96:13-41
+	android:theme
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:94:13-64
+	android:name
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:91:13-95
+meta-data#android.support.PARENT_ACTIVITY
+ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:97:13-99:93
+	android:value
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:99:17-90
+	android:name
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:98:17-63
+activity#org.monora.uprotocol.client.android.activity.WelcomeActivity
+ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:102:9-105:67
+	android:label
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:104:13-44
+	android:theme
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:105:13-64
+	android:name
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:103:13-88
+activity#org.monora.uprotocol.client.android.activity.PackageInstallerActivity
+ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:107:9-111:102
+	android:parentActivityName
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:111:13-99
+	android:label
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:110:13-52
+	android:launchMode
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:109:13-43
+	android:name
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:108:13-62
+activity#com.leaf.explorer.MusicActivity
+ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:113:9-132:20
+	android:label
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:115:13-42
+	android:exported
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:117:13-36
+	android:theme
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:116:13-64
+	android:name
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:114:13-59
+intent-filter#action:name:android.intent.action.MUSIC_PLAYER+category:name:android.intent.category.APP_MUSIC+category:name:android.intent.category.DEFAULT
+ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:118:13-123:29
+action#android.intent.action.MUSIC_PLAYER
+ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:119:17-77
+	android:name
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:119:25-74
+category#android.intent.category.APP_MUSIC
+ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:121:17-78
+	android:name
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:121:27-75
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.DEFAULT+data:mimeType:audio/*+data:scheme:content
+ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:124:13-131:29
+receiver#org.monora.uprotocol.client.android.receiver.BgBroadcastReceiver
+ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:134:9-66
+	android:name
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:134:19-63
+service#org.monora.uprotocol.client.android.service.BackgroundService
+ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:136:9-140:58
+	android:enabled
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:138:13-35
+	android:label
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:140:13-55
+	android:exported
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:139:13-37
+	android:name
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:137:13-89
+service#org.monora.uprotocol.client.android.service.TogglingTileService
+ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:142:9-151:19
+	android:label
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:146:13-54
+	android:exported
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:144:13-36
+	android:permission
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:147:13-77
+	android:icon
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:145:13-51
+	android:name
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:143:13-91
+intent-filter#action:name:android.service.quicksettings.action.QS_TILE
+ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:148:13-150:29
+action#android.service.quicksettings.action.QS_TILE
+ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:149:17-87
+	android:name
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:149:25-84
+service#com.leaf.explorer.player.PlayerService
+ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:153:9-155:40
+	android:exported
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:155:13-37
+	android:name
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml:154:13-66
+uses-sdk
+INJECTED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml
+INJECTED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml
+INJECTED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml
+INJECTED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml
+		INJECTED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml
+		ADDED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml
+		INJECTED from /home/malek/StudioProjects/elimugo-android/hotspot-ui/src/main/AndroidManifest.xml

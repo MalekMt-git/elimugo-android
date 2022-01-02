@@ -1,0 +1,73 @@
+[
+  {
+    "name": "nav_about",
+    "navigationXmlIds": [],
+    "deepLinks": []
+  },
+  {
+    "name": "nav_text_editor",
+    "navigationXmlIds": [
+      "nav_pick_client"
+    ],
+    "deepLinks": []
+  },
+  {
+    "name": "nav_receive",
+    "navigationXmlIds": [
+      "nav_pick_client",
+      "nav_transfer_details"
+    ],
+    "deepLinks": []
+  },
+  {
+    "name": "nav_sharing",
+    "navigationXmlIds": [
+      "nav_pick_client",
+      "nav_transfer_details",
+      "nav_text_editor"
+    ],
+    "deepLinks": []
+  },
+  {
+    "name": "nav_home",
+    "navigationXmlIds": [
+      "nav_transfer_details",
+      "nav_receive",
+      "nav_preferences",
+      "nav_manage_clients",
+      "nav_about",
+      "nav_text_editor"
+    ],
+    "deepLinks": []
+  },
+  {
+    "name": "nav_preferences",
+    "navigationXmlIds": [],
+    "deepLinks": []
+  },
+  {
+    "name": "nav_content_browser",
+    "navigationXmlIds": [
+      "nav_transfer_details",
+      "nav_pick_client"
+    ],
+    "deepLinks": []
+  },
+  {
+    "name": "nav_pick_client",
+    "navigationXmlIds": [
+      "nav_transfer_details"
+    ],
+    "deepLinks": []
+  },
+  {
+    "name": "nav_manage_clients",
+    "navigationXmlIds": [],
+    "deepLinks": []
+  },
+  {
+    "name": "nav_transfer_details",
+    "navigationXmlIds": [],
+    "deepLinks": []
+  }
+]
