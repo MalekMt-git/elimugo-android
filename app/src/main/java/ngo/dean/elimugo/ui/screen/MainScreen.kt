@@ -129,7 +129,7 @@ fun MainScreenContent(
                 Button(
                     onClick = {
 
-                        navController.navigate(Routes.DownloadScreen.route)
+                        navController.navigate(Routes.DownloadFromServerScreen.route)
 
                     },
                     Modifier
