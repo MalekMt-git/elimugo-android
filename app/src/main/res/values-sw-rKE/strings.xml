@@ -9,6 +9,9 @@
     <string name="download_btn_content">Start downloading ElimuGo content</string>
     <string name="explore">Explore</string>
     <string name="explore_content">Find Elimu content on this device</string>
-    <string name="elimugo_btn_content">Copy this ElimuGO to another phone</string>
+    <string name="elimugo_btn_content">Send ElimuGO to another phone</string>
     <string name="elimugo">ElimuGO</string>
+    <string name="downlaod_from_server_content">Download from server if you have internt</string>
+    <string name="mega_byte">MB</string>
+    <string name="nothing_downloaded">Nothing is downloaded</string>
 </resources>

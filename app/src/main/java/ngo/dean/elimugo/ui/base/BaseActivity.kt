@@ -11,7 +11,7 @@ class BaseActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             ElimugoTheme {
-                NavController(applicationContext = applicationContext)
+                NavController(activity = this)
             }
         }
     }

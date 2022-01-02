@@ -1,6 +1,6 @@
 package ngo.dean.elimugo.ui.nav.controller
 
-import android.content.Context
+import android.app.Activity
 import androidx.compose.animation.EnterTransition
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.animation.core.CubicBezierEasing
@@ -10,13 +10,12 @@ import androidx.compose.runtime.Composable
 import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.google.accompanist.navigation.animation.composable
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
-import ngo.dean.elimugo.ui.screen.LanguageScreen
-import ngo.dean.elimugo.ui.screen.MainScreen
-import ngo.dean.elimugo.ui.screen.SplashScreen
+import ngo.dean.elimugo.ui.screen.*
+import ngo.dean.elimugo.ui.screen.download.DownloadFromServerScreen
 
 @OptIn(ExperimentalAnimationApi::class)
 @Composable
-fun NavController(applicationContext: Context) {
+fun NavController(activity: Activity) {
 
     val navController = rememberAnimatedNavController()
 
@@ -27,7 +26,7 @@ fun NavController(applicationContext: Context) {
         composable(
             Routes.SplashScreen.route,
         ) {
-            SplashScreen(navController = navController, applicationContext)
+            SplashScreen(navController = navController, activity)
         }
         composable(
 
@@ -35,7 +34,7 @@ fun NavController(applicationContext: Context) {
             enterTransition = { initial, _ -> enterScreenFadeAnimation() },
         ) {
 
-            LanguageScreen(navController = navController, applicationContext)
+            LanguageScreen(navController = navController, activity)
         }
 
         composable(
@@ -44,9 +43,41 @@ fun NavController(applicationContext: Context) {
             enterTransition = { initial, _ -> enterScreenFadeAnimation() },
         ) {
 
-            MainScreen(navController = navController, applicationContext)
+            MainScreen(navController = navController, activity)
         }
 
+        composable(
+
+            Routes.DownloadScreen.route,
+            enterTransition = { initial, _ -> enterScreenFadeAnimation() },
+        ) {
+
+            DownloadScreen(navController = navController, activity)
+        }
+        composable(
+
+            Routes.DownloadFromServerScreen.route,
+            enterTransition = { initial, _ -> enterScreenFadeAnimation() },
+        ) {
+
+            DownloadFromServerScreen(navController = navController, activity)
+        }
+        composable(
+
+            Routes.ExploreScreen.route,
+            enterTransition = { initial, _ -> enterScreenFadeAnimation() },
+        ) {
+
+            ExploreScreen(navController = navController, activity)
+        }
+        composable(
+
+            Routes.ShareDataScreen.route,
+            enterTransition = { initial, _ -> enterScreenFadeAnimation() },
+        ) {
+
+            ShareDataScreen(navController = navController, activity)
+        }
     }
 }
 

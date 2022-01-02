@@ -1,7 +1,9 @@
 package ngo.dean.elimugo.ui.screen
 
 import android.app.Activity
+import android.app.DownloadManager
 import android.content.Context
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Button
@@ -32,18 +34,19 @@ import androidx.navigation.NavController
 import ngo.dean.elimugo.R
 import ngo.dean.elimugo.ui.Toolbar
 import ngo.dean.elimugo.ui.nav.controller.Routes
-import ngo.dean.elimugo.util.ShareAPK
+import ngo.dean.elimugo.ui.theme.ElimugoTheme
 
 @Composable
-fun MainScreen(navController: NavController, activity: Activity) {
+fun DownloadScreen(navController: NavController, activity: Activity) {
     Toolbar()
-    MainScreenContent(navController = navController , activity)
+    DownloadScreenContent(navController = navController , activity)
 }
 
 @Composable
-fun MainScreenContent(
+fun DownloadScreenContent(
     navController: NavController , activity: Activity
 ) {
+
     Box(
         Modifier
             .fillMaxSize()
@@ -87,7 +90,7 @@ fun MainScreenContent(
 
                 Button(
                     onClick = {
-                        navController.navigate(Routes.ShareDataScreen.route)
+                        navController.navigate(Routes.MainScreen.route)
                     },
                     Modifier
                         .size(180.dp, 180.dp)
@@ -126,6 +129,9 @@ fun MainScreenContent(
 
                 Spacer(modifier = Modifier.size(10.dp, 0.dp))
 
+                ElimugoTheme(downloadScreenThemeColors = true) {
+
+
                 Button(
                     onClick = {
 
@@ -134,10 +140,12 @@ fun MainScreenContent(
                     },
                     Modifier
                         .size(180.dp, 180.dp)
-                        .shadow(19.dp, shape = RoundedCornerShape(4))
+                        .shadow(
+                            19.dp, shape = RoundedCornerShape(4)
+                        )
                 ) {
 
-                    Box(Modifier.fillMaxSize()) {
+                    Box(Modifier.fillMaxHeight()) {
 
                         Text(
                             text = stringResource(R.string.download_btn_title),
@@ -157,7 +165,7 @@ fun MainScreenContent(
                         )
 
                         Text(
-                            text = stringResource(R.string.download_btn_content),
+                            text = stringResource(R.string.downlaod_from_server_content),
                             fontSize = 12.sp,
                             fontWeight = FontWeight.ExtraBold,
                             fontStyle = FontStyle.Normal,
@@ -167,15 +175,15 @@ fun MainScreenContent(
                     }
                 }
             }
-
-            Row(Modifier.padding(10.dp)) {
+            }
+/*            Row(Modifier.padding(10.dp)) {
 
                 Spacer(modifier = Modifier.size(0.dp, 0.dp))
 
                 Button(
                     onClick = {
 
-                        navController.navigate(Routes.ExploreScreen.route)
+                        navController.navigate(Routes.MainScreen.route)
 
                     },
                     Modifier
@@ -215,46 +223,7 @@ fun MainScreenContent(
 
                 Spacer(modifier = Modifier.size(10.dp, 0.dp))
 
-                Button(
-                    onClick = {
-
-                        ShareAPK().share(activity)
-                    },
-                    Modifier
-                        .size(180.dp, 180.dp)
-                        .shadow(19.dp, shape = RoundedCornerShape(4))
-                ) {
-
-                    Box(Modifier.fillMaxSize()) {
-
-                        Text(
-                            text = stringResource(R.string.elimugo),
-                            fontSize = 23.sp,
-                            fontWeight = FontWeight.ExtraBold,
-                            fontStyle = FontStyle.Normal,
-                            modifier = Modifier.align(TopCenter)
-                        )
-
-                        Icon(
-                            painter = painterResource(id = R.drawable.toolbar_logo),
-                            contentDescription = stringResource(R.string.content_description),
-                            modifier = Modifier
-                                .align(Center)
-                                .size(180.dp),
-                            Color.White
-                        )
-
-                        Text(
-                            text = stringResource(R.string.elimugo_btn_content),
-                            fontSize = 12.sp,
-                            fontWeight = FontWeight.ExtraBold,
-                            fontStyle = FontStyle.Normal,
-                            textAlign = TextAlign.Center,
-                            modifier = Modifier.align(BottomCenter)
-                        )
-                    }
-                }
-            }
+            }*/
         }
     }
 }
