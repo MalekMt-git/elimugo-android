@@ -55,7 +55,7 @@ class ShareAPK {
             intent.type = "application/vnd.android.package-archive"
             intent.putExtra(
                 Intent.EXTRA_STREAM, FileProvider.getUriForFile(
-                    context, BuildConfig.APPLICATION_ID + ".fileprovider", File(tempFile.path)
+                    context, BuildConfig.APPLICATION_ID + ".provider", File(tempFile.path)
                 )
             )
             intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
