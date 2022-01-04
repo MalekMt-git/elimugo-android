@@ -20,7 +20,6 @@ import ngo.dean.elimugo.R
 import ngo.dean.elimugo.data.server.Package
 import ngo.dean.elimugo.data.server.Request
 import ngo.dean.elimugo.ui.Toolbar
-import java.io.File
 
 @Composable
 fun DownloadFromServerScreen(navController: NavController, activity: Activity) {
@@ -35,8 +34,7 @@ fun DownloadFromServerScreenContent(
     val mutablePackageList = remember { mutableStateOf(arrayListOf<Package>()) }
     val choosedPackagesToDownload =  remember { mutableStateOf(ArrayList<Package>()) }
 
-    val queryUrlString = "content/package" +
-            "s.xml"
+    val queryUrlString = "content/package" + "s.xml"
     Box(
         Modifier
             .fillMaxSize()

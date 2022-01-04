@@ -214,10 +214,10 @@ org/monora/uprotocol/client/android/viewmodel/ClientsViewModel_HiltModules_KeyMo
  org.monora.uprotocol.client.android.viewmodel.ClientsViewModel_HiltModules_KeyModule_ProvideFactory$InstanceHolder
 org/monora/uprotocol/client/android/di/RoomModule_ProvideTransferDaoFactory.java
  org.monora.uprotocol.client.android.di.RoomModule_ProvideTransferDaoFactory
-org/monora/uprotocol/client/android/data/TransferRepository_Factory.java
- org.monora.uprotocol.client.android.data.TransferRepository_Factory
-org/monora/uprotocol/client/android/viewmodel/SharingViewModel_Factory.java
- org.monora.uprotocol.client.android.viewmodel.SharingViewModel_Factory
+hilt_aggregated_deps/_org_monora_uprotocol_client_android_fragment_content_AppBrowserViewModel_HiltModules_KeyModule.java
+ hilt_aggregated_deps._org_monora_uprotocol_client_android_fragment_content_AppBrowserViewModel_HiltModules_KeyModule
+androidx/databinding/library/baseAdapters/BR.java
+ androidx.databinding.library.baseAdapters.BR
 org/monora/uprotocol/client/android/fragment/content/transfer/PrepareIndexViewModel_HiltModules.java
  org.monora.uprotocol.client.android.fragment.content.transfer.PrepareIndexViewModel_HiltModules
  org.monora.uprotocol.client.android.fragment.content.transfer.PrepareIndexViewModel_HiltModules$BindsModule
@@ -245,8 +245,8 @@ org/monora/uprotocol/client/android/databinding/ListAlbumBindingImpl.java
  org.monora.uprotocol.client.android.databinding.ListAlbumBindingImpl
 hilt_aggregated_deps/_org_monora_uprotocol_client_android_fragment_content_AudioBrowserFragment_GeneratedInjector.java
  hilt_aggregated_deps._org_monora_uprotocol_client_android_fragment_content_AudioBrowserFragment_GeneratedInjector
-org/monora/uprotocol/client/android/databinding/ListFilePickerBindingImpl.java
- org.monora.uprotocol.client.android.databinding.ListFilePickerBindingImpl
+hilt_aggregated_deps/_org_monora_uprotocol_client_android_viewmodel_ClientConnectionViewModel_HiltModules_KeyModule.java
+ hilt_aggregated_deps._org_monora_uprotocol_client_android_viewmodel_ClientConnectionViewModel_HiltModules_KeyModule
 org/monora/uprotocol/client/android/fragment/PreparationViewModel_Factory.java
  org.monora.uprotocol.client.android.fragment.PreparationViewModel_Factory
 hilt_aggregated_deps/_org_monora_uprotocol_client_android_activity_SharingActivity_GeneratedInjector.java
@@ -282,8 +282,9 @@ org/monora/uprotocol/client/android/fragment/ChangelogFragment_GeneratedInjector
  org.monora.uprotocol.client.android.fragment.ChangelogFragment_GeneratedInjector
 org/monora/uprotocol/client/android/databinding/ListFileNouveauBinding.java
  org.monora.uprotocol.client.android.databinding.ListFileNouveauBinding
-org/monora/uprotocol/client/android/viewmodel/FilesViewModel_Factory.java
- org.monora.uprotocol.client.android.viewmodel.FilesViewModel_Factory
+org/monora/uprotocol/client/android/fragment/ReceiverViewModel_HiltModules_KeyModule_ProvideFactory.java
+ org.monora.uprotocol.client.android.fragment.ReceiverViewModel_HiltModules_KeyModule_ProvideFactory
+ org.monora.uprotocol.client.android.fragment.ReceiverViewModel_HiltModules_KeyModule_ProvideFactory$InstanceHolder
 org/monora/uprotocol/client/android/viewmodel/UserProfileViewModel_HiltModules_KeyModule_ProvideFactory.java
  org.monora.uprotocol.client.android.viewmodel.UserProfileViewModel_HiltModules_KeyModule_ProvideFactory
  org.monora.uprotocol.client.android.viewmodel.UserProfileViewModel_HiltModules_KeyModule_ProvideFactory$InstanceHolder
@@ -468,16 +469,16 @@ hilt_aggregated_deps/_org_monora_uprotocol_client_android_viewmodel_SharedTextsV
 org/monora/uprotocol/client/android/viewmodel/ClientPickerViewModel_HiltModules_KeyModule_ProvideFactory.java
  org.monora.uprotocol.client.android.viewmodel.ClientPickerViewModel_HiltModules_KeyModule_ProvideFactory
  org.monora.uprotocol.client.android.viewmodel.ClientPickerViewModel_HiltModules_KeyModule_ProvideFactory$InstanceHolder
-org/monora/uprotocol/client/android/databinding/ListFilePickerBinding.java
- org.monora.uprotocol.client.android.databinding.ListFilePickerBinding
+org/monora/uprotocol/client/android/databinding/ListTransferBindingImpl.java
+ org.monora.uprotocol.client.android.databinding.ListTransferBindingImpl
 com/leaf/explorer/helper/VersioningHelper.java
  com.leaf.explorer.helper.VersioningHelper
 org/monora/uprotocol/client/android/fragment/CrashLogFragment_GeneratedInjector.java
  org.monora.uprotocol.client.android.fragment.CrashLogFragment_GeneratedInjector
 com/leaf/explorer/MPConstants.java
  com.leaf.explorer.MPConstants
-org/monora/uprotocol/client/android/fragment/FilePickerFragment_GeneratedInjector.java
- org.monora.uprotocol.client.android.fragment.FilePickerFragment_GeneratedInjector
+org/monora/uprotocol/client/android/databinding/ListPermissionBinding.java
+ org.monora.uprotocol.client.android.databinding.ListPermissionBinding
 org/monora/uprotocol/client/android/database/ClientAddressDao_Impl.java
  org.monora.uprotocol.client.android.database.ClientAddressDao_Impl
  org.monora.uprotocol.client.android.database.ClientAddressDao_Impl$1
@@ -755,8 +756,8 @@ org/monora/uprotocol/client/android/app/FileExplorer_ComponentTreeDeps.java
  org.monora.uprotocol.client.android.app.FileExplorer_ComponentTreeDeps
 hilt_aggregated_deps/_org_monora_uprotocol_client_android_fragment_content_AppBrowserViewModel_HiltModules_BindsModule.java
  hilt_aggregated_deps._org_monora_uprotocol_client_android_fragment_content_AppBrowserViewModel_HiltModules_BindsModule
-org/monora/uprotocol/client/android/data/FileRepository_Factory.java
- org.monora.uprotocol.client.android.data.FileRepository_Factory
+org/monora/uprotocol/client/android/databinding/ListTransferItemBindingImpl.java
+ org.monora.uprotocol.client.android.databinding.ListTransferItemBindingImpl
 org/monora/uprotocol/client/android/data/MediaRepository_Factory.java
  org.monora.uprotocol.client.android.data.MediaRepository_Factory
 org/monora/uprotocol/client/android/databinding/ListSectionDateBindingImpl.java
@@ -764,12 +765,11 @@ org/monora/uprotocol/client/android/databinding/ListSectionDateBindingImpl.java
 org/monora/uprotocol/client/android/fragment/content/VideoBrowserViewModel_HiltModules_KeyModule_ProvideFactory.java
  org.monora.uprotocol.client.android.fragment.content.VideoBrowserViewModel_HiltModules_KeyModule_ProvideFactory
  org.monora.uprotocol.client.android.fragment.content.VideoBrowserViewModel_HiltModules_KeyModule_ProvideFactory$InstanceHolder
-org/monora/uprotocol/client/android/fragment/Hilt_FilePickerFragment.java
- org.monora.uprotocol.client.android.fragment.Hilt_FilePickerFragment
-org/monora/uprotocol/client/android/viewmodel/FilesViewModel_HiltModules.java
- org.monora.uprotocol.client.android.viewmodel.FilesViewModel_HiltModules
- org.monora.uprotocol.client.android.viewmodel.FilesViewModel_HiltModules$BindsModule
- org.monora.uprotocol.client.android.viewmodel.FilesViewModel_HiltModules$KeyModule
+org/monora/uprotocol/client/android/di/RoomModule_ProvideSafFolderDaoFactory.java
+ org.monora.uprotocol.client.android.di.RoomModule_ProvideSafFolderDaoFactory
+org/monora/uprotocol/client/android/viewmodel/TransferManagerViewModel_HiltModules_KeyModule_ProvideFactory.java
+ org.monora.uprotocol.client.android.viewmodel.TransferManagerViewModel_HiltModules_KeyModule_ProvideFactory
+ org.monora.uprotocol.client.android.viewmodel.TransferManagerViewModel_HiltModules_KeyModule_ProvideFactory$InstanceHolder
 hilt_aggregated_deps/_org_monora_uprotocol_client_android_viewmodel_UserProfileViewModel_HiltModules_KeyModule.java
  hilt_aggregated_deps._org_monora_uprotocol_client_android_viewmodel_UserProfileViewModel_HiltModules_KeyModule
 hilt_aggregated_deps/_org_monora_uprotocol_client_android_fragment_content_transfer_WebShareViewModel_HiltModules_KeyModule.java
@@ -780,8 +780,8 @@ hilt_aggregated_deps/_org_monora_uprotocol_client_android_fragment_ClientDetails
  hilt_aggregated_deps._org_monora_uprotocol_client_android_fragment_ClientDetailsFragment_GeneratedInjector
 org/monora/uprotocol/client/android/di/RoomModule_ProvideClientAddressDaoFactory.java
  org.monora.uprotocol.client.android.di.RoomModule_ProvideClientAddressDaoFactory
-org/monora/uprotocol/client/android/protocol/MainPersistenceProvider_Factory.java
- org.monora.uprotocol.client.android.protocol.MainPersistenceProvider_Factory
+org/monora/uprotocol/client/android/data/SharedTextRepository_Factory.java
+ org.monora.uprotocol.client.android.data.SharedTextRepository_Factory
 hilt_aggregated_deps/_org_monora_uprotocol_client_android_fragment_ReceiverViewModel_HiltModules_BindsModule.java
  hilt_aggregated_deps._org_monora_uprotocol_client_android_fragment_ReceiverViewModel_HiltModules_BindsModule
 org/monora/uprotocol/client/android/databinding/ListPermissionBindingImpl.java
@@ -793,10 +793,8 @@ org/monora/uprotocol/client/android/BR.java
 org/monora/uprotocol/client/android/fragment/TextEditorViewModel_HiltModules_KeyModule_ProvideFactory.java
  org.monora.uprotocol.client.android.fragment.TextEditorViewModel_HiltModules_KeyModule_ProvideFactory
  org.monora.uprotocol.client.android.fragment.TextEditorViewModel_HiltModules_KeyModule_ProvideFactory$InstanceHolder
-org/monora/uprotocol/client/android/viewmodel/SharingViewModel_HiltModules.java
- org.monora.uprotocol.client.android.viewmodel.SharingViewModel_HiltModules
- org.monora.uprotocol.client.android.viewmodel.SharingViewModel_HiltModules$BindsModule
- org.monora.uprotocol.client.android.viewmodel.SharingViewModel_HiltModules$KeyModule
+hilt_aggregated_deps/_org_monora_uprotocol_client_android_fragment_pickclient_BarcodeScannerViewModel_HiltModules_BindsModule.java
+ hilt_aggregated_deps._org_monora_uprotocol_client_android_fragment_pickclient_BarcodeScannerViewModel_HiltModules_BindsModule
 org/monora/uprotocol/client/android/databinding/ListLibraryLicenseBinding.java
  org.monora.uprotocol.client.android.databinding.ListLibraryLicenseBinding
 org/monora/uprotocol/client/android/databinding/ListAlbumBinding.java
@@ -804,30 +802,6 @@ org/monora/uprotocol/client/android/databinding/ListAlbumBinding.java
 org/monora/uprotocol/client/android/viewmodel/CrashLogViewModel_HiltModules_KeyModule_ProvideFactory.java
  org.monora.uprotocol.client.android.viewmodel.CrashLogViewModel_HiltModules_KeyModule_ProvideFactory
  org.monora.uprotocol.client.android.viewmodel.CrashLogViewModel_HiltModules_KeyModule_ProvideFactory$InstanceHolder
-hilt_aggregated_deps/_org_monora_uprotocol_client_android_viewmodel_ClientConnectionViewModel_HiltModules_KeyModule.java
- hilt_aggregated_deps._org_monora_uprotocol_client_android_viewmodel_ClientConnectionViewModel_HiltModules_KeyModule
-org/monora/uprotocol/client/android/databinding/ListTransferItemBindingImpl.java
- org.monora.uprotocol.client.android.databinding.ListTransferItemBindingImpl
-org/monora/uprotocol/client/android/databinding/ListTransferBindingImpl.java
- org.monora.uprotocol.client.android.databinding.ListTransferBindingImpl
-org/monora/uprotocol/client/android/viewmodel/TransferManagerViewModel_HiltModules_KeyModule_ProvideFactory.java
- org.monora.uprotocol.client.android.viewmodel.TransferManagerViewModel_HiltModules_KeyModule_ProvideFactory
- org.monora.uprotocol.client.android.viewmodel.TransferManagerViewModel_HiltModules_KeyModule_ProvideFactory$InstanceHolder
-org/monora/uprotocol/client/android/databinding/ListPermissionBinding.java
- org.monora.uprotocol.client.android.databinding.ListPermissionBinding
-org/monora/uprotocol/client/android/di/RoomModule_ProvideSafFolderDaoFactory.java
- org.monora.uprotocol.client.android.di.RoomModule_ProvideSafFolderDaoFactory
-org/monora/uprotocol/client/android/fragment/ReceiverViewModel_HiltModules_KeyModule_ProvideFactory.java
- org.monora.uprotocol.client.android.fragment.ReceiverViewModel_HiltModules_KeyModule_ProvideFactory
- org.monora.uprotocol.client.android.fragment.ReceiverViewModel_HiltModules_KeyModule_ProvideFactory$InstanceHolder
-hilt_aggregated_deps/_org_monora_uprotocol_client_android_fragment_content_AppBrowserViewModel_HiltModules_KeyModule.java
- hilt_aggregated_deps._org_monora_uprotocol_client_android_fragment_content_AppBrowserViewModel_HiltModules_KeyModule
-androidx/databinding/library/baseAdapters/BR.java
- androidx.databinding.library.baseAdapters.BR
-org/monora/uprotocol/client/android/data/SharedTextRepository_Factory.java
- org.monora.uprotocol.client.android.data.SharedTextRepository_Factory
-hilt_aggregated_deps/_org_monora_uprotocol_client_android_fragment_pickclient_BarcodeScannerViewModel_HiltModules_BindsModule.java
- hilt_aggregated_deps._org_monora_uprotocol_client_android_fragment_pickclient_BarcodeScannerViewModel_HiltModules_BindsModule
 org/monora/uprotocol/client/android/fragment/TransferHistoryFragment_GeneratedInjector.java
  org.monora.uprotocol.client.android.fragment.TransferHistoryFragment_GeneratedInjector
 org/monora/uprotocol/client/android/service/Hilt_BackgroundService.java
@@ -1026,10 +1000,16 @@ org/monora/uprotocol/client/android/databinding/ListClientGridBinding.java
  org.monora.uprotocol.client.android.databinding.ListClientGridBinding
 org/monora/uprotocol/client/android/fragment/Hilt_ReceiveFragment.java
  org.monora.uprotocol.client.android.fragment.Hilt_ReceiveFragment
+org/monora/uprotocol/client/android/data/TransferRepository_Factory.java
+ org.monora.uprotocol.client.android.data.TransferRepository_Factory
 org/monora/uprotocol/client/android/fragment/Hilt_ManageClientsFragment.java
  org.monora.uprotocol.client.android.fragment.Hilt_ManageClientsFragment
+org/monora/uprotocol/client/android/viewmodel/SharingViewModel_Factory.java
+ org.monora.uprotocol.client.android.viewmodel.SharingViewModel_Factory
 org/monora/uprotocol/client/android/service/web/SharingControllerIndexHandler1.java
  org.monora.uprotocol.client.android.service.web.SharingControllerIndexHandler1
+org/monora/uprotocol/client/android/databinding/ListFilePickerBinding.java
+ org.monora.uprotocol.client.android.databinding.ListFilePickerBinding
 org/monora/uprotocol/client/android/fragment/content/FileBrowserFragment_GeneratedInjector.java
  org.monora.uprotocol.client.android.fragment.content.FileBrowserFragment_GeneratedInjector
 org/monora/uprotocol/client/android/app/FileExplorer_HiltComponents.java
@@ -1056,17 +1036,27 @@ org/monora/uprotocol/client/android/app/FileExplorer_HiltComponents.java
  org.monora.uprotocol.client.android.app.FileExplorer_HiltComponents$ViewWithFragmentC
  org.monora.uprotocol.client.android.app.FileExplorer_HiltComponents$ViewWithFragmentC$Builder
  org.monora.uprotocol.client.android.app.FileExplorer_HiltComponents$ViewWithFragmentCBuilderModule
+org/monora/uprotocol/client/android/fragment/FilePickerFragment_GeneratedInjector.java
+ org.monora.uprotocol.client.android.fragment.FilePickerFragment_GeneratedInjector
 org/monora/uprotocol/client/android/viewmodel/ClientPickerViewModel_HiltModules.java
  org.monora.uprotocol.client.android.viewmodel.ClientPickerViewModel_HiltModules
  org.monora.uprotocol.client.android.viewmodel.ClientPickerViewModel_HiltModules$BindsModule
  org.monora.uprotocol.client.android.viewmodel.ClientPickerViewModel_HiltModules$KeyModule
+org/monora/uprotocol/client/android/data/FileRepository_Factory.java
+ org.monora.uprotocol.client.android.data.FileRepository_Factory
 org/monora/uprotocol/client/android/service/web/SharingControllerDownloadZipHandler.java
  org.monora.uprotocol.client.android.service.web.SharingControllerDownloadZipHandler
 org/monora/uprotocol/client/android/app/Activity_MembersInjector.java
  org.monora.uprotocol.client.android.app.Activity_MembersInjector
+org/monora/uprotocol/client/android/fragment/Hilt_FilePickerFragment.java
+ org.monora.uprotocol.client.android.fragment.Hilt_FilePickerFragment
 org/monora/uprotocol/client/android/databinding/LayoutClientDetailBindingImpl.java
  org.monora.uprotocol.client.android.databinding.LayoutClientDetailBindingImpl
  org.monora.uprotocol.client.android.databinding.LayoutClientDetailBindingImpl$OnClickListenerImpl
+org/monora/uprotocol/client/android/viewmodel/FilesViewModel_HiltModules.java
+ org.monora.uprotocol.client.android.viewmodel.FilesViewModel_HiltModules
+ org.monora.uprotocol.client.android.viewmodel.FilesViewModel_HiltModules$BindsModule
+ org.monora.uprotocol.client.android.viewmodel.FilesViewModel_HiltModules$KeyModule
 org/monora/uprotocol/client/android/fragment/ClientDetailsFragment_GeneratedInjector.java
  org.monora.uprotocol.client.android.fragment.ClientDetailsFragment_GeneratedInjector
 org/monora/uprotocol/client/android/activity/PackageInstallerViewModel_Factory_Impl.java
@@ -1075,6 +1065,8 @@ org/monora/uprotocol/client/android/fragment/ClientDetailsFragment_MembersInject
  org.monora.uprotocol.client.android.fragment.ClientDetailsFragment_MembersInjector
 org/monora/uprotocol/client/android/fragment/TransferItemFragment_MembersInjector.java
  org.monora.uprotocol.client.android.fragment.TransferItemFragment_MembersInjector
+org/monora/uprotocol/client/android/databinding/ListFilePickerBindingImpl.java
+ org.monora.uprotocol.client.android.databinding.ListFilePickerBindingImpl
 org/monora/uprotocol/client/android/fragment/content/Hilt_ImageBrowserFragment.java
  org.monora.uprotocol.client.android.fragment.content.Hilt_ImageBrowserFragment
 org/monora/uprotocol/client/android/viewmodel/TransferManagerViewModel_HiltModules.java
@@ -1089,6 +1081,12 @@ org/monora/uprotocol/client/android/activity/Hilt_SharingActivity.java
  org.monora.uprotocol.client.android.activity.Hilt_SharingActivity$1
 org/monora/uprotocol/client/android/fragment/content/ImageBrowserFragment_GeneratedInjector.java
  org.monora.uprotocol.client.android.fragment.content.ImageBrowserFragment_GeneratedInjector
+org/monora/uprotocol/client/android/viewmodel/SharingViewModel_HiltModules.java
+ org.monora.uprotocol.client.android.viewmodel.SharingViewModel_HiltModules
+ org.monora.uprotocol.client.android.viewmodel.SharingViewModel_HiltModules$BindsModule
+ org.monora.uprotocol.client.android.viewmodel.SharingViewModel_HiltModules$KeyModule
+org/monora/uprotocol/client/android/protocol/MainPersistenceProvider_Factory.java
+ org.monora.uprotocol.client.android.protocol.MainPersistenceProvider_Factory
 org/monora/uprotocol/client/android/fragment/pickclient/AcceptClientFragment_GeneratedInjector.java
  org.monora.uprotocol.client.android.fragment.pickclient.AcceptClientFragment_GeneratedInjector
 org/monora/uprotocol/client/android/viewmodel/ClientsViewModel_HiltModules.java
@@ -1115,8 +1113,8 @@ org/monora/uprotocol/client/android/fragment/SharingFragment_GeneratedInjector.j
  org.monora.uprotocol.client.android.fragment.SharingFragment_GeneratedInjector
 org/monora/uprotocol/client/android/app/Activity_GeneratedInjector.java
  org.monora.uprotocol.client.android.app.Activity_GeneratedInjector
-org/monora/uprotocol/client/android/databinding/LayoutClientDetailPickBindingImpl.java
- org.monora.uprotocol.client.android.databinding.LayoutClientDetailPickBindingImpl
+org/monora/uprotocol/client/android/viewmodel/FilesViewModel_Factory.java
+ org.monora.uprotocol.client.android.viewmodel.FilesViewModel_Factory
 org/monora/uprotocol/client/android/service/BackgroundService_GeneratedInjector.java
  org.monora.uprotocol.client.android.service.BackgroundService_GeneratedInjector
 org/monora/uprotocol/client/android/databinding/ListPickClientBinding.java
@@ -1124,9 +1122,11 @@ org/monora/uprotocol/client/android/databinding/ListPickClientBinding.java
 org/monora/uprotocol/client/android/databinding/LayoutTransferDetailsBindingImpl.java
  org.monora.uprotocol.client.android.databinding.LayoutTransferDetailsBindingImpl
  org.monora.uprotocol.client.android.databinding.LayoutTransferDetailsBindingImpl$OnClickListenerImpl
+org/monora/uprotocol/client/android/databinding/LayoutClientDetailPickBindingImpl.java
+ org.monora.uprotocol.client.android.databinding.LayoutClientDetailPickBindingImpl
 org/monora/uprotocol/client/android/fragment/Hilt_ClientDetailsFragment.java
  org.monora.uprotocol.client.android.fragment.Hilt_ClientDetailsFragment
 org/monora/uprotocol/client/android/fragment/pickclient/ClientConnectionFragment_GeneratedInjector.java
  org.monora.uprotocol.client.android.fragment.pickclient.ClientConnectionFragment_GeneratedInjector
-org/monora/uprotocol/client/android/andserver/plugin/generator/Qilyyxqiuz.java
- org.monora.uprotocol.client.android.andserver.plugin.generator.Qilyyxqiuz
+org/monora/uprotocol/client/android/andserver/plugin/generator/Hbrjhrkviv.java
+ org.monora.uprotocol.client.android.andserver.plugin.generator.Hbrjhrkviv

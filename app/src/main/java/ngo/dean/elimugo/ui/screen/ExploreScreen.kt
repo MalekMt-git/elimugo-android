@@ -70,7 +70,7 @@ fun ExploreScreenContent(navController: NavController, activity: Activity) {
             .padding(top = 120.dp)
     ) {
 
-        fun File.getMimeType(fallback: String = "html/*"): String {
+        fun File.getMimeType(fallback: String = "*/*"): String {
             return MimeTypeMap.getFileExtensionFromUrl(toString())
                 ?.run { MimeTypeMap.getSingleton().getMimeTypeFromExtension(lowercase(Locale.getDefault())) }
                 ?: fallback // You might set it to */*
