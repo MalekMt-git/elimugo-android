@@ -1128,5 +1128,5 @@ org/monora/uprotocol/client/android/fragment/Hilt_ClientDetailsFragment.java
  org.monora.uprotocol.client.android.fragment.Hilt_ClientDetailsFragment
 org/monora/uprotocol/client/android/fragment/pickclient/ClientConnectionFragment_GeneratedInjector.java
  org.monora.uprotocol.client.android.fragment.pickclient.ClientConnectionFragment_GeneratedInjector
-org/monora/uprotocol/client/android/andserver/plugin/generator/Hbrjhrkviv.java
- org.monora.uprotocol.client.android.andserver.plugin.generator.Hbrjhrkviv
+org/monora/uprotocol/client/android/andserver/plugin/generator/Qqpbaiamgt.java
+ org.monora.uprotocol.client.android.andserver.plugin.generator.Qqpbaiamgt

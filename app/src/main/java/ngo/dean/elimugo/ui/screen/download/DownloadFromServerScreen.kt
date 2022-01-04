@@ -32,7 +32,6 @@ fun DownloadFromServerScreenContent(
     navController: NavController, activity: Activity
 ) {
     val mutablePackageList = remember { mutableStateOf(arrayListOf<Package>()) }
-    val choosedPackagesToDownload =  remember { mutableStateOf(ArrayList<Package>()) }
 
     val queryUrlString = "content/package" + "s.xml"
     Box(
@@ -81,29 +80,24 @@ fun DownloadFromServerScreenContent(
                             Spacer(modifier = Modifier.size(20.dp, 20.dp))
                             val checkedState = remember { mutableStateOf(false) }
                             Row {
-                                Checkbox(
-                                    checked = checkedState.value,
-                                    onCheckedChange = {
-                                        checkedState.value = it
-                                        if (checkedState.value){
-                                            choosedPackagesToDownload.value.add(mutablePackageList.value[index])
-                                        } else{
-                                            choosedPackagesToDownload.value.removeAt(index)
+
+                                Button(onClick = {
+                                    Request().download(listOf(mutablePackageList.value[index]), activity)
+
+                                }){
+                                    Icon(
+                                        Icons.Filled.Download,
+                                        contentDescription = stringResource(R.string.content_description),
+                                        modifier = Modifier,
+                                    )
+
+                                    Text(
+                                        with(mutablePackageList.value[index]){
+                                            this.uniqueId + " : " + this.size / 1000 + "KB"
                                         }
-                                        },
-                                )
-                                Spacer(modifier = Modifier.size(10.dp, 0.dp))
-
-                                Text(
-                                    with(mutablePackageList.value[index]){
-                                       this.uniqueId + " : " + this.size / 1000 + "KB"
-                                    }
-                                )
-
+                                    )
+                                }
                             }
-                            Log.i(
-                                "TAAAG", choosedPackagesToDownload.value.toString()
-                            )
                         }
                     }
 
@@ -112,7 +106,7 @@ fun DownloadFromServerScreenContent(
             }
         }
         FloatingActionButton(onClick = {
-                                       Request().download(choosedPackagesToDownload.value, activity)
+                                       Request().download(mutablePackageList.value, activity)
         }, modifier = Modifier.align(Alignment.BottomEnd).padding(20.dp)) {
             Icon(
                 Icons.Filled.Download,
