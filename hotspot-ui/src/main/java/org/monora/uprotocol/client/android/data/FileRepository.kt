@@ -73,15 +73,17 @@ class FileRepository @Inject constructor(
         // TODO : fIX iT
         if (Build.VERSION.SDK_INT >= 30) {
            // return@lazy context.getExternalFilesDir("Transferred (Hidden Folder)")!!
-            return@lazy context.getExternalFilesDir("Elimugo")!!
+          //  return@lazy context.getExternalFilesDir("Elimugo")!!
+             return@lazy File(context.getExternalFilesDir(null), "Elimugo")
         }
 
-        var primaryDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
-        if (!primaryDir.isDirectory && !primaryDir.mkdirs() || !primaryDir.canWrite()) {
-            primaryDir = Environment.getExternalStorageDirectory()
-        }
-
-        File(primaryDir.toString() + File.separator + context.getString(R.string.app_name))
+        File(context.getExternalFilesDir(null), "Elimugo")
+//        var primaryDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
+//        if (!primaryDir.isDirectory && !primaryDir.mkdirs() || !primaryDir.canWrite()) {
+//            primaryDir = Environment.getExternalStorageDirectory()
+//        }
+//
+//        File(primaryDir.toString() + File.separator + context.getString(R.string.app_name))
     }
 
     suspend fun clearStorageList() = safFolderDao.removeAll()
