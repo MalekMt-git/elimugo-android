@@ -34,13 +34,28 @@ android {
         compose = true
     }
 
+    dataBinding {
+        enabled = true
+    }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.1.0-alpha06"
     }
 
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/ASL2.0'
+        exclude("META-INF/*.kotlin_module")
+    }
 }
 
 dependencies {
+    implementation project(':hotspot-ui')
 
     implementation 'androidx.core:core-ktx:1.6.0'
     implementation 'androidx.appcompat:appcompat:1.3.1'
@@ -48,6 +63,8 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
     implementation  "com.android.volley:volley:1.2.1"
     implementation 'com.google.firebase:firebase-crashlytics-buildtools:2.8.0'
+    implementation project(path: ':hotspot-ui')
+    implementation project(path: ':hotspot-ui')
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

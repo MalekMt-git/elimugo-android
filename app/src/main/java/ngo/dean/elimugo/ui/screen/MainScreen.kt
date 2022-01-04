@@ -2,6 +2,7 @@ package ngo.dean.elimugo.ui.screen
 
 import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Button
@@ -28,11 +29,13 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.core.content.ContextCompat.startActivity
 import androidx.navigation.NavController
 import ngo.dean.elimugo.R
 import ngo.dean.elimugo.ui.Toolbar
 import ngo.dean.elimugo.ui.nav.controller.Routes
 import ngo.dean.elimugo.util.ShareAPK
+import org.monora.uprotocol.client.android.activity.HomeActivity
 
 @Composable
 fun MainScreen(navController: NavController, activity: Activity) {
@@ -87,7 +90,9 @@ fun MainScreenContent(
 
                 Button(
                     onClick = {
-                        navController.navigate(Routes.ShareDataScreen.route)
+                        ///navController.navigate(Routes.ShareDataScreen.route)
+                        val intent = Intent(activity, HomeActivity::class.java)
+                        startActivity(activity,intent , null)
                     },
                     Modifier
                         .size(180.dp, 180.dp)

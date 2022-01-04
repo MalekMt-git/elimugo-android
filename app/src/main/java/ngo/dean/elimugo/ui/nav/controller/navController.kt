@@ -21,7 +21,7 @@ fun NavController(activity: Activity) {
 
     AnimatedNavHost(
         navController = navController,
-        startDestination = Routes.MainScreen.route
+        startDestination = Routes.SplashScreen.route
     ) {
         composable(
             Routes.SplashScreen.route,
@@ -44,15 +44,6 @@ fun NavController(activity: Activity) {
         ) {
 
             MainScreen(navController = navController, activity)
-        }
-
-        composable(
-
-            Routes.DownloadScreen.route,
-            enterTransition = { initial, _ -> enterScreenFadeAnimation() },
-        ) {
-
-            DownloadScreen(navController = navController, activity)
         }
         composable(
 
