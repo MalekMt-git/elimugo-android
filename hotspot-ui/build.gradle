@@ -32,27 +32,8 @@ android {
         dataBinding true
     }
 
-    signingConfigs {
-        gbDistribution {
-            // In the root folder of the project, you can find the template properties file
-            // named 'signing.properties.txt'. Rename it to 'signing.properties' to make use of it
-            def signingPropertiesFile = project.rootProject.file('signing.properties')
-
-            if (signingPropertiesFile.exists()) {
-                Properties signingProperties = new Properties()
-                signingProperties.load(signingPropertiesFile.newDataInputStream())
-
-                storeFile file(signingProperties.getProperty('signing.storeFile'))
-                keyAlias signingProperties.getProperty('signing.keyAlias')
-                storePassword signingProperties.getProperty('signing.storePassword')
-                keyPassword signingProperties.getProperty('signing.keyPassword')
-            }
-        }
-    }
-
     compileOptions {
         coreLibraryDesugaringEnabled true
-
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
@@ -75,13 +56,6 @@ android {
     lintOptions {
         checkReleaseBuilds false
         abortOnError false
-    }
-
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
     }
 }
 

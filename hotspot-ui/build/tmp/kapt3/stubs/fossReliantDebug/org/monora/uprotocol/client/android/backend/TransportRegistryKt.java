@@ -1,7 +1,0 @@
-package org.monora.uprotocol.client.android.backend;
-
-import java.lang.System;
-
-@kotlin.Metadata(mv = {1, 5, 1}, k = 2, d1 = {"\u0000*\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002*@\u0010\u0000\"\u001d\u0012\u0013\u0012\u00110\u0002\u00a2\u0006\f\b\u0003\u0012\b\b\u0004\u0012\u0004\b\b(\u0005\u0012\u0004\u0012\u00020\u00060\u00012\u001d\u0012\u0013\u0012\u00110\u0002\u00a2\u0006\f\b\u0003\u0012\b\b\u0004\u0012\u0004\b\b(\u0005\u0012\u0004\u0012\u00020\u00060\u0001*j\u0010\u0007\"2\u0012\u0013\u0012\u00110\t\u00a2\u0006\f\b\u0003\u0012\b\b\u0004\u0012\u0004\b\b(\n\u0012\u0013\u0012\u00110\u000b\u00a2\u0006\f\b\u0003\u0012\b\b\u0004\u0012\u0004\b\b(\f\u0012\u0004\u0012\u00020\u00060\b22\u0012\u0013\u0012\u00110\t\u00a2\u0006\f\b\u0003\u0012\b\b\u0004\u0012\u0004\b\b(\n\u0012\u0013\u0012\u00110\u000b\u00a2\u0006\f\b\u0003\u0012\b\b\u0004\u0012\u0004\b\b(\f\u0012\u0004\u0012\u00020\u00060\b\u00a8\u0006\r"}, d2 = {"AcquaintanceCallback", "Lkotlin/Function1;", "Lorg/monora/uprotocol/core/CommunicationBridge;", "Lkotlin/ParameterName;", "name", "bridge", "", "TransferRequestCallback", "Lkotlin/Function2;", "Lorg/monora/uprotocol/client/android/database/model/Transfer;", "transfer", "", "hasPin", "hotspot-ui_fossReliantDebug"})
-public final class TransportRegistryKt {
-}

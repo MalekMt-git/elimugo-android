@@ -1,2 +1,0 @@
-com/genonbeta/android/framework/BuildConfig.java
- com.genonbeta.android.framework.BuildConfig
