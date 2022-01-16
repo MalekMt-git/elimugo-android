@@ -56,7 +56,13 @@ fun DownloadFromServerScreenContent(
                 modifier = Modifier,
                 Color.Black
             )
-        }
+
+            //Todo @Malek Descriptions instead of UniqueId in DownloadScreen
+            //Todo @Malek A folder for each package
+            //Todo @Malek Add a remove option in Explore Screen
+            //Todo @Malek Change color to be same as UX file
+            //Todo @Malek Change color to be same as UX file
+            //Todo @Malek Add the advanced mode in the drawer/dashboard
     }
     Box(
         Modifier
@@ -105,17 +111,17 @@ fun DownloadFromServerScreenContent(
                 }
             }
         }
-        FloatingActionButton(onClick = {
-                                       Request().download(mutablePackageList.value, activity)
-        }, modifier = Modifier.align(Alignment.BottomEnd).padding(20.dp)) {
-            Icon(
-                Icons.Filled.Download,
-                contentDescription = stringResource(R.string.content_description),
-                modifier = Modifier,
-                Color.White
-            )
-
-        }
+//        FloatingActionButton(onClick = {
+//                                       Request().download(mutablePackageList.value, activity)
+//        }, modifier = Modifier.align(Alignment.BottomEnd).padding(20.dp)) {
+//            Icon(
+//                Icons.Filled.Download,
+//                contentDescription = stringResource(R.string.content_description),
+//                modifier = Modifier,
+//                Color.White
+//            )
+//
+//        }
     }
 
-}
+}}

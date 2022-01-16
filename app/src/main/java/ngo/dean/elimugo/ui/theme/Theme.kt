@@ -10,32 +10,25 @@ import androidx.compose.ui.graphics.Color
 import ngo.dean.elimugo.ui.nav.controller.Routes
 
 private val LightThemeColors = lightColors(
-    primary = Red700,
-    primaryVariant = Red900,
-    onPrimary = Color.White,
-    secondary = Red700,
-    secondaryVariant = Red900,
-    onSecondary = Color.White,
-    error = Red800
+    primary = Red,
+    primaryVariant = Red,
+    secondary = Red,
+    secondaryVariant = Red,
+    error = Red
 )
 
-@SuppressLint("ConflictingOnColor")
 private val DarkThemeColors = darkColors(
-    primary = Red300,
-    primaryVariant = Red700,
-    onPrimary = Color.Black,
-    secondary = Red300,
-    onSecondary = Color.White,
-    error = Red200
+    primary = Red,
+    primaryVariant = Red,
+    secondary = Red,
+    error = Red
 )
 
 private val DownloadScreenThemeColors = lightColors(
-    primary = Blue900,
-    primaryVariant = Blue900,
-    onPrimary = Color.White,
-    secondary = Blue900,
-    onSecondary = Color.White,
-    error = Blue900,
+    primary = Red,
+    primaryVariant = Red,
+    secondary = Red,
+    error = Red,
 )
 
 @Composable
