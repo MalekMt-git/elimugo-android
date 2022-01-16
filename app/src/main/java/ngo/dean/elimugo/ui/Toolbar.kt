@@ -26,9 +26,10 @@ fun Toolbar() {
                 Icon(
                     painter = painterResource(id = R.drawable.toolbar_logo),
                     contentDescription = "",
-                    Modifier
+                    modifier = Modifier
                         .fillMaxWidth()
-                        .fillMaxSize(0.5f),
+                        .fillMaxSize(0.6f)
+                        .padding(end = 20.dp),
                     Color.White
                 )
 
@@ -62,7 +63,7 @@ fun Toolbar() {
                 }
             },
 
-            backgroundColor = Color.Red
+            backgroundColor = ngo.dean.elimugo.ui.theme.Red
 
         )
     }, content = {
