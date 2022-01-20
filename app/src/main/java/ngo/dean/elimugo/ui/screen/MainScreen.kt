@@ -3,24 +3,16 @@ package ngo.dean.elimugo.ui.screen
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
-import android.graphics.Paint
+import android.graphics.drawable.Drawable
+import android.view.WindowManager
 import android.widget.Toast
 import androidx.compose.foundation.ExperimentalFoundationApi
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.GridCells
 import androidx.compose.foundation.lazy.LazyVerticalGrid
-import androidx.compose.material.ButtonDefaults.ContentPadding
-import androidx.compose.material.Text
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.CloudDownload
-import androidx.compose.material.icons.filled.MobileScreenShare
-import androidx.compose.material.icons.filled.TravelExplore
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment.Companion.BottomCenter
 import androidx.compose.ui.Alignment.Companion.Center
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
@@ -33,6 +25,7 @@ import ngo.dean.elimugo.ui.component.Toolbar
 import ngo.dean.elimugo.ui.nav.controller.Routes
 import ngo.dean.elimugo.util.ShareAPK
 import org.monora.uprotocol.client.android.activity.HomeActivity
+
 
 @Composable
 fun MainScreen(navController: NavController, activity: Activity) {
@@ -57,7 +50,10 @@ fun MainScreenContent(
 
         LazyVerticalGrid(
             cells = GridCells.Fixed(2),
-            modifier = Modifier.align(Center).padding(horizontal = 10.dp).padding(top = 40.dp)
+            modifier = Modifier
+                .align(Center)
+                .padding(horizontal = 10.dp)
+                .padding(top = 40.dp)
         ) {
             item {
                 ElimuGoButton(title = stringResource(R.string.share_btn_title)

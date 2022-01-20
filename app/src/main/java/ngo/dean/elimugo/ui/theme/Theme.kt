@@ -1,13 +1,10 @@
 package ngo.dean.elimugo.ui.theme
 
-import android.annotation.SuppressLint
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.graphics.Color
-import ngo.dean.elimugo.ui.nav.controller.Routes
 
 private val LightThemeColors = lightColors(
     primary = Red,
