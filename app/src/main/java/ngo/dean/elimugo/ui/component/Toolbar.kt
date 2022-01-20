@@ -1,4 +1,4 @@
-package ngo.dean.elimugo.ui
+package ngo.dean.elimugo.ui.component
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*

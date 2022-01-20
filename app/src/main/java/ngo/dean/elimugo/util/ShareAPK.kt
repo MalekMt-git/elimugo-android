@@ -1,6 +1,7 @@
 package ngo.dean.elimugo.util
 
 import android.app.Activity
+import android.content.Context
 import android.widget.Toast
 
 import androidx.core.content.ContentProviderCompat.requireContext
@@ -19,7 +20,7 @@ import ngo.dean.elimugo.BuildConfig
 import java.io.*
 
 class ShareAPK {
-    fun share(context: Activity) {
+    fun share(context: Context) {
         val app: ApplicationInfo = context.applicationInfo
         val originalApk = app.publicSourceDir
         try {
