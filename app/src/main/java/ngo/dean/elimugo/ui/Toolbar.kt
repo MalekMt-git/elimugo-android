@@ -20,9 +20,7 @@ import ngo.dean.elimugo.R
 fun Toolbar() {
     Scaffold(topBar = {
         TopAppBar(
-
             title = {
-
                 Icon(
                     painter = painterResource(id = R.drawable.toolbar_logo),
                     contentDescription = "",
@@ -32,25 +30,17 @@ fun Toolbar() {
                         .padding(end = 20.dp),
                     Color.White
                 )
-
             },
-
             navigationIcon = {
                 IconButton(onClick = { }) {
                     Icon(Icons.Filled.Menu, "", modifier = Modifier, Color.White)
-                }
-
-            },
-
+                } },
             actions = {
-
                 Box(
                     Modifier
                         .wrapContentSize(Alignment.TopEnd)
-
                 ) {
                     IconButton(onClick = {
-
                     }) {
                         Icon(
                             Icons.Filled.Search,
@@ -59,16 +49,11 @@ fun Toolbar() {
                             Color.White
                         )
                     }
-
                 }
             },
-
             backgroundColor = ngo.dean.elimugo.ui.theme.Red
-
         )
     }, content = {
-
-
 
     })
 }
