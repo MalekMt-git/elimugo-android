@@ -29,18 +29,15 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
-
     buildFeatures {
         compose = true
     }
-
     dataBinding {
         enabled = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.1.0-alpha06"
     }
-
     packagingOptions {
         exclude 'META-INF/DEPENDENCIES'
         exclude 'META-INF/LICENSE'
