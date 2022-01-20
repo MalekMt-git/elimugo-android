@@ -1,5 +1,6 @@
 package ngo.dean.elimugo.ui.component
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
@@ -10,11 +11,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.AbsoluteAlignment
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import ngo.dean.elimugo.R
+import ngo.dean.elimugo.ui.theme.gradient
 
 @Composable
 fun Toolbar() {
@@ -51,7 +54,9 @@ fun Toolbar() {
                     }
                 }
             },
-            backgroundColor = ngo.dean.elimugo.ui.theme.Red
+            backgroundColor = Color.Transparent,
+            modifier = Modifier.background(gradient).padding(top=25.dp),
+            elevation = 0.dp
         )
     }, content = {
 

@@ -22,7 +22,7 @@ fun GuideLine(text: String, onClick: () -> Unit){
     Box(
         Modifier
             .fillMaxSize()
-            .padding(top = 70.dp)
+            .padding(top = 90.dp)
     ) {
         Text(
             text = text,

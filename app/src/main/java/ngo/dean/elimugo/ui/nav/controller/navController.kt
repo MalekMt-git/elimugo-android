@@ -26,12 +26,12 @@ fun NavController(activity: Activity) {
         composable(
             Routes.SplashScreen.route,
         ) {
-            SplashScreen(navController = navController, activity)
+            SplashScreen(navController = navController)
         }
         composable(
 
             Routes.LanguageScreen.route,
-            enterTransition = { initial, _ -> enterScreenFadeAnimation() },
+            enterTransition = { _, _ -> enterScreenFadeAnimation() },
         ) {
 
             LanguageScreen(navController = navController, activity)
@@ -40,7 +40,7 @@ fun NavController(activity: Activity) {
         composable(
 
             Routes.MainScreen.route,
-            enterTransition = { initial, _ -> enterScreenFadeAnimation() },
+            enterTransition = { _, _ -> enterScreenFadeAnimation() },
         ) {
 
             MainScreen(navController = navController, activity)
@@ -48,7 +48,7 @@ fun NavController(activity: Activity) {
         composable(
 
             Routes.DownloadFromServerScreen.route,
-            enterTransition = { initial, _ -> enterScreenFadeAnimation() },
+            enterTransition = { _, _ -> enterScreenFadeAnimation() },
         ) {
 
             DownloadFromServerScreen(navController = navController, activity)
@@ -56,7 +56,7 @@ fun NavController(activity: Activity) {
         composable(
 
             Routes.ExploreScreen.route,
-            enterTransition = { initial, _ -> enterScreenFadeAnimation() },
+            enterTransition = { _, _ -> enterScreenFadeAnimation() },
         ) {
 
             ExploreScreen(navController = navController, activity)
@@ -64,7 +64,7 @@ fun NavController(activity: Activity) {
         composable(
 
             Routes.ShareDataScreen.route,
-            enterTransition = { initial, _ -> enterScreenFadeAnimation() },
+            enterTransition = { _, _ -> enterScreenFadeAnimation() },
         ) {
 
             ShareDataScreen(navController = navController, activity)
