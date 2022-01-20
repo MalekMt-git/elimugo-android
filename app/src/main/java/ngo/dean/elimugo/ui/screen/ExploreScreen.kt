@@ -3,7 +3,6 @@ package ngo.dean.elimugo.ui.screen
 import android.app.Activity
 import android.content.ActivityNotFoundException
 import android.content.Intent
-import android.net.Uri
 import android.webkit.MimeTypeMap
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -24,7 +23,7 @@ import androidx.core.content.ContextCompat.startActivity
 import androidx.core.content.FileProvider
 import androidx.navigation.NavController
 import ngo.dean.elimugo.R
-import ngo.dean.elimugo.ui.Toolbar
+import ngo.dean.elimugo.ui.component.Toolbar
 import java.io.File
 import java.util.*
 

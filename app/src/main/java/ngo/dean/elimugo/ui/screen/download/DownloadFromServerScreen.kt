@@ -1,7 +1,6 @@
 package ngo.dean.elimugo.ui.screen.download
 
 import android.app.Activity
-import android.util.Log
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.*
@@ -19,7 +18,7 @@ import androidx.navigation.NavController
 import ngo.dean.elimugo.R
 import ngo.dean.elimugo.data.server.Package
 import ngo.dean.elimugo.data.server.Request
-import ngo.dean.elimugo.ui.Toolbar
+import ngo.dean.elimugo.ui.component.Toolbar
 
 @Composable
 fun DownloadFromServerScreen(navController: NavController, activity: Activity) {

@@ -3,36 +3,33 @@ package ngo.dean.elimugo.ui.screen
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.graphics.Paint
+import android.widget.Toast
+import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Button
-import androidx.compose.material.Icon
-import androidx.compose.material.IconButton
+import androidx.compose.foundation.lazy.GridCells
+import androidx.compose.foundation.lazy.LazyVerticalGrid
+import androidx.compose.material.ButtonDefaults.ContentPadding
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.CloudDownload
-import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.MobileScreenShare
 import androidx.compose.material.icons.filled.TravelExplore
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.AbsoluteAlignment
 import androidx.compose.ui.Alignment.Companion.BottomCenter
 import androidx.compose.ui.Alignment.Companion.Center
-import androidx.compose.ui.Alignment.Companion.TopCenter
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.font.FontStyle
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.core.content.ContextCompat.startActivity
 import androidx.navigation.NavController
 import ngo.dean.elimugo.R
-import ngo.dean.elimugo.ui.Toolbar
+import ngo.dean.elimugo.ui.component.ElimuGoButton
+import ngo.dean.elimugo.ui.component.GuideLine
+import ngo.dean.elimugo.ui.component.Toolbar
 import ngo.dean.elimugo.ui.nav.controller.Routes
 import ngo.dean.elimugo.util.ShareAPK
 import org.monora.uprotocol.client.android.activity.HomeActivity
@@ -43,43 +40,56 @@ fun MainScreen(navController: NavController, activity: Activity) {
     MainScreenContent(navController = navController , activity)
 }
 
+@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun MainScreenContent(
-    navController: NavController , activity: Activity
+    navController: NavController , context: Context
 ) {
-    Box(
-        Modifier
-            .fillMaxSize()
-            .padding(top = 70.dp)
-    ) {
-        Text(
-            text = stringResource(R.string.main_screen_toolbar_title),
-            Modifier
-                .align(TopCenter)
-                .padding(top = 13.dp)
-        )
-        IconButton(
-            onClick = {
-            },
-            Modifier.align(AbsoluteAlignment.TopRight),
-        ) {
-            Icon(
-                Icons.Filled.Info,
-                contentDescription = stringResource(R.string.content_description),
-                modifier = Modifier,
-                Color.Black
-            )
-        }
+    GuideLine(text = stringResource(R.string.main_screen_toolbar_title)) {
+        //TODO @Malek
+        Toast.makeText(context , R.string.will_be_soon , Toast.LENGTH_LONG).show()
     }
 
+
     Box(
-        Modifier
-            .fillMaxSize()
-            .wrapContentSize(Center)
-            .padding(top = 120.dp)
+        modifier=Modifier.fillMaxSize()
     ) {
 
-        Column(
+        LazyVerticalGrid(
+            cells = GridCells.Fixed(2),
+            modifier = Modifier.align(Center).padding(horizontal = 10.dp).padding(top = 40.dp)
+        ) {
+            item {
+                ElimuGoButton(title = stringResource(R.string.share_btn_title)
+                    , icon = painterResource(id = R.drawable.share_logo),
+                    description = stringResource(R.string.share_btn_content)){
+                    startActivity(context,Intent(context, HomeActivity::class.java) ,null)
+                }
+            }
+            item {
+                ElimuGoButton(title = stringResource(R.string.download_btn_title)
+                    , icon = painterResource(id = R.drawable.download_logo),
+                    description = stringResource(R.string.download_btn_content)){
+                    navController.navigate(Routes.DownloadFromServerScreen.route)
+                }
+            }
+            item {
+                ElimuGoButton(title = stringResource(R.string.explore)
+                    , icon = painterResource(id = R.drawable.explore_logo),
+                    description = stringResource(R.string.explore_content)){
+                    navController.navigate(Routes.ExploreScreen.route)
+                }
+            }
+            item {
+                ElimuGoButton(title = stringResource(R.string.elimugo)
+                    , icon = painterResource(id = R.drawable.elimugo_mainscreen_logo),
+                    description = stringResource(R.string.elimugo_btn_content)){
+                    ShareAPK().share(context)
+                }
+            }
+        }
+        
+/*        Column(
             Modifier
                 .fillMaxSize()
                 .wrapContentSize(Center)
@@ -91,8 +101,8 @@ fun MainScreenContent(
                 Button(
                     onClick = {
                         ///navController.navigate(Routes.ShareDataScreen.route)
-                        val intent = Intent(activity, HomeActivity::class.java)
-                        startActivity(activity,intent , null)
+                        val intent = Intent(context, HomeActivity::class.java)
+                        startActivity(context,intent , null)
                     },
                     Modifier
                         .size(180.dp, 180.dp)
@@ -222,8 +232,7 @@ fun MainScreenContent(
 
                 Button(
                     onClick = {
-
-                        ShareAPK().share(activity)
+                        ShareAPK().share(context)
                     },
                     Modifier
                         .size(180.dp, 180.dp)
@@ -260,6 +269,6 @@ fun MainScreenContent(
                     }
                 }
             }
-        }
+        }*/
     }
 }

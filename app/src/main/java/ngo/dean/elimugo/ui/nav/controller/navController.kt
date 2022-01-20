@@ -21,7 +21,7 @@ fun NavController(activity: Activity) {
 
     AnimatedNavHost(
         navController = navController,
-        startDestination = Routes.LanguageScreen.route
+        startDestination = Routes.SplashScreen.route
     ) {
         composable(
             Routes.SplashScreen.route,
@@ -75,7 +75,7 @@ fun NavController(activity: Activity) {
 @OptIn(ExperimentalAnimationApi::class)
 fun enterScreenFadeAnimation(): EnterTransition {
     return fadeIn(
-        initialAlpha = 0.3f,
+        initialAlpha = 0.0f,
         animationSpec = tween(
             1000,
             500,
