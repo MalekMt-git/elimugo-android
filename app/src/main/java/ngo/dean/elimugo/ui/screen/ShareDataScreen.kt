@@ -1,6 +1,7 @@
 package ngo.dean.elimugo.ui.screen
 
 import android.app.Activity
+import android.content.Context
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
@@ -20,14 +21,14 @@ import ngo.dean.elimugo.ui.component.Toolbar
 
 
 @Composable
-fun ShareDataScreen(navController: NavController, activity: Activity) {
+fun ShareDataScreen(navController: NavController, context: Context) {
     Toolbar()
-    ShareDataScreenContent(navController, activity)
+    ShareDataScreenContent(navController, context)
 }
 
 
 @Composable
-fun ShareDataScreenContent(navController: NavController, activity: Activity) {
+fun ShareDataScreenContent(navController: NavController, context: Context) {
 
     Box(
         Modifier

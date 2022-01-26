@@ -1,6 +1,7 @@
 package ngo.dean.elimugo.ui.nav.controller
 
 import android.app.Activity
+import android.content.Context
 import androidx.compose.animation.EnterTransition
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.animation.core.CubicBezierEasing
@@ -15,7 +16,7 @@ import ngo.dean.elimugo.ui.screen.download.DownloadFromServerScreen
 
 @OptIn(ExperimentalAnimationApi::class)
 @Composable
-fun NavController(activity: Activity) {
+fun NavController(context: Context) {
 
     val navController = rememberAnimatedNavController()
 
@@ -34,7 +35,7 @@ fun NavController(activity: Activity) {
             enterTransition = { _, _ -> enterScreenFadeAnimation() },
         ) {
 
-            LanguageScreen(navController = navController, activity)
+            LanguageScreen(navController = navController, context)
         }
 
         composable(
@@ -43,7 +44,7 @@ fun NavController(activity: Activity) {
             enterTransition = { _, _ -> enterScreenFadeAnimation() },
         ) {
 
-            MainScreen(navController = navController, activity)
+            MainScreen(navController = navController, context)
         }
         composable(
 
@@ -51,7 +52,7 @@ fun NavController(activity: Activity) {
             enterTransition = { _, _ -> enterScreenFadeAnimation() },
         ) {
 
-            DownloadFromServerScreen(navController = navController, activity)
+            DownloadFromServerScreen(context)
         }
         composable(
 
@@ -59,7 +60,7 @@ fun NavController(activity: Activity) {
             enterTransition = { _, _ -> enterScreenFadeAnimation() },
         ) {
 
-            ExploreScreen(navController = navController, activity)
+            ExploreScreen(context)
         }
         composable(
 
@@ -67,7 +68,7 @@ fun NavController(activity: Activity) {
             enterTransition = { _, _ -> enterScreenFadeAnimation() },
         ) {
 
-            ShareDataScreen(navController = navController, activity)
+            ShareDataScreen(navController = navController, context)
         }
     }
 }

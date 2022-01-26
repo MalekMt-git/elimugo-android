@@ -13,7 +13,7 @@ class BaseActivity : AppCompatActivity() {
         WindowCompat.setDecorFitsSystemWindows(window, false)
         setContent {
             ElimugoTheme {
-                NavController(activity = this)
+                NavController(context = this)
             }
         }
     }

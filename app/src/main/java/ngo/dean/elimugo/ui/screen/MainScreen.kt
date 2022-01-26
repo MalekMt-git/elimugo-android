@@ -26,9 +26,9 @@ import org.monora.uprotocol.client.android.activity.HomeActivity
 
 
 @Composable
-fun MainScreen(navController: NavController, activity: Activity) {
+fun MainScreen(navController: NavController, context: Context) {
     Toolbar()
-    MainScreenContent(navController = navController , activity)
+    MainScreenContent(navController = navController , context)
 }
 
 @OptIn(ExperimentalFoundationApi::class)
