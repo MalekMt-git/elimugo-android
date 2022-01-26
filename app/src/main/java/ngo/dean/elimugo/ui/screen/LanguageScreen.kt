@@ -20,6 +20,7 @@ import ngo.dean.elimugo.R
 import ngo.dean.elimugo.ui.component.GuideLine
 import ngo.dean.elimugo.ui.component.Toolbar
 import ngo.dean.elimugo.ui.nav.controller.Routes
+import java.util.*
 
 @Composable
 fun LanguageScreen(
@@ -28,7 +29,11 @@ fun LanguageScreen(
     val sharedPref = context.getSharedPreferences(getString(context.contentResolver
         ,context.resources.getString(R.string.app_name)), Context.MODE_PRIVATE)
 
+    val config = context.resources.configuration
+
     if (sharedPref.contains("app_language")) {
+        config.locale = Locale(sharedPref.getString("app_language", "en"))
+        context.resources.updateConfiguration(config, context.resources.displayMetrics)
         navController.navigate(Routes.MainScreen.route)
     }else{
         Toolbar()
@@ -49,11 +54,9 @@ fun Content(
     }
 
     Box(
-
         Modifier
             .fillMaxSize()
             .wrapContentSize(Alignment.Center)
-
     ) {
 
         Column(
@@ -65,7 +68,7 @@ fun Content(
             Button(
                 onClick = {
                     with (sharedPref.edit()) {
-                        putString("app_language", "en")
+                        putString("app_language", "sw")
                         apply()
                     }
                     navController.navigate(Routes.MainScreen.route)
@@ -118,9 +121,7 @@ fun Content(
                         fontWeight = FontWeight.Light,
                     )
                 }
-
             }
         }
     }
-
 }
