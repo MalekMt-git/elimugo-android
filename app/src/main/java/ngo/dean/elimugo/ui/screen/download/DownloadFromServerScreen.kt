@@ -1,6 +1,6 @@
 package ngo.dean.elimugo.ui.screen.download
 
-import android.app.Activity
+import android.content.Context
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.*
@@ -14,22 +14,19 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavController
 import ngo.dean.elimugo.R
 import ngo.dean.elimugo.data.server.Package
 import ngo.dean.elimugo.data.server.Request
 import ngo.dean.elimugo.ui.component.Toolbar
 
 @Composable
-fun DownloadFromServerScreen(navController: NavController, activity: Activity) {
+fun DownloadFromServerScreen(context: Context) {
     Toolbar()
-    DownloadFromServerScreenContent(navController = navController, activity)
+    DownloadFromServerScreenContent(context)
 }
 
 @Composable
-fun DownloadFromServerScreenContent(
-    navController: NavController, activity: Activity
-) {
+fun DownloadFromServerScreenContent(context: Context) {
     val mutablePackageList = remember { mutableStateOf(arrayListOf<Package>()) }
 
     val queryUrlString = "content/package" + "s.xml"
@@ -77,17 +74,16 @@ fun DownloadFromServerScreenContent(
             Row(Modifier.padding(10.dp)) {
                 Column() {
 
-                    Request().query(activity, queryUrlString) {listOfPackages ->
+                    Request().query(context, queryUrlString) {listOfPackages ->
                             mutablePackageList.value = listOfPackages
                     }
                     LazyColumn {
                         items(mutablePackageList.value.size) { index ->
                             Spacer(modifier = Modifier.size(20.dp, 20.dp))
-                            val checkedState = remember { mutableStateOf(false) }
                             Row {
 
                                 Button(onClick = {
-                                    Request().download(listOf(mutablePackageList.value[index]), activity)
+                                    Request().download(listOf(mutablePackageList.value[index]), context)
 
                                 }){
                                     Icon(
@@ -98,29 +94,20 @@ fun DownloadFromServerScreenContent(
 
                                     Text(
                                         with(mutablePackageList.value[index]){
-                                            this.uniqueId + " : " + this.size / 1000 + "KB"
+                                           when (context.resources.configuration.locale.language){
+                                               "en" ->  this.descriptions.en + " : " + this.size / 1000 + "KB"
+                                               "sw" ->  this.descriptions.sw + " : " + this.size / 1000 + "KB"
+                                               else -> this.descriptions.en + " : " + this.size / 1000 + "KB"
+                                           }
                                         }
                                     )
                                 }
                             }
                         }
                     }
-
-
                 }
             }
         }
-//        FloatingActionButton(onClick = {
-//                                       Request().download(mutablePackageList.value, activity)
-//        }, modifier = Modifier.align(Alignment.BottomEnd).padding(20.dp)) {
-//            Icon(
-//                Icons.Filled.Download,
-//                contentDescription = stringResource(R.string.content_description),
-//                modifier = Modifier,
-//                Color.White
-//            )
-//
-//        }
     }
 
 }}

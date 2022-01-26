@@ -1,12 +1,9 @@
 package ngo.dean.elimugo.ui.base
 
-import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.WindowManager
 import androidx.activity.compose.setContent
 import androidx.core.view.WindowCompat
-import ngo.dean.elimugo.R
 import ngo.dean.elimugo.ui.nav.controller.NavController
 import ngo.dean.elimugo.ui.theme.ElimugoTheme
 

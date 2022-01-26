@@ -1,5 +1,6 @@
 package ngo.dean.elimugo.ui.component
 
+import android.widget.Toast
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
@@ -14,6 +15,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import ngo.dean.elimugo.R
+import ngo.dean.elimugo.ui.base.BaseActivity
 import ngo.dean.elimugo.ui.theme.gradient
 
 @Composable
@@ -32,7 +34,8 @@ fun Toolbar() {
                 )
             },
             navigationIcon = {
-                IconButton(onClick = { }) {
+                IconButton(onClick = {
+                }) {
                     Icon(Icons.Filled.Menu, "", modifier = Modifier, Color.White)
                 } },
             actions = {
