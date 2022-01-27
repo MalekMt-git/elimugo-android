@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">ElimuGo</string>
     <string name="share_btn_content">Share ElimuGo Content to Another Device</string>
-    <string name="share_btn_title">Share or Get</string>
+    <string name="share_btn_title">Share</string>
     <string name="main_screen_toolbar_title">Select a ElimuGo functionality</string>
     <string name="download_btn_title">Download</string>
     <string name="content_description">Localized description</string>
@@ -16,4 +16,6 @@
     <string name="mega_byte">MB</string>
     <string name="shared_pref_app_language">app_language</string>
     <string name="nothing_downloaded">Nothing is downloaded</string>
+    <string name="select_a_language">Select a Language</string>
+    <string name="will_be_soon">This feature coming soon</string>
 </resources>

@@ -2,30 +2,25 @@ package ngo.dean.elimugo.ui.screen
 
 import android.content.Context
 import android.provider.Settings.Global.getString
-import android.util.Log
+import android.widget.Toast
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Button
-import androidx.compose.material.Icon
-import androidx.compose.material.IconButton
 import androidx.compose.material.Text
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Info
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.AbsoluteAlignment
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import ngo.dean.elimugo.R
-import ngo.dean.elimugo.ui.Toolbar
+import ngo.dean.elimugo.ui.component.GuideLine
+import ngo.dean.elimugo.ui.component.Toolbar
 import ngo.dean.elimugo.ui.nav.controller.Routes
+import java.util.*
 
 @Composable
 fun LanguageScreen(
@@ -34,7 +29,11 @@ fun LanguageScreen(
     val sharedPref = context.getSharedPreferences(getString(context.contentResolver
         ,context.resources.getString(R.string.app_name)), Context.MODE_PRIVATE)
 
+    val config = context.resources.configuration
+
     if (sharedPref.contains("app_language")) {
+        config.locale = Locale(sharedPref.getString("app_language", "en"))
+        context.resources.updateConfiguration(config, context.resources.displayMetrics)
         navController.navigate(Routes.MainScreen.route)
     }else{
         Toolbar()
@@ -49,41 +48,15 @@ fun Content(
     val sharedPref = context.getSharedPreferences(getString(context.contentResolver
         ,context.resources.getString(R.string.app_name)), Context.MODE_PRIVATE)
 
-    Box(
-        Modifier
-            .fillMaxSize()
-            .padding(top = 70.dp)
-    ) {
-
-        Text(
-            text = "Select a Language",
-            Modifier
-                .align(Alignment.TopCenter)
-                .padding(top = 13.dp)
-
-        )
-
-        IconButton(
-            onClick = {
-
-            },
-            Modifier.align(AbsoluteAlignment.TopRight),
-        ) {
-            Icon(
-                Icons.Filled.Info,
-                contentDescription = stringResource(R.string.content_description),
-                modifier = Modifier,
-                Color.Black
-            )
-        }
+    GuideLine(text = stringResource(R.string.main_screen_toolbar_title)) {
+        //TODO @Malek
+        Toast.makeText(context , R.string.will_be_soon , Toast.LENGTH_LONG).show()
     }
 
     Box(
-
         Modifier
             .fillMaxSize()
             .wrapContentSize(Alignment.Center)
-
     ) {
 
         Column(
@@ -94,30 +67,33 @@ fun Content(
         ) {
             Button(
                 onClick = {
-
                     with (sharedPref.edit()) {
-                        putString("app_language", "en")
+                        putString("app_language", "sw")
                         apply()
                     }
-
                     navController.navigate(Routes.MainScreen.route)
-
                 },
                 Modifier
-                    .size(230.dp, 140.dp)
-                    .shadow(19.dp, shape = RoundedCornerShape(4))
+                    .size(260.dp, 110.dp)
+                    .shadow(15.dp, shape = RoundedCornerShape(13))
             ) {
-
-                Text(
-                    text = "KISWAHLI",
-                    fontSize = 25.sp,
-                    fontWeight = FontWeight.ExtraBold,
-                    fontStyle = FontStyle.Normal
-                )
+                Column(modifier = Modifier.fillMaxWidth(),
+                    horizontalAlignment  =  Alignment.Start){
+                    Text(
+                        text = "KISWAHLI",
+                        fontSize = 25.sp,
+                        fontWeight = FontWeight.ExtraBold,
+                        modifier = Modifier.padding(start = 5.dp , bottom = 15.dp)
+                    )
+                    Text(
+                        text = "Endelea kwa kiswahili",
+                        fontSize = 15.sp,
+                        fontWeight = FontWeight.Light,
+                    )
+                }
             }
 
             Spacer(modifier = Modifier.size(40.dp))
-
 
             Button(
                 onClick = {
@@ -126,21 +102,26 @@ fun Content(
                         apply()
                     }
                     navController.navigate(Routes.MainScreen.route)
-
                 },
                 Modifier
-                    .size(230.dp, 140.dp)
-                    .shadow(19.dp, shape = RoundedCornerShape(4))
+                    .size(260.dp, 110.dp)
+                    .shadow(15.dp, shape = RoundedCornerShape(13))
             ) {
-                Text(
-                    text = "ENGLISH",
-                    fontSize = 25.sp,
-                    fontWeight = FontWeight.ExtraBold,
-                    fontStyle = FontStyle.Normal
-                )
-
+                Column(modifier = Modifier.fillMaxWidth(),
+                    horizontalAlignment  =  Alignment.Start){
+                    Text(
+                        text = "ENGLISH",
+                        fontSize = 25.sp,
+                        fontWeight = FontWeight.ExtraBold,
+                        modifier = Modifier.padding(start = 5.dp , bottom = 15.dp)
+                    )
+                    Text(
+                        text = "Proceed in English",
+                        fontSize = 15.sp,
+                        fontWeight = FontWeight.Light,
+                    )
+                }
             }
         }
     }
-
 }

@@ -1,9 +1,8 @@
 package ngo.dean.elimugo.ui.screen
 
-import android.app.Activity
 import android.content.ActivityNotFoundException
+import android.content.Context
 import android.content.Intent
-import android.net.Uri
 import android.webkit.MimeTypeMap
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -22,22 +21,20 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat.startActivity
 import androidx.core.content.FileProvider
-import androidx.navigation.NavController
 import ngo.dean.elimugo.R
-import ngo.dean.elimugo.ui.Toolbar
+import ngo.dean.elimugo.ui.component.Toolbar
 import java.io.File
 import java.util.*
 
 
 @Composable
-fun ExploreScreen(navController: NavController, activity: Activity) {
+fun ExploreScreen(context: Context) {
     Toolbar()
-    ExploreScreenContent(navController, activity)
+    ExploreScreenContent(context)
 }
 
-
 @Composable
-fun ExploreScreenContent(navController: NavController, activity: Activity) {
+fun ExploreScreenContent(context: Context) {
     Box(
         Modifier
             .fillMaxSize()
@@ -77,7 +74,7 @@ fun ExploreScreenContent(navController: NavController, activity: Activity) {
         }
 
         LazyColumn {
-            val directory = File(activity.getExternalFilesDir(null), "Elimugo")
+            val directory = File(context.getExternalFilesDir(null), "Elimugo")
             if (directory.listFiles() != null) {
 
                 val files: Array<File> = directory.listFiles()
@@ -91,8 +88,8 @@ fun ExploreScreenContent(navController: NavController, activity: Activity) {
                             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK;
                             intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
                             //   intent.setDataAndType(Uri.fromFile(files[index]), files[index].getMimeType() )
-                            intent.setDataAndType(FileProvider.getUriForFile(activity ,activity.applicationContext.packageName + ".provider" , files[index]), files[index].getMimeType() )
-                            startActivity( activity, intent , null)
+                            intent.setDataAndType(FileProvider.getUriForFile(context ,context.applicationContext.packageName + ".provider" , files[index]), files[index].getMimeType() )
+                            startActivity( context, intent , null)
                         } catch (e: ActivityNotFoundException) {
                             // no Activity to handle this kind of files
                         }
@@ -117,6 +114,4 @@ fun ExploreScreenContent(navController: NavController, activity: Activity) {
         }
 
     }
-
-
 }

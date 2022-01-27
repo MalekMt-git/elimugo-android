@@ -22,7 +22,6 @@ class Request {
     lateinit var listOfPackages : ArrayList<Package>
     fun query(context: Context, query: String, callBack: (result: ArrayList<Package>) -> Unit) {
 
-
         // Instantiate the RequestQueue.
         val queue = Volley.newRequestQueue(context)
         val url = baseUrl + query
@@ -40,7 +39,7 @@ class Request {
                 Log.i("TAG", "$it : failed ")
             })
 
-// Add the request to the RequestQueue.
+    // Add the request to the RequestQueue.
         queue.add(stringRequest)
     }
 
