@@ -1,6 +1,5 @@
 package ngo.dean.elimugo.ui.nav.controller
 
-import android.app.Activity
 import android.content.Context
 import androidx.compose.animation.EnterTransition
 import androidx.compose.animation.ExperimentalAnimationApi
@@ -22,7 +21,7 @@ fun NavController(context: Context) {
 
     AnimatedNavHost(
         navController = navController,
-        startDestination = Routes.SplashScreen.route
+        startDestination = Routes.DownloadFromServerScreen.route
     ) {
         composable(
             Routes.SplashScreen.route,

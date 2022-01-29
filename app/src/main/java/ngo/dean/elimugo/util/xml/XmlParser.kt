@@ -1,18 +1,61 @@
 package ngo.dean.elimugo.util.xml
 
 import android.util.Xml
-import ngo.dean.elimugo.data.server.Accessibility
-import ngo.dean.elimugo.data.server.Descriptions
+import ngo.dean.elimugo.data.server.*
 import org.xmlpull.v1.XmlPullParser
 import org.xmlpull.v1.XmlPullParserException
 import java.io.IOException
 import java.io.InputStream
-import ngo.dean.elimugo.data.server.Package
 
 class XmlParser {
 
+
     @Throws(XmlPullParserException::class, IOException::class)
-    fun parse(inputStream: InputStream): List<Package> {
+    fun parseFilesUrls(inputStream: InputStream): ArrayList<File> {
+        inputStream.use { inputStream ->
+            val parser: XmlPullParser = Xml.newPullParser()
+            parser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, false)
+            parser.setInput(inputStream, null)
+            parser.nextTag()
+            return readFilesUrl(parser)
+        }
+    }
+
+    @Throws(XmlPullParserException::class, IOException::class)
+    private fun readFilesUrl(parser: XmlPullParser): ArrayList<File> {
+        val FilesUrl = ArrayList<File>()
+        parser.require(XmlPullParser.START_TAG, null, "Files")
+        while (parser.next() != XmlPullParser.END_TAG) {
+            if (parser.eventType != XmlPullParser.START_TAG) {
+                continue
+            }
+            // Starts by looking for the entry tag
+            if (parser.name == "File") {
+                FilesUrl.add(readFilesUrls(parser))
+            } else {
+                skip(parser)
+            }
+        }
+        return FilesUrl
+    }
+
+    @Throws(XmlPullParserException::class, IOException::class)
+    private fun readFilesUrls(parser: XmlPullParser): File {
+        return readFile(parser)
+    }
+
+    @Throws(IOException::class, XmlPullParserException::class)
+    private fun readFile(parser: XmlPullParser): File {
+        parser.require(XmlPullParser.START_TAG, null, "File")
+        var url = ""
+        var size = "0"
+        size = parser.getAttributeValue(0)
+        url =  readText(parser)
+        return File(size.toInt(),url)
+    }
+
+    @Throws(XmlPullParserException::class, IOException::class)
+    fun parsePackages(inputStream: InputStream): List<Package> {
         inputStream.use { inputStream ->
             val parser: XmlPullParser = Xml.newPullParser()
             parser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, false)
@@ -68,6 +111,7 @@ class XmlParser {
         }
         return Package(uniqueId, descriptions, type,contentVersion,accessibility,releaseDate,size)
     }
+
 
     @Throws(IOException::class, XmlPullParserException::class)
     private fun readUniqueId(parser: XmlPullParser): String {

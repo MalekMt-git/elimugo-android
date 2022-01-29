@@ -14,6 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import kotlinx.coroutines.*
 import ngo.dean.elimugo.R
 import ngo.dean.elimugo.data.server.Package
 import ngo.dean.elimugo.data.server.Request
@@ -25,6 +26,7 @@ fun DownloadFromServerScreen(context: Context) {
     DownloadFromServerScreenContent(context)
 }
 
+@OptIn(DelicateCoroutinesApi::class)
 @Composable
 fun DownloadFromServerScreenContent(context: Context) {
     val mutablePackageList = remember { mutableStateOf(arrayListOf<Package>()) }
@@ -74,8 +76,10 @@ fun DownloadFromServerScreenContent(context: Context) {
             Row(Modifier.padding(10.dp)) {
                 Column() {
 
+                    GlobalScope.launch (Dispatchers.IO) {
                     Request().query(context, queryUrlString) {listOfPackages ->
                             mutablePackageList.value = listOfPackages
+                    }
                     }
                     LazyColumn {
                         items(mutablePackageList.value.size) { index ->
@@ -83,8 +87,9 @@ fun DownloadFromServerScreenContent(context: Context) {
                             Row {
 
                                 Button(onClick = {
+                                    GlobalScope.launch (Dispatchers.IO) {
                                     Request().download(listOf(mutablePackageList.value[index]), context)
-
+                                    }
                                 }){
                                     Icon(
                                         Icons.Filled.Download,
