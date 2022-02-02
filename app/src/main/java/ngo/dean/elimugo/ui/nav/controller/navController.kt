@@ -10,6 +10,7 @@ import androidx.compose.runtime.Composable
 import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.google.accompanist.navigation.animation.composable
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
+import ngo.dean.elimugo.ui.component.WebView
 import ngo.dean.elimugo.ui.screen.*
 import ngo.dean.elimugo.ui.screen.download.DownloadFromServerScreen
 
@@ -21,7 +22,7 @@ fun NavController(context: Context) {
 
     AnimatedNavHost(
         navController = navController,
-        startDestination = Routes.SplashScreen.route
+        startDestination = Routes.MainScreen.route
     ) {
         composable(
             Routes.SplashScreen.route,
@@ -29,44 +30,33 @@ fun NavController(context: Context) {
             SplashScreen(navController = navController)
         }
         composable(
-
             Routes.LanguageScreen.route,
             enterTransition = { _, _ -> enterScreenFadeAnimation() },
         ) {
-
             LanguageScreen(navController = navController, context)
         }
-
         composable(
-
             Routes.MainScreen.route,
             enterTransition = { _, _ -> enterScreenFadeAnimation() },
         ) {
-
             MainScreen(navController = navController, context)
         }
         composable(
-
             Routes.DownloadFromServerScreen.route,
             enterTransition = { _, _ -> enterScreenFadeAnimation() },
         ) {
-
             DownloadFromServerScreen(context)
         }
         composable(
-
             Routes.ExploreScreen.route,
             enterTransition = { _, _ -> enterScreenFadeAnimation() },
         ) {
-
             ExploreScreen(context)
         }
         composable(
-
             Routes.ShareDataScreen.route,
             enterTransition = { _, _ -> enterScreenFadeAnimation() },
         ) {
-
             ShareDataScreen(navController = navController, context)
         }
     }

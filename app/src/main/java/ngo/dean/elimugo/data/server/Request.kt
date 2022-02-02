@@ -92,7 +92,7 @@ class Request {
             setTitle(title)
             setDescription(description)
             setDestinationInExternalFilesDir(context, path ,subPath )
-            setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED)
+            setNotificationVisibility(DownloadManager.Request.VISIBILITY_HIDDEN)
         }
         val manager = context.getSystemService(DOWNLOAD_SERVICE) as DownloadManager?
         manager!!.enqueue(request)

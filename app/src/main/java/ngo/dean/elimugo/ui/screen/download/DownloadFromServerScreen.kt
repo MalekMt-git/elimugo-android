@@ -1,6 +1,7 @@
 package ngo.dean.elimugo.ui.screen.download
 
 import android.content.Context
+import android.widget.Toast
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.*
@@ -18,6 +19,7 @@ import kotlinx.coroutines.*
 import ngo.dean.elimugo.R
 import ngo.dean.elimugo.data.server.Package
 import ngo.dean.elimugo.data.server.Request
+import ngo.dean.elimugo.ui.component.GuideLine
 import ngo.dean.elimugo.ui.component.Toolbar
 
 @Composable
@@ -29,34 +31,13 @@ fun DownloadFromServerScreen(context: Context) {
 @OptIn(DelicateCoroutinesApi::class)
 @Composable
 fun DownloadFromServerScreenContent(context: Context) {
-    val mutablePackageList = remember { mutableStateOf(arrayListOf<Package>()) }
-
-    val queryUrlString = "content/packages.xml"
-    Box(
-        Modifier
-            .fillMaxSize()
-            .padding(top = 70.dp)
-    ) {
-        Text(
-            text = stringResource(R.string.main_screen_toolbar_title),
-            Modifier
-                .align(Alignment.TopCenter)
-                .padding(top = 13.dp)
-        )
-        IconButton(
-            onClick = {
-            },
-            Modifier.align(AbsoluteAlignment.TopRight),
-        ) {
-            Icon(
-                Icons.Filled.Info,
-                contentDescription = stringResource(R.string.content_description),
-                modifier = Modifier,
-                Color.Black
-            )
-            //Todo @Malek Add a remove option in Explore Screen
-            //Todo @Malek Add the advanced mode in the drawer/dashboard
+    GuideLine(text = stringResource(R.string.main_screen_toolbar_title)) {
+        Toast.makeText(context , R.string.will_be_soon , Toast.LENGTH_LONG).show()
+        //Todo @Malek Add a remove option in Explore Screen
+        //Todo @Malek Add the advanced mode in the drawer/dashboard
     }
+    val mutablePackageList = remember { mutableStateOf(arrayListOf<Package>()) }
+    val queryUrlString = "content/packages.xml"
     Box(
         Modifier
             .fillMaxSize()
@@ -109,5 +90,4 @@ fun DownloadFromServerScreenContent(context: Context) {
             }
         }
     }
-
-}}
+}
