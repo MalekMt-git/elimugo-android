@@ -31,7 +31,7 @@ fun DownloadFromServerScreen(context: Context) {
 fun DownloadFromServerScreenContent(context: Context) {
     val mutablePackageList = remember { mutableStateOf(arrayListOf<Package>()) }
 
-    val queryUrlString = "content/package" + "s.xml"
+    val queryUrlString = "content/packages.xml"
     Box(
         Modifier
             .fillMaxSize()
@@ -54,12 +54,7 @@ fun DownloadFromServerScreenContent(context: Context) {
                 modifier = Modifier,
                 Color.Black
             )
-
-            //Todo @Malek Descriptions instead of UniqueId in DownloadScreen
-            //Todo @Malek A folder for each package
             //Todo @Malek Add a remove option in Explore Screen
-            //Todo @Malek Change color to be same as UX file
-            //Todo @Malek Change color to be same as UX file
             //Todo @Malek Add the advanced mode in the drawer/dashboard
     }
     Box(
@@ -88,7 +83,7 @@ fun DownloadFromServerScreenContent(context: Context) {
 
                                 Button(onClick = {
                                     GlobalScope.launch (Dispatchers.IO) {
-                                    Request().download(listOf(mutablePackageList.value[index]), context)
+                                    Request().downloadPackages(listOf(mutablePackageList.value[index]), context)
                                     }
                                 }){
                                     Icon(

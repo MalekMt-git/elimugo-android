@@ -23,6 +23,7 @@ import androidx.core.content.ContextCompat.startActivity
 import androidx.core.content.FileProvider
 import ngo.dean.elimugo.R
 import ngo.dean.elimugo.ui.component.Toolbar
+import ngo.dean.elimugo.util.xml.XmlParser
 import java.io.File
 import java.util.*
 
@@ -74,11 +75,9 @@ fun ExploreScreenContent(context: Context) {
         }
 
         LazyColumn {
-            val directory = File(context.getExternalFilesDir(null), "Elimugo")
+            val directory = File(context.getExternalFilesDir(null), "Public")
             if (directory.listFiles() != null) {
-
                 val files: Array<File> = directory.listFiles()
-
                 items(files.size) { index ->
 
                     Button(onClick = {

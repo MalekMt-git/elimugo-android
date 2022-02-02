@@ -12,6 +12,7 @@ import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import ngo.dean.elimugo.util.xml.XmlParser
 import java.io.File
+import java.io.FileWriter
 
 
 class Request {
@@ -57,12 +58,12 @@ class Request {
             })
         queue.add(filesUrlsRequest)
     }
-    fun download(listOfPackages: List<Package>, context: Context) {
-        var link = ""
+    fun downloadPackages(listOfPackages: List<Package>, context: Context) {
+        var fileName = ""
         val policy = ThreadPolicy.Builder().permitAll().build()
         StrictMode.setThreadPolicy(policy)
 
-        val appLanguage = context.resources.configuration.locale.language
+        downloader(context , "packages.xml", path = "Public/" , subPath ="packages.xml" )
 
         for (learnPackage in listOfPackages) {
             val folder = context.filesDir
@@ -71,17 +72,29 @@ class Request {
 
             queryFilesUrls(context , learnPackage.uniqueId){
                 for (i in it){
-                    link = "$contentsUrl/${learnPackage.uniqueId}/${i.url}"
-                    val request = DownloadManager.Request(Uri.parse(link))
-                    request.setTitle("${learnPackage.uniqueId} is Downloading")
-                    request.setDescription("please be wait")
-                    request.setDestinationInExternalFilesDir(context, "Public/"+learnPackage.uniqueId ,i.url )
-                    request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED)
-                    val manager = context.getSystemService(DOWNLOAD_SERVICE) as DownloadManager?
-                    manager!!.enqueue(request)
+                    fileName = "${learnPackage.uniqueId}/${i.url}"
+                    downloader(context = context ,fileName = fileName ,
+                        title = "${learnPackage.uniqueId} is Downloading",
+                        description= "please be wait",
+                        path =  "Public/"+learnPackage.uniqueId,subPath = i.url)
                 }
+
             }
         }
     }
 
+    private fun downloader(context: Context, fileName: String, title : String? = null, description :String? = null, path : String, subPath: String){
+        val oldFile = File(context.getExternalFilesDir("Public") , fileName)
+        if (oldFile.exists()){
+            oldFile.canonicalFile.delete()
+        }
+        val request = DownloadManager.Request(Uri.parse("$contentsUrl/$fileName")).apply {
+            setTitle(title)
+            setDescription(description)
+            setDestinationInExternalFilesDir(context, path ,subPath )
+            setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED)
+        }
+        val manager = context.getSystemService(DOWNLOAD_SERVICE) as DownloadManager?
+        manager!!.enqueue(request)
+    }
 }
