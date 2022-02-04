@@ -68,7 +68,7 @@ fun ExploreScreenContent(context: Context) {
         LazyColumn {
 
             val directory = File(context.getExternalFilesDir(null), "Public")
-            var language = context.resources.configuration.locale.language
+            val language = context.resources.configuration.locale.language
             if (directory.listFiles() != null && webView == "" ) {
                 val files: Array<File> = directory.listFiles()
                 items(files.size) { index ->
@@ -91,6 +91,7 @@ fun ExploreScreenContent(context: Context) {
                     }, content = {
                             val packagesFile =
                                 File(context.getExternalFilesDir("Public"), "packages.xml")
+                        if (packagesFile.exists()){
                             val packages = XmlParser().parsePackages(
                                 FileInputStream(packagesFile).bufferedReader().readText()
                                     .toByteArray().inputStream()
@@ -111,7 +112,8 @@ fun ExploreScreenContent(context: Context) {
                                     }
                                 }
                             }
-                        })
+                        }
+                    })
                     Spacer(modifier = Modifier.size(0.dp, 30.dp))
                     }}
             } else if (webView == "") {
