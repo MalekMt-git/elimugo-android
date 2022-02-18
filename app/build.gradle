@@ -2,7 +2,6 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
 }
-
 android {
     compileSdk 31
 
@@ -15,7 +14,6 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-
     buildTypes {
         release {
             minifyEnabled false
@@ -50,7 +48,6 @@ android {
         exclude("META-INF/*.kotlin_module")
     }
 }
-
 dependencies {
     implementation project(':hotspot-ui')
 
@@ -89,6 +86,8 @@ dependencies {
 
     implementation "com.google.accompanist:accompanist-insets:0.14.0"
 
+    //pdf viewer
+    implementation 'com.github.afreakyelf:Pdf-Viewer:v1.0.7'
 
     // Navigation
     implementation("androidx.navigation:navigation-compose:2.4.0-alpha10")
@@ -101,7 +100,4 @@ dependencies {
 
     // UI Tests
     androidTestImplementation 'androidx.compose.ui:ui-test-junit4:1.0.4'
-
-
-
 }
