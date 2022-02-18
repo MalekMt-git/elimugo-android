@@ -7,5 +7,5 @@ data class Package(
     val contentVersion: Int,
     val accessibility: Accessibility,
     val releaseDate: String,
-    val size: Int
+    val size: Int,
 )

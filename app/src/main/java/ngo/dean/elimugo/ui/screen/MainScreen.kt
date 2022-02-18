@@ -24,7 +24,6 @@ import ngo.dean.elimugo.ui.nav.controller.Routes
 import ngo.dean.elimugo.util.ShareAPK
 import org.monora.uprotocol.client.android.activity.HomeActivity
 
-
 @Composable
 fun MainScreen(navController: NavController, context: Context) {
     Toolbar()
