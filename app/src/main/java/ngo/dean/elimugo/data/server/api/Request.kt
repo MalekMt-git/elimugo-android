@@ -1,4 +1,4 @@
-package ngo.dean.elimugo.data.server
+package ngo.dean.elimugo.data.server.api
 
 import android.app.DownloadManager
 import android.content.Context
@@ -10,22 +10,20 @@ import android.util.Log
 import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import ngo.dean.elimugo.data.server.entites.Package
 import ngo.dean.elimugo.util.xml.XmlParser
 import java.io.File
-import java.io.FileWriter
 
-
-class Request {
+class Request(var context: Context) {
 
     private val baseUrl = "https://www.elimupi.online/"
     private val contentsUrl = "${baseUrl}content"
     private lateinit var listOfPackages : ArrayList<Package>
-    lateinit var listOfPackagesFilesUrls : ArrayList<ngo.dean.elimugo.data.server.File>
+    lateinit var listOfPackagesFilesUrls : ArrayList<ngo.dean.elimugo.data.server.entites.File>
 
-    fun query(context: Context, query: String, callBack: (result: ArrayList<Package>) -> Unit) {
+    fun query(query: String, callBack: (result: ArrayList<Package>) -> Unit) {
         val queue = Volley.newRequestQueue(context)
         val url = baseUrl + query
-
         val packagesRequest = StringRequest(
             Request.Method.GET, url,
             { response ->
@@ -41,14 +39,14 @@ class Request {
         queue.add(packagesRequest)
     }
 
-    private fun queryFilesUrls(context: Context, query: String, callBack: (result: ArrayList<ngo.dean.elimugo.data.server.File>) -> Unit){
+    private fun queryFilesUrls(context: Context, query: String, callBack: (result: ArrayList<ngo.dean.elimugo.data.server.entites.File>) -> Unit){
         val queue = Volley.newRequestQueue(context)
         val url = "$contentsUrl/$query/files.xml"
 
         val filesUrlsRequest = StringRequest(
             Request.Method.GET, url,
             { response ->
-                listOfPackagesFilesUrls = XmlParser().parseFilesUrls(response.toByteArray().inputStream()) as ArrayList<ngo.dean.elimugo.data.server.File>
+                listOfPackagesFilesUrls = XmlParser().parseFilesUrls(response.toByteArray().inputStream()) as ArrayList<ngo.dean.elimugo.data.server.entites.File>
                 with(listOfPackagesFilesUrls){
                     callBack(this)
                 }

@@ -7,18 +7,15 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Download
-import androidx.compose.material.icons.filled.Info
 import androidx.compose.runtime.*
-import androidx.compose.ui.AbsoluteAlignment
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import kotlinx.coroutines.*
 import ngo.dean.elimugo.R
-import ngo.dean.elimugo.data.server.Package
-import ngo.dean.elimugo.data.server.Request
+import ngo.dean.elimugo.data.server.entites.Package
+import ngo.dean.elimugo.data.server.api.Request
 import ngo.dean.elimugo.ui.component.GuideLine
 import ngo.dean.elimugo.ui.component.Toolbar
 
@@ -53,7 +50,7 @@ fun DownloadFromServerScreenContent(context: Context) {
                 Column() {
 
                     GlobalScope.launch (Dispatchers.IO) {
-                    Request().query(context, queryUrlString) {listOfPackages ->
+                    Request().query(context, queryUrlString) { listOfPackages ->
                             mutablePackageList.value = listOfPackages
                     }
                     }

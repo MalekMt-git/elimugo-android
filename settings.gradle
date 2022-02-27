@@ -8,7 +8,7 @@ dependencyResolutionManagement {
 }
 rootProject.name = "elimugo"
 include ':app'
-include ':core'
+include ':hotspot-core'
 include ':zxing'
 include ':hotspot-ui'
 

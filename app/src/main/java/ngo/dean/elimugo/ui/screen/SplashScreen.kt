@@ -54,7 +54,6 @@ fun SplashScreenView(navController: NavController){
 
     LaunchedEffect(animatedFloat) {
         delay(1000)
-
         navController.navigate(Routes.LanguageScreen.route)
     }
 }

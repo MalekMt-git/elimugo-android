@@ -1,6 +1,5 @@
 package ngo.dean.elimugo.ui.screen
 
-import android.app.Activity
 import android.content.Context
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Icon
@@ -25,7 +24,6 @@ fun ShareDataScreen(navController: NavController, context: Context) {
     Toolbar()
     ShareDataScreenContent(navController, context)
 }
-
 
 @Composable
 fun ShareDataScreenContent(navController: NavController, context: Context) {
@@ -54,17 +52,10 @@ fun ShareDataScreenContent(navController: NavController, context: Context) {
             )
         }
     }
-
     Box(
         Modifier
             .fillMaxSize()
             .wrapContentSize(Alignment.Center)
             .padding(top = 120.dp)
-    ) {
-
-
-
-    }
-
-
+    ) {}
 }
