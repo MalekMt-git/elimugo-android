@@ -30,7 +30,7 @@
         android:theme="@style/Theme.Elimugo"
         tools:targetApi="m">
         <activity
-            android:name=".ui.base.BaseActivity"
+            android:name=".presentation.base.BaseActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

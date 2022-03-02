@@ -1,10 +1,10 @@
 package ngo.dean.elimugo.util.xml
 
 import android.util.Xml
-import ngo.dean.elimugo.data.server.*
-import ngo.dean.elimugo.data.server.entites.Descriptions
-import ngo.dean.elimugo.data.server.entites.File
-import ngo.dean.elimugo.data.server.entites.Package
+import ngo.dean.elimugo.domain.entites.Accessibility
+import ngo.dean.elimugo.domain.entites.Descriptions
+import ngo.dean.elimugo.domain.entites.File
+import ngo.dean.elimugo.domain.entites.Package
 import org.xmlpull.v1.XmlPullParser
 import org.xmlpull.v1.XmlPullParserException
 import java.io.IOException
