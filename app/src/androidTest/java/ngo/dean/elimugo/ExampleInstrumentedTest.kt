@@ -1,18 +1,14 @@
 package ngo.dean.elimugo
 
-import android.content.Context
 import android.widget.Toast
-import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
-import ngo.dean.elimugo.ui.base.BaseActivity
+import ngo.dean.elimugo.presentation.base.BaseActivity
 
 import org.junit.Test
 import org.junit.runner.RunWith
-
-import org.junit.Assert.*
 
 /**
  * Instrumented test, which will execute on an Android device.
