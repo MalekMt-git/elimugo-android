@@ -48,9 +48,6 @@ import org.monora.uprotocol.client.android.viewmodel.UserProfileViewModel
 
 @AndroidEntryPoint
 class HomeActivity : Activity(), NavigationView.OnNavigationItemSelectedListener {
-    private val changelogViewModel: ChangelogViewModel by viewModels()
-
-    private val crashLogViewModel: CrashLogViewModel by viewModels()
 
     private val userProfileViewModel: UserProfileViewModel by viewModels()
 

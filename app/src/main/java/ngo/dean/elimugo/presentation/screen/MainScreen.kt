@@ -21,6 +21,7 @@ import ngo.dean.elimugo.presentation.component.GuideLine
 import ngo.dean.elimugo.presentation.component.Toolbar
 import ngo.dean.elimugo.presentation.nav.controller.Routes
 import ngo.dean.elimugo.util.ShareAPK
+import org.monora.uprotocol.client.android.activity.ContentBrowserActivity
 import org.monora.uprotocol.client.android.activity.HomeActivity
 
 @Composable
@@ -53,8 +54,8 @@ fun MainScreenContent(
                 ElimuGoButton(title = stringResource(R.string.share_btn_title)
                     , icon = painterResource(id = R.drawable.share_logo),
                     description = stringResource(R.string.share_btn_content)){
-                    startActivity(context,Intent(context, HomeActivity::class.java) ,null)
-                }
+                    startActivity(context,Intent(context, ContentBrowserActivity::class.java) ,null)}
+                    //startActivity(Intent(it.context, ContentBrowserActivity::class.java))}
             }
             item {
                 ElimuGoButton(title = stringResource(R.string.download_btn_title)

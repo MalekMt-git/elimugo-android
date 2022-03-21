@@ -99,7 +99,7 @@ abstract class Activity : AppCompatActivity(), OnSharedPreferenceChangeListener 
 
     private var themeLoadingFailed = false
 
-    var welcomePageDisallowed = false
+    var welcomePageDisallowed = true
         protected set
 
     override fun onCreate(savedInstanceState: Bundle?) {

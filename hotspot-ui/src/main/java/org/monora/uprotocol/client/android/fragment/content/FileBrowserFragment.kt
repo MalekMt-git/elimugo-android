@@ -190,12 +190,12 @@ class FileBrowserFragment : Fragment(R.layout.layout_file_browser) {
 
     override fun onResume() {
         super.onResume()
-        activity?.onBackPressedDispatcher?.addCallback(viewLifecycleOwner, backPressedCallback)
+        //activity?.onBackPressedDispatcher?.addCallback(viewLifecycleOwner, backPressedCallback)
     }
 
     override fun onPause() {
         super.onPause()
-        backPressedCallback.remove()
+        //backPressedCallback.remove()
     }
 }
 

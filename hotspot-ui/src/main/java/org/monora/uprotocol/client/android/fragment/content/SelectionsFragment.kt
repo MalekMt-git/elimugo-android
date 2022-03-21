@@ -156,7 +156,7 @@ class SelectionsAdapter(
         val item = getItem(position)
         when (holder) {
             is TitleSectionViewHolder -> if (item is TitleSectionContentModel) holder.bind(item)
-            is AppViewHolder -> if (item is App) holder.bind(item)
+          //  is AppViewHolder -> if (item is App) holder.bind(item)
             is FileViewHolder -> if (item is FileModel) holder.bind(item)
             is SongViewHolder -> if (item is Song) holder.bind(item)
             is ImageViewHolder -> if (item is Image) holder.bind(item)
@@ -167,7 +167,7 @@ class SelectionsAdapter(
     override fun getItemViewType(position: Int): Int {
         return when (getItem(position)) {
             is TitleSectionContentModel -> VIEW_TYPE_SECTION_TITLE
-            is App -> VIEW_TYPE_APP
+           // is App -> VIEW_TYPE_APP
             is FileModel -> VIEW_TYPE_FILE
             is Song -> VIEW_TYPE_SONG
             is Image -> VIEW_TYPE_IMAGE
