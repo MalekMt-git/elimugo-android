@@ -79,7 +79,7 @@ class ContentBrowserFragment : Fragment(R.layout.layout_content_browser) {
         val snackbar = Snackbar.make(view, R.string.sending, Snackbar.LENGTH_INDEFINITE)
 
 //        pagerAdapter.add(PageItem(getString(R.string.app), AppBrowserFragment::class.java.name))
-        pagerAdapter.add(PageItem(getString(R.string.files), FileBrowserFragment::class.java.name))
+        pagerAdapter.add(PageItem(getString(R.string.packages), FileBrowserFragment::class.java.name))
 //        pagerAdapter.add(PageItem(getString(R.string.music), AudioBrowserFragment::class.java.name))
 //        pagerAdapter.add(PageItem(getString(R.string.photo), ImageBrowserFragment::class.java.name))
 //        pagerAdapter.add(PageItem(getString(R.string.video), VideoBrowserFragment::class.java.name))

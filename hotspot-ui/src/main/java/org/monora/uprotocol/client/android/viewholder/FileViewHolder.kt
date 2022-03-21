@@ -31,7 +31,10 @@ class FileViewHolder(
     fun bind(fileModel: FileModel) {
         binding.viewModel = FileContentViewModel(fileModel)
         binding.root.setOnClickListener {
-            clickListener(fileModel, FileAdapter.ClickType.Default)
+//            clickListener(fileModel, FileAdapter.ClickType.Default)
+            fileModel.isSelected = !fileModel.isSelected
+            it.isSelected = fileModel.isSelected
+            clickListener(fileModel, FileAdapter.ClickType.ToggleSelect)
         }
         binding.selection.setOnClickListener {
             fileModel.isSelected = !fileModel.isSelected

@@ -77,7 +77,7 @@
             style="@style/TextAppearance.Primary"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@{viewModel.name}"
+            android:text="@{viewModel.name(context)}"
             app:layout_constraintBottom_toTopOf="@id/secondaryText"
             app:layout_constraintEnd_toStartOf="@id/selectButton"
             app:layout_constraintStart_toEndOf="@id/thumbnail"

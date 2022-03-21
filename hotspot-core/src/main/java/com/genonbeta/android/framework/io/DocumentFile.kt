@@ -29,8 +29,10 @@ import android.util.Log
 import android.webkit.MimeTypeMap
 import androidx.annotation.RequiresApi
 import androidx.core.content.FileProvider
+import com.genonbeta.android.framework.util.XmlParser
 import kotlinx.parcelize.Parcelize
 import java.io.File
+import java.io.FileInputStream
 import java.io.FileNotFoundException
 import java.io.IOException
 import java.net.URI
@@ -140,6 +142,48 @@ class DocumentFile private constructor(
     fun getLength(): Long = data?.length ?: file?.length() ?: throw IllegalStateException()
 
     fun getName(): String = data?.name ?: file?.name ?: throw IllegalStateException()
+
+    fun getDescription(context: Context) : String {
+        val packagesFile =
+            File(context.getExternalFilesDir("Public"), "packages.xml")
+        if (packagesFile.exists()) {
+            val packages = XmlParser().parsePackages(
+                FileInputStream(packagesFile).bufferedReader().readText()
+                    .toByteArray().inputStream()
+            )
+            for (i in packages) {
+                if (i.uniqueId == file?.name) {
+                    return when (context.resources.configuration.locale.language) {
+                        "en" -> i.descriptions.en
+                        "sw" -> i.descriptions.sw.toString()
+                        else -> i.descriptions.en
+                    }
+                }
+            }
+        }
+        return file?.name.toString()
+    }
+
+    fun getFolderSize(context: Context) : String {
+        val packagesFile =
+            File(context.getExternalFilesDir("Public"), "packages.xml")
+        if (packagesFile.exists()) {
+            val packages = XmlParser().parsePackages(
+                FileInputStream(packagesFile).bufferedReader().readText()
+                    .toByteArray().inputStream()
+            )
+            for (i in packages) {
+                if (i.uniqueId == file?.name) {
+                    return when (context.resources.configuration.locale.language) {
+                        "en" -> i.descriptions.en
+                        "sw" -> i.descriptions.sw.toString()
+                        else -> i.descriptions.en
+                    }
+                }
+            }
+        }
+        return file?.name.toString()
+    }
 
     fun getSecureUri(context: Context, authority: String): Uri {
         if (SDK_INT < Build.VERSION_CODES.M || data != null) {

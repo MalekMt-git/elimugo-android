@@ -88,6 +88,7 @@
     <string name="remove_client_notice">Removing a client also removes the data related to it</string>
     <string name="remove_all_question">Remove all?</string>
     <string name="folder">Folder</string>
+    <string name="packages">Packages</string>
     <string name="organizing_files_notice">Organizing files…</string>
     <string name="error">Error</string>
     <string name="double_click_exit_notice">Press again to exit</string>
@@ -180,6 +181,7 @@
     <string name="count_seconds_short">%d sec</string>
     <string name="exit">Exit</string>
     <string name="empty_files_list">No files here</string>
+    <string name="empty_packages_list">No Packages here</string>
     <string name="empty_photos_list">No photos here</string>
     <string name="empty_apps_list">No apps here</string>
     <string name="empty_video_list">No videos here</string>

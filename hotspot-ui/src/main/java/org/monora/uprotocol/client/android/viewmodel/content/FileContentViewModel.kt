@@ -18,18 +18,16 @@
 
 package org.monora.uprotocol.client.android.viewmodel.content
 
-import android.util.Log
-import android.widget.ImageView
-import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
+import android.content.Context
 import com.genonbeta.android.framework.util.Files
-import org.monora.uprotocol.client.android.GlideApp
 import org.monora.uprotocol.client.android.R
 import org.monora.uprotocol.client.android.model.FileModel
 import org.monora.uprotocol.client.android.util.MimeIcons
-import org.monora.uprotocol.core.transfer.TransferItem
 
-class FileContentViewModel(fileModel: FileModel) {
-    val name = fileModel.file.getName()
+class FileContentViewModel(var fileModel: FileModel) {
+    fun name(context: Context) : String {
+       return fileModel.file.getDescription(context)
+    }
 
     val count = fileModel.indexCount
 
