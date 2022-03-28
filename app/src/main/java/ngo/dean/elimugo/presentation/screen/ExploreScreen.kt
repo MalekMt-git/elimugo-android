@@ -40,7 +40,7 @@ fun ExploreScreenContent(context: Context , navController: NavController) {
     GuideLine(text = stringResource(R.string.main_screen_toolbar_title)) {
         Toast.makeText(context , R.string.will_be_soon , Toast.LENGTH_LONG).show()
     }
-
+    val apkMimeType = "application/vnd.android.package-archive"
     Box(
         Modifier
             .fillMaxSize()
@@ -63,17 +63,34 @@ fun ExploreScreenContent(context: Context , navController: NavController) {
                     Button(onClick = {
                         try {
                             val indexFile = File(context.getExternalFilesDir("Public") ,files[index].name + "/" + language + "/"+ "index.html" )
-                            if ( indexFile.exists() && indexFile.getMimeType() == "text/html" ){
-                                //webView = indexFile.absolutePath
-                                val encodedUrl = URLEncoder.encode(indexFile.absolutePath, StandardCharsets.UTF_8.toString())
-                                navController.navigate(Routes.WebViewer.route + "/" + encodedUrl)
-                            }else{
-                                val intent = Intent(Intent.ACTION_VIEW)
-                                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK;
-                                intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
-                                intent.setDataAndType(FileProvider.getUriForFile(context ,context.applicationContext.packageName + ".provider" , indexFile), indexFile.getMimeType() )
-                                startActivity( context, intent , null)
+                            val packageFiles = files[index].listFiles()
+                            if (packageFiles != null) {
+                            var didFindApk = false
+                                    for (packageFile in packageFiles){
+                                        if (packageFile.getMimeType() == apkMimeType){
+                                            val intent = Intent(Intent.ACTION_VIEW)
+                                            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK;
+                                            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+                                            intent.setDataAndType(FileProvider.getUriForFile(context ,context.applicationContext.packageName + ".provider" , packageFile), packageFile.getMimeType() )
+                                            didFindApk = true
+                                            startActivity( context, intent , null)
+
+                                        }
+                                    }
+                                if (!didFindApk){
+                                    if ( indexFile.exists() && indexFile.getMimeType() == "text/html"){
+                                        val encodedUrl = URLEncoder.encode(indexFile.absolutePath, StandardCharsets.UTF_8.toString())
+                                        navController.navigate(Routes.WebViewer.route + "/" + encodedUrl)
+                                    }else{
+                                        val intent = Intent(Intent.ACTION_VIEW)
+                                        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK;
+                                        intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+                                        intent.setDataAndType(FileProvider.getUriForFile(context ,context.applicationContext.packageName + ".provider" , indexFile), indexFile.getMimeType() )
+                                        startActivity( context, intent , null)
+                                    }
+                                }
                             }
+
                         } catch (e: ActivityNotFoundException) {
                             // no Activity to handle this kind of files
                         }
@@ -92,7 +109,7 @@ fun ExploreScreenContent(context: Context , navController: NavController) {
                                         "sw" -> i.descriptions.sw
                                         else -> i.descriptions.en
                                     }?.let {
-                                        if (it.isNotEmpty()) {
+                                        if (it.isNotEmpty() && it.length > 1 ) {
                                             Text(
                                                 text = it,
                                                 Modifier.padding(13.dp, 13.dp)
