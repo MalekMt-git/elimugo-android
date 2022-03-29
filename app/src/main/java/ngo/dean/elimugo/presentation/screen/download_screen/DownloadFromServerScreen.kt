@@ -32,7 +32,6 @@ fun DownloadFromServerScreen(context: Context) {
 fun DownloadFromServerScreenContent(context: Context) {
     GuideLine(text = stringResource(R.string.main_screen_toolbar_title)) {
         Toast.makeText(context , R.string.will_be_soon , Toast.LENGTH_LONG).show()
-        //Todo @Malek Add a remove option in Explore Screen
     }
     val mutablePackageList = remember { mutableStateOf(arrayListOf<Package>()) }
     val queryUrlString = "content/packages.xml"

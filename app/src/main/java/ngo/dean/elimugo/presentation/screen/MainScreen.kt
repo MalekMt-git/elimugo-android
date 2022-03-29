@@ -22,7 +22,6 @@ import ngo.dean.elimugo.presentation.component.Toolbar
 import ngo.dean.elimugo.presentation.nav.controller.Routes
 import ngo.dean.elimugo.util.ShareAPK
 import org.monora.uprotocol.client.android.activity.ContentBrowserActivity
-import org.monora.uprotocol.client.android.activity.HomeActivity
 
 @Composable
 fun MainScreen(navController: NavController, context: Context) {
@@ -51,28 +50,32 @@ fun MainScreenContent(
                 .padding(top = 40.dp)
         ) {
             item {
-                ElimuGoButton(title = stringResource(R.string.share_btn_title)
+                ElimuGoButton(
+                    title = stringResource(R.string.share_btn_title)
                     , icon = painterResource(id = R.drawable.share_logo),
                     description = stringResource(R.string.share_btn_content)){
                     startActivity(context,Intent(context, ContentBrowserActivity::class.java) ,null)}
                     //startActivity(Intent(it.context, ContentBrowserActivity::class.java))}
             }
             item {
-                ElimuGoButton(title = stringResource(R.string.download_btn_title)
+                ElimuGoButton(
+                    title = stringResource(R.string.download_btn_title)
                     , icon = painterResource(id = R.drawable.download_logo),
                     description = stringResource(R.string.download_btn_content)){
-                    navController.navigate(Routes.DownloadFromServerScreen.route)
+                    navController.navigate(Routes.MainDownloadScreen.route)
                 }
             }
             item {
-                ElimuGoButton(title = stringResource(R.string.explore)
+                ElimuGoButton(
+                    title = stringResource(R.string.explore)
                     , icon = painterResource(id = R.drawable.explore_logo),
                     description = stringResource(R.string.explore_content)){
                     navController.navigate(Routes.ExploreScreen.route)
                 }
             }
             item {
-                ElimuGoButton(title = stringResource(R.string.elimugo)
+                ElimuGoButton(
+                    title = stringResource(R.string.elimugo)
                     , icon = painterResource(id = R.drawable.elimugo_mainscreen_logo),
                     description = stringResource(R.string.elimugo_btn_content)){
                     ShareAPK().share(context)

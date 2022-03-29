@@ -14,7 +14,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import ngo.dean.elimugo.R
-import ngo.dean.elimugo.presentation.theme.gradient
+import ngo.dean.elimugo.presentation.theme.gradient_red
 
 @Composable
 fun Toolbar() {
@@ -53,7 +53,7 @@ fun Toolbar() {
                 }
             },
             backgroundColor = Color.Transparent,
-            modifier = Modifier.background(gradient).padding(top=25.dp),
+            modifier = Modifier.background(gradient_red).padding(top=25.dp),
             elevation = 0.dp
         )
     }, content = {
