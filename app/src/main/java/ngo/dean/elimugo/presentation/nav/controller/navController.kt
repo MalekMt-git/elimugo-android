@@ -24,7 +24,7 @@ fun NavController(context: Context) {
 
     AnimatedNavHost(
         navController = navController,
-        startDestination = Routes.MainDownloadScreen.route
+        startDestination = Routes.SplashScreen.route
     ) {
         composable(
             Routes.SplashScreen.route,
@@ -50,6 +50,12 @@ fun NavController(context: Context) {
             DownloadFromServerScreen(context)
         }
         composable(
+            Routes.MainDownloadScreen.route,
+            enterTransition = { _, _ -> enterScreenFadeAnimation() },
+        ) {
+            MainDownloadScreen(navController = navController, context)
+        }
+        composable(
             Routes.ExploreScreen.route,
             enterTransition = { _, _ -> enterScreenFadeAnimation() },
         ) {
@@ -60,12 +66,6 @@ fun NavController(context: Context) {
             enterTransition = { _, _ -> enterScreenFadeAnimation() },
         ) {
             ShareDataScreen(navController = navController, context)
-        }
-        composable(
-            Routes.MainDownloadScreen.route,
-            enterTransition = { _, _ -> enterScreenFadeAnimation() },
-        ) {
-            MainDownloadScreen(navController = navController, context)
         }
         composable(
             Routes.WebViewer.route + "/{urlToRender}",

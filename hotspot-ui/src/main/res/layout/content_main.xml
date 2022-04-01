@@ -33,6 +33,6 @@
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         app:defaultNavHost="true"
-        app:navGraph="@navigation/nav_home" />
+        app:navGraph="@navigation/nav_receive" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

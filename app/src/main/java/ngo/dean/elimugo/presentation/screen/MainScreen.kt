@@ -55,7 +55,6 @@ fun MainScreenContent(
                     , icon = painterResource(id = R.drawable.share_logo),
                     description = stringResource(R.string.share_btn_content)){
                     startActivity(context,Intent(context, ContentBrowserActivity::class.java) ,null)}
-                    //startActivity(Intent(it.context, ContentBrowserActivity::class.java))}
             }
             item {
                 ElimuGoButton(

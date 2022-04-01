@@ -21,6 +21,7 @@ import ngo.dean.elimugo.data.server.api.Requests
 import ngo.dean.elimugo.domain.usecase.GetPackagesUseCaseImpl
 import ngo.dean.elimugo.presentation.component.GuideLine
 import ngo.dean.elimugo.presentation.component.Toolbar
+import java.io.File
 
 @Composable
 fun DownloadFromServerScreen(context: Context) {
@@ -35,6 +36,7 @@ fun DownloadFromServerScreenContent(context: Context) {
     }
     val mutablePackageList = remember { mutableStateOf(arrayListOf<Package>()) }
     val queryUrlString = "content/packages.xml"
+    val directory = File(context.getExternalFilesDir(null), "Public")
     Box(
         Modifier
             .fillMaxSize()
@@ -53,6 +55,7 @@ fun DownloadFromServerScreenContent(context: Context) {
                                 MainScope().launch (Dispatchers.IO) {
                                     Requests(context).getPackageWithQuery(queryUrlString) { listOfPackages ->
                                         mutablePackageList.value = listOfPackages
+                                        }
                                     }
                                 }
                             }
@@ -62,7 +65,6 @@ fun DownloadFromServerScreenContent(context: Context) {
                         items(mutablePackageList.value.size) { index ->
                             Spacer(modifier = Modifier.size(20.dp, 20.dp))
                             Row {
-
                                 Button(onClick = {
                                     MainScope().launch (Dispatchers.IO) {
                                     Requests(context).downloadPackages(listOf(mutablePackageList.value[index]))
@@ -89,4 +91,3 @@ fun DownloadFromServerScreenContent(context: Context) {
                 }
             }
         }
-    }

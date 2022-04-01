@@ -78,7 +78,6 @@ class HomeActivity : Activity(), NavigationView.OnNavigationItemSelectedListener
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
-
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
 
         setSupportActionBar(toolbar)
@@ -99,20 +98,6 @@ class HomeActivity : Activity(), NavigationView.OnNavigationItemSelectedListener
         navigationView.setNavigationItemSelectedListener(this)
         navController.addOnDestinationChangedListener { _, destination, _ -> title = destination.label }
         userProfileBinding.executePendingBindings()
-
-/*
-        if (BuildConfig.FLAVOR == "googlePlay" || BuildConfig.FLAVOR == "fossReliant") {
-            navigationView.menu.findItem(R.id.donate).isVisible = false
-        }
-*/
-
-/*        if (hasIntroductionShown()) {
-            if (changelogViewModel.shouldShowChangelog) {
-                navController.navigate(NavHomeDirections.actionGlobalChangelogFragment())
-            } else if (crashLogViewModel.shouldShowCrashLog) {
-                navController.navigate(NavHomeDirections.actionGlobalCrashLogFragment())
-            }
-        }*/
     }
 
     override fun onNewIntent(intent: Intent?) {

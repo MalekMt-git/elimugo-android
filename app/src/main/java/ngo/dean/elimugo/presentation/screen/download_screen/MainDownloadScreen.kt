@@ -24,6 +24,7 @@ import ngo.dean.elimugo.presentation.nav.controller.Routes
 import ngo.dean.elimugo.presentation.theme.gradient_blue
 import ngo.dean.elimugo.presentation.theme.gradient_green
 import org.monora.uprotocol.client.android.activity.ContentBrowserActivity
+import org.monora.uprotocol.client.android.activity.HomeActivity
 import org.monora.uprotocol.client.android.activity.SharingActivity
 
 @Composable
@@ -57,7 +58,7 @@ fun MainDownloadScreenContent(
                     topIcon = painterResource(id = R.drawable.elimugo_download_device_icon)
                     , icon = painterResource(id = R.drawable.mobile_download_device_icon),
                     description = stringResource(R.string.connect_to_another_elimugp_app)){
-                    startActivity(context,Intent(context, ContentBrowserActivity::class.java) ,null)}
+                    startActivity(context,Intent(context, HomeActivity::class.java) ,null)}
             }
             item {
                 ElimuGoButton(
