@@ -9,6 +9,7 @@ sealed class Routes(val route: String) {
     object MainScreen : Routes( "MainScreen")
     object ExploreScreen : Routes( "ExploreScreen")
     object DownloadFromServerScreen : Routes( "DownloadFromServerScreen")
+    object MainDownloadScreen : Routes( "MainDownloadScreen")
     object ShareDataScreen : Routes( "ShareDataScreen")
     object WebViewer : Routes( "WebViewer")
 }

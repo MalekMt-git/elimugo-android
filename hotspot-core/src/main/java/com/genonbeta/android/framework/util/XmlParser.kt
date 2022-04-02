@@ -1,11 +1,10 @@
-package ngo.dean.elimugo.util.xml
+package com.genonbeta.android.framework.util
 
-import android.content.Context
 import android.util.Xml
-import ngo.dean.elimugo.domain.entites.Accessibility
-import ngo.dean.elimugo.domain.entites.Descriptions
-import ngo.dean.elimugo.domain.entites.File
-import ngo.dean.elimugo.domain.entites.Package
+import com.genonbeta.android.framework.entites.Accessibility
+import com.genonbeta.android.framework.entites.Descriptions
+import com.genonbeta.android.framework.entites.File
+import com.genonbeta.android.framework.entites.Package
 import org.xmlpull.v1.XmlPullParser
 import org.xmlpull.v1.XmlPullParserException
 import java.io.IOException
@@ -13,15 +12,6 @@ import java.io.InputStream
 
 class XmlParser {
 
-    fun getLocalPackages(context: Context , onSuccess: (result: ArrayList<Package>) -> Unit , onFailed: (result: String) -> Unit ) {
-        val directory = java.io.File(context.getExternalFilesDir(null), "Public")
-        val file = java.io.File(directory, "packages.xml")
-        try {
-            onSuccess(XmlParser().parsePackages(file.inputStream()) as ArrayList<Package>)
-        }catch (e : Exception){
-            onFailed(e.toString())
-        }
-    }
 
     @Throws(XmlPullParserException::class, IOException::class)
     fun parseFilesUrls(inputStream: InputStream): ArrayList<File> {

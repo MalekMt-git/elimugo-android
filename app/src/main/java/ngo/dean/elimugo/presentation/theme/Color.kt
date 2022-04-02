@@ -3,10 +3,22 @@ package ngo.dean.elimugo.presentation.theme
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 
-val gradient = Brush.horizontalGradient(
+val gradient_red = Brush.horizontalGradient(
     listOf(Color(0xFFBD000D),
         Color(0xFFAD000B),
         Color(0xFF9C0008)
+    ))
+
+val gradient_blue = Brush.horizontalGradient(
+    listOf(Color(0xFF64B5F6),
+        Color(0xFF0091EA),
+        Color(0xFF2962FF)
+    ))
+
+val gradient_green = Brush.horizontalGradient(
+    listOf(Color(0xFF8BC34A),
+        Color(0xFF4CAF50),
+        Color(0xFF009688)
     ))
 
 val Black = Color(0xFF000000)

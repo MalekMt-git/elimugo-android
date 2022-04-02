@@ -18,4 +18,9 @@
     <string name="nothing_downloaded">Nothing is downloaded</string>
     <string name="select_a_language">Select a Language</string>
     <string name="will_be_soon">This feature coming soon</string>
+    <string name="online_connection">Connect with ElimuOnline on the internet</string>
+    <string name="connect_to_another_elimugp_app">Connect with another ElimuGO app</string>
+    <string name="connect_local_elimupi">Connect with a local ElimuPi</string>
+    <string name="size">Size</string>
+    <string name="no_new_package">There is no new package</string>
 </resources>

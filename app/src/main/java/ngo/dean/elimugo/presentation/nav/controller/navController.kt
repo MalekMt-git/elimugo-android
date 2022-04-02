@@ -14,6 +14,7 @@ import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 import ngo.dean.elimugo.presentation.component.WebViewer
 import ngo.dean.elimugo.presentation.screen.*
 import ngo.dean.elimugo.presentation.screen.download_screen.DownloadFromServerScreen
+import ngo.dean.elimugo.presentation.screen.download_screen.MainDownloadScreen
 
 @OptIn(ExperimentalAnimationApi::class)
 @Composable
@@ -47,6 +48,12 @@ fun NavController(context: Context) {
             enterTransition = { _, _ -> enterScreenFadeAnimation() },
         ) {
             DownloadFromServerScreen(context)
+        }
+        composable(
+            Routes.MainDownloadScreen.route,
+            enterTransition = { _, _ -> enterScreenFadeAnimation() },
+        ) {
+            MainDownloadScreen(navController = navController, context)
         }
         composable(
             Routes.ExploreScreen.route,

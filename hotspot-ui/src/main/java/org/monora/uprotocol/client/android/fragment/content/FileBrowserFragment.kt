@@ -22,15 +22,13 @@ import android.annotation.TargetApi
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
-import android.view.Menu
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.OnBackPressedCallback
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.appcompat.widget.PopupMenu
 import androidx.coordinatorlayout.widget.CoordinatorLayout
-import androidx.core.view.MenuCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
@@ -44,7 +42,6 @@ import org.monora.uprotocol.client.android.adapter.FileAdapter
 import org.monora.uprotocol.client.android.databinding.LayoutEmptyContentBinding
 import org.monora.uprotocol.client.android.databinding.ListPathBinding
 import org.monora.uprotocol.client.android.model.FileModel
-import org.monora.uprotocol.client.android.util.Activities
 import org.monora.uprotocol.client.android.viewmodel.EmptyContentViewModel
 import org.monora.uprotocol.client.android.viewmodel.FilesViewModel
 import org.monora.uprotocol.client.android.viewmodel.SharingSelectionViewModel
@@ -65,24 +62,6 @@ class FileBrowserFragment : Fragment(R.layout.layout_file_browser) {
 
     private val selectionViewModel: SharingSelectionViewModel by activityViewModels()
 
-    private lateinit var pathsPopupMenu: PopupMenu
-
-    private val backPressedCallback = object : OnBackPressedCallback(true) {
-        private var afterPopup = false
-
-        override fun handleOnBackPressed() {
-            if (viewModel.goUp()) {
-                afterPopup = false
-            } else if (afterPopup) {
-                isEnabled = false
-                activity?.onBackPressedDispatcher?.onBackPressed()
-            } else {
-                afterPopup = true
-                pathsPopupMenu.show()
-            }
-        }
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView)
@@ -90,13 +69,14 @@ class FileBrowserFragment : Fragment(R.layout.layout_file_browser) {
         val floatingViewsContainer = view.findViewById<CoordinatorLayout>(R.id.floatingViewsContainer)
         val adapter = FileAdapter { fileModel, clickType ->
             when (clickType) {
-                FileAdapter.ClickType.Default -> {
+/*                FileAdapter.ClickType.Default -> {
                     if (fileModel.file.isDirectory()) {
                         viewModel.requestPath(fileModel.file)
                     } else {
                         Activities.view(view.context, fileModel.file)
                     }
-                }
+                    selectionViewModel.setSelected(fileModel, fileModel.isSelected)
+                }*/
                 FileAdapter.ClickType.ToggleSelect -> {
                     selectionViewModel.setSelected(fileModel, fileModel.isSelected)
                 }
@@ -110,20 +90,8 @@ class FileBrowserFragment : Fragment(R.layout.layout_file_browser) {
         }
         val safAddedSnackbar = Snackbar.make(floatingViewsContainer, R.string.add_success, Snackbar.LENGTH_LONG)
 
-        pathsPopupMenu = PopupMenu(requireContext(), pathSelectorButton).apply {
-            MenuCompat.setGroupDividerEnabled(menu, true)
-        }
-        pathSelectorButton.setOnClickListener {
-            if (Build.VERSION.SDK_INT < 21) {
-                viewModel.requestStorageFolder()
-                return@setOnClickListener
-            }
-
-            pathsPopupMenu.show()
-        }
-
         emptyView.viewModel = emptyContentViewModel
-        emptyView.emptyText.setText(R.string.empty_files_list)
+        emptyView.emptyText.setText(/*R.string.empty_files_list*/ R.string.empty_packages_list)
         emptyView.emptyImage.setImageResource(R.drawable.ic_insert_drive_file_white_24dp)
         emptyView.executePendingBindings()
         adapter.setHasStableIds(true)
@@ -149,35 +117,6 @@ class FileBrowserFragment : Fragment(R.layout.layout_file_browser) {
             pathAdapter.submitList(it)
         }
 
-        viewModel.safFolders.observe(viewLifecycleOwner) {
-            pathsPopupMenu.menu.clear()
-            pathsPopupMenu.setOnMenuItemClickListener { menuItem ->
-                if (menuItem.itemId == R.id.storage_folder) {
-                    viewModel.requestStorageFolder()
-                } else if (menuItem.itemId == R.id.default_storage_folder) {
-                    viewModel.requestDefaultStorageFolder()
-                } else if (menuItem.groupId == R.id.locations_custom) {
-                    viewModel.requestPath(it[menuItem.itemId])
-                } else if (menuItem.itemId == R.id.add_storage) {
-                    addAccess.launch(null)
-                } else if (menuItem.itemId == R.id.clear_storage_list) {
-                    viewModel.clearStorageList()
-                } else {
-                    return@setOnMenuItemClickListener false
-                }
-
-                return@setOnMenuItemClickListener true
-            }
-            pathsPopupMenu.inflate(R.menu.file_browser)
-            pathsPopupMenu.menu.findItem(R.id.storage_folder).isVisible = viewModel.isCustomStorageFolder
-            pathsPopupMenu.menu.findItem(R.id.clear_storage_list).isVisible = it.isNotEmpty()
-            it.forEachIndexed { index, safFolder ->
-                pathsPopupMenu.menu.add(R.id.locations_custom, index, Menu.NONE, safFolder.name).apply {
-                    setIcon(R.drawable.ic_save_white_24dp)
-                }
-            }
-        }
-
         selectionViewModel.externalState.observe(viewLifecycleOwner) {
             adapter.notifyDataSetChanged()
         }
@@ -188,15 +127,6 @@ class FileBrowserFragment : Fragment(R.layout.layout_file_browser) {
         }
     }
 
-    override fun onResume() {
-        super.onResume()
-        activity?.onBackPressedDispatcher?.addCallback(viewLifecycleOwner, backPressedCallback)
-    }
-
-    override fun onPause() {
-        super.onPause()
-        backPressedCallback.remove()
-    }
 }
 
 class PathContentViewModel(fileModel: FileModel) {

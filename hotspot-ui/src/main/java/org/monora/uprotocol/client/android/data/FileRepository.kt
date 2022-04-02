@@ -74,10 +74,10 @@ class FileRepository @Inject constructor(
         if (Build.VERSION.SDK_INT >= 30) {
            // return@lazy context.getExternalFilesDir("Transferred (Hidden Folder)")!!
           //  return@lazy context.getExternalFilesDir("Elimugo")!!
-             return@lazy File(context.getExternalFilesDir(null), "Elimugo")
+             return@lazy File(context.getExternalFilesDir(null), "Public")
         }
 
-        File(context.getExternalFilesDir(null), "Elimugo")
+        File(context.getExternalFilesDir(null), "Public")
 //        var primaryDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
 //        if (!primaryDir.isDirectory && !primaryDir.mkdirs() || !primaryDir.canWrite()) {
 //            primaryDir = Environment.getExternalStorageDirectory()

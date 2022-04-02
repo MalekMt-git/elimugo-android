@@ -131,7 +131,6 @@ class WelcomeActivity : Activity() {
                     }
                     backend.ensureStartedAfterWelcoming()
                     startActivity(Intent(this@WelcomeActivity, HomeActivity::class.java))
-
                     finish()
                 } else {
                     viewPager.setCurrentItem(permissionPosition, true)

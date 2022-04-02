@@ -9,10 +9,16 @@ import android.widget.Toast
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.Button
+import androidx.compose.material.Icon
+import androidx.compose.material.IconButton
 import androidx.compose.material.Text
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.Alignment.Companion.CenterVertically
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat.startActivity
@@ -40,6 +46,11 @@ fun ExploreScreenContent(context: Context , navController: NavController) {
     GuideLine(text = stringResource(R.string.main_screen_toolbar_title)) {
         Toast.makeText(context , R.string.will_be_soon , Toast.LENGTH_LONG).show()
     }
+    val apkMimeType = "application/vnd.android.package-archive"
+    val itemCount: MutableState<Int> = remember {
+        mutableStateOf(0)
+    }
+
 
     Box(
         Modifier
@@ -50,61 +61,92 @@ fun ExploreScreenContent(context: Context , navController: NavController) {
         fun File.getMimeType(fallback: String = "*/*"): String {
             return MimeTypeMap.getFileExtensionFromUrl(toString())
                 ?.run { MimeTypeMap.getSingleton().getMimeTypeFromExtension(lowercase(Locale.getDefault())) }
-                ?: fallback // You might set it to */*
+                ?: fallback
         }
         LazyColumn {
 
             val directory = File(context.getExternalFilesDir(null), "Public")
             val language = context.resources.configuration.locale.language
-            if (directory.listFiles() != null) {
-                val files: Array<File> = directory.listFiles()
-                items(files.size) { index ->
+            val files: Array<File> = directory.listFiles() as Array<File>
+            if (files.size > 1) {
+                itemCount.value = files.size
+                items(itemCount.value) { index ->
                     if (files[index].name != "packages.xml"){
-                    Button(onClick = {
-                        try {
-                            val indexFile = File(context.getExternalFilesDir("Public") ,files[index].name + "/" + language + "/"+ "index.html" )
-                            if ( indexFile.exists() && indexFile.getMimeType() == "text/html" ){
-                                //webView = indexFile.absolutePath
-                                val encodedUrl = URLEncoder.encode(indexFile.absolutePath, StandardCharsets.UTF_8.toString())
-                                navController.navigate(Routes.WebViewer.route + "/" + encodedUrl)
-                            }else{
-                                val intent = Intent(Intent.ACTION_VIEW)
-                                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK;
-                                intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
-                                intent.setDataAndType(FileProvider.getUriForFile(context ,context.applicationContext.packageName + ".provider" , indexFile), indexFile.getMimeType() )
-                                startActivity( context, intent , null)
-                            }
-                        } catch (e: ActivityNotFoundException) {
-                            // no Activity to handle this kind of files
+                    Row {
+                        IconButton(modifier = Modifier.align(CenterVertically),
+                            onClick = {
+                                files[index].deleteRecursively()
+                                itemCount.value = itemCount.value - 1
+                            }) {
+                            Icon(
+                                Icons.Filled.DeleteForever,
+                                "contentDescription",
+                                tint = Color.Gray)
                         }
-                    }, content = {
+                        Button(onClick = {
+                            try {
+                                val indexFile = File(context.getExternalFilesDir("Public") ,files[index].name + "/" + language + "/"+ "index.html" )
+                                val packageFiles = files[index].listFiles()
+                                if (packageFiles != null) {
+                                    var didFindApk = false
+                                    for (packageFile in packageFiles){
+                                        if (packageFile.getMimeType() == apkMimeType){
+                                            val intent = Intent(Intent.ACTION_VIEW)
+                                            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK;
+                                            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+                                            intent.setDataAndType(FileProvider.getUriForFile(context ,context.applicationContext.packageName + ".provider" , packageFile), packageFile.getMimeType() )
+                                            didFindApk = true
+                                            startActivity( context, intent , null)
+
+                                        }
+                                    }
+                                    if (!didFindApk){
+                                        if ( indexFile.exists() && indexFile.getMimeType() == "text/html"){
+                                            val encodedUrl = URLEncoder.encode(indexFile.absolutePath, StandardCharsets.UTF_8.toString())
+                                            navController.navigate(Routes.WebViewer.route + "/" + encodedUrl)
+                                        }else{
+                                            val intent = Intent(Intent.ACTION_VIEW)
+                                            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK;
+                                            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+                                            intent.setDataAndType(FileProvider.getUriForFile(context ,context.applicationContext.packageName + ".provider" , indexFile), indexFile.getMimeType() )
+                                            startActivity( context, intent , null)
+                                        }
+                                    }
+                                }
+
+                            } catch (e: ActivityNotFoundException) {
+                                // no Activity to handle this kind of files
+                            }
+                        }, content = {
                             val packagesFile =
                                 File(context.getExternalFilesDir("Public"), "packages.xml")
-                        if (packagesFile.exists()){
-                            val packages = XmlParser().parsePackages(
-                                FileInputStream(packagesFile).bufferedReader().readText()
-                                    .toByteArray().inputStream()
-                            )
-                            for (i in packages) {
-                                if (i.uniqueId == files[index].name) {
-                                    when (language) {
-                                        "en" -> i.descriptions.en
-                                        "sw" -> i.descriptions.sw
-                                        else -> i.descriptions.en
-                                    }?.let {
-                                        if (it.isNotEmpty()) {
-                                            Text(
-                                                text = it,
-                                                Modifier.padding(13.dp, 13.dp)
-                                            )
+                            if (packagesFile.exists()){
+                                val packages = XmlParser().parsePackages(
+                                    FileInputStream(packagesFile).bufferedReader().readText()
+                                        .toByteArray().inputStream()
+                                )
+                                for (i in packages) {
+                                    if (i.uniqueId == files[index].name ) {
+                                        when (language) {
+                                            "en" -> i.descriptions.en
+                                            "sw" -> i.descriptions.sw
+                                            else -> i.descriptions.en
+                                        }?.let {
+                                            if (it.isNotEmpty() && it.length > 1 && files[index].exists()) {
+                                                Text(
+                                                    text = it,
+                                                    Modifier.padding(13.dp, 13.dp),
+                                                )
+                                            }
                                         }
                                     }
                                 }
                             }
-                        }
-                    })
+                        })
+                    }
                     Spacer(modifier = Modifier.size(0.dp, 30.dp))
-                    }}
+                    }
+                }
             } else {
                 item {
                     Text(text = stringResource(R.string.nothing_downloaded))

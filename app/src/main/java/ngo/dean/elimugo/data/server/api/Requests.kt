@@ -1,12 +1,16 @@
 package ngo.dean.elimugo.data.server.api
 
+import android.annotation.SuppressLint
 import android.app.DownloadManager
+import android.app.DownloadManager.COLUMN_BYTES_DOWNLOADED_SO_FAR
 import android.content.Context
 import android.content.Context.DOWNLOAD_SERVICE
 import android.net.Uri
 import android.os.StrictMode
 import android.os.StrictMode.ThreadPolicy
 import android.util.Log
+import androidx.compose.runtime.MutableState
+import androidx.core.content.getSystemService
 import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
@@ -15,6 +19,7 @@ import ngo.dean.elimugo.domain.entites.Package
 import ngo.dean.elimugo.domain.repository.PackageRepository
 import ngo.dean.elimugo.util.xml.XmlParser
 import java.io.File
+import kotlin.concurrent.thread
 
 class Requests(var context: Context) : PackageRepository {
 
@@ -23,7 +28,7 @@ class Requests(var context: Context) : PackageRepository {
     private lateinit var listOfPackages : ArrayList<Package>
     lateinit var listOfPackagesFilesUrls : ArrayList<ngo.dean.elimugo.domain.entites.File>
 
-    override fun downloadPackages(listOfPackages: List<Package>) {
+    override fun downloadPackages(listOfPackages: List<Package>, progress: MutableState<Float>) {
         var fileName = ""
         val policy = ThreadPolicy.Builder().permitAll().build()
         StrictMode.setThreadPolicy(policy)
@@ -36,31 +41,37 @@ class Requests(var context: Context) : PackageRepository {
             f.mkdir()
             runBlocking {
                 getFilesUrls(learnPackage.uniqueId){
+                    var downloadedFilesAmount = 0
                     for (i in it){
+                        val allFilesAmount = it.size
                         fileName = "${learnPackage.uniqueId}/${i.url}"
                         downloader(fileName = fileName ,
                             title = "${learnPackage.uniqueId} is Downloading",
                             description= "please be wait",
                             path =  "Public/"+learnPackage.uniqueId,subPath = i.url)
+                        downloadedFilesAmount += 1
+                        progress.value = (downloadedFilesAmount / allFilesAmount).toFloat()
                     }
                 }
             }
         }
     }
 
-    override fun downloader(fileName: String, title : String?, description :String?, path : String, subPath: String){
+    @SuppressLint("Range")
+    override fun downloader(fileName: String, title : String?, description :String?, path : String, subPath: String , progress: MutableState<Float>?){
         val oldFile = File(context.getExternalFilesDir("Public") , fileName)
         if (oldFile.exists()){
             oldFile.canonicalFile.delete()
         }
         val request = DownloadManager.Request(Uri.parse("$contentsUrl/$fileName")).apply {
+            this.
             setTitle(title)
             setDescription(description)
             setDestinationInExternalFilesDir(context, path ,subPath )
             setNotificationVisibility(DownloadManager.Request.VISIBILITY_HIDDEN)
         }
-        val manager = context.getSystemService(DOWNLOAD_SERVICE) as DownloadManager?
-        manager!!.enqueue(request)
+        val manager = context.getSystemService(DOWNLOAD_SERVICE) as DownloadManager
+        manager.enqueue(request)
     }
 
     override suspend fun getPackageWithQuery(

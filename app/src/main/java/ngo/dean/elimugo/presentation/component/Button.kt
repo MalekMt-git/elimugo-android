@@ -13,6 +13,7 @@ import androidx.compose.ui.Alignment.Companion.Center
 import androidx.compose.ui.Alignment.Companion.TopCenter
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.stringResource
@@ -23,10 +24,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import ngo.dean.elimugo.R
 import ngo.dean.elimugo.presentation.theme.White
-import ngo.dean.elimugo.presentation.theme.gradient
+import ngo.dean.elimugo.presentation.theme.gradient_red
 
 @Composable
-fun ElimuGoButton(title: String, icon : Painter, description : String, onClick: () -> Unit){
+fun ElimuGoButton(title: String="", icon: Painter, description: String, buttonBackgroundColor: Brush = gradient_red, topIcon: Painter? = null, onClick: () -> Unit){
 
     Button(
         onClick = onClick,
@@ -36,25 +37,30 @@ fun ElimuGoButton(title: String, icon : Painter, description : String, onClick: 
             .size(150.dp, 200.dp)
             .padding(horizontal = 5.dp , vertical = 12.dp)
             .shadow(8.dp, shape = RoundedCornerShape(8))
-            .background(gradient)
+            .background(buttonBackgroundColor)
     ) {
-
         Box(Modifier.fillMaxSize()) {
-            Text(
-                text = title,
-                color = White,
-                fontSize = 20.sp,
-                fontWeight = FontWeight.ExtraBold,
-                fontStyle = FontStyle.Normal,
-                modifier = Modifier.align(TopCenter)
-            )
-
+            if (topIcon != null){
+                Image(
+                    painter = topIcon,
+                    contentDescription = stringResource(R.string.content_description),
+                    modifier = Modifier.align(TopCenter).size(width = 3000.dp , height = 35.dp),
+                )
+            } else{
+                Text(
+                    text = title,
+                    color = White,
+                    fontSize = 20.sp,
+                    fontWeight = FontWeight.ExtraBold,
+                    fontStyle = FontStyle.Normal,
+                    modifier = Modifier.align(TopCenter)
+                )
+            }
             Image(
                 painter = icon,
                 contentDescription = stringResource(R.string.content_description),
                 modifier = Modifier.align(Center),
             )
-
             Text(
                 text = description,
                 color = White,

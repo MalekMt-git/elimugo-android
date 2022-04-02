@@ -51,6 +51,7 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/pathRecyclerViewContainer"
+        android:visibility="invisible"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
