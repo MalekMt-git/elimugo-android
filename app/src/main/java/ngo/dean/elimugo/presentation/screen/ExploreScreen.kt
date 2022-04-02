@@ -61,13 +61,13 @@ fun ExploreScreenContent(context: Context , navController: NavController) {
         fun File.getMimeType(fallback: String = "*/*"): String {
             return MimeTypeMap.getFileExtensionFromUrl(toString())
                 ?.run { MimeTypeMap.getSingleton().getMimeTypeFromExtension(lowercase(Locale.getDefault())) }
-                ?: fallback // You might set it to */*
+                ?: fallback
         }
         LazyColumn {
 
             val directory = File(context.getExternalFilesDir(null), "Public")
             val language = context.resources.configuration.locale.language
-            val files: Array<File> = directory.listFiles()
+            val files: Array<File> = directory.listFiles() as Array<File>
             if (files.size > 1) {
                 itemCount.value = files.size
                 items(itemCount.value) { index ->
